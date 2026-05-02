@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const steps = [
-  { num: "01", title: "Requirement Analysis",       desc: "Structured discovery covering frequency bands, gain targets, polarisation, form factor, connector type, operating environment, and volume forecast. Output: a formal engineering brief.", duration: "1-2 days",  icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" },
-  { num: "02", title: "RF Design",                  desc: "Our engineers develop the antenna geometry, matching network, feed structure, and PCB layout. Design rules are validated against the engineering brief before simulation.",                   duration: "3-7 days",  icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" },
-  { num: "03", title: "Electromagnetic Simulation", desc: "Full-wave EM simulation to predict radiation patterns, impedance behaviour, and cross-band isolation. Results compared against targets and design iterated until compliant.",                  duration: "2-5 days",  icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
-  { num: "04", title: "Prototype Build",             desc: "In-house fabrication of functional prototypes using the validated design. Assembly follows controlled procedures for connector integration, cable routing, and mechanical fit.",             duration: "3-10 days", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
-  { num: "05", title: "Lab Testing and Validation",  desc: "Network analyser measurements for VSWR, insertion loss, and impedance. Anechoic chamber testing for gain and radiation patterns. Environmental stress screening where required.",           duration: "2-5 days",  icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" },
-  { num: "06", title: "Production Scale-Up",         desc: "Transition from approved prototype to volume manufacturing. Process documentation, incoming material QC, in-process checks, and batch testing ensure consistent quality at scale.",       duration: "Per volume", icon: "M4 7h16M4 12h16M4 17h7" },
+  { num: "01", title: "Requirement Analysis",       desc: "Structured discovery covering frequency bands, gain targets, polarisation, form factor, connector type, operating environment, and volume forecast. Output: a formal engineering brief.", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" },
+  { num: "02", title: "RF Design",                  desc: "Our engineers develop the antenna geometry, matching network, feed structure, and PCB layout. Design rules are validated against the engineering brief before simulation.",                   icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" },
+  { num: "03", title: "Electromagnetic Simulation", desc: "Full-wave EM simulation to predict radiation patterns, impedance behaviour, and cross-band isolation. Results compared against targets and design iterated until compliant.",                  icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
+  { num: "04", title: "Prototype Build",             desc: "In-house fabrication of functional prototypes using the validated design. Assembly follows controlled procedures for connector integration, cable routing, and mechanical fit.",             icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+  { num: "05", title: "Lab Testing and Validation",  desc: "Network analyser measurements for VSWR, insertion loss, and impedance. Anechoic chamber testing for gain and radiation patterns. Environmental stress screening where required.",           icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" },
+  { num: "06", title: "Production Scale-Up",         desc: "Transition from approved prototype to volume manufacturing. Process documentation, incoming material QC, in-process checks, and batch testing ensure consistent quality at scale.",       icon: "M4 7h16M4 12h16M4 17h7" },
 ];
 
 const faqs = [
@@ -59,12 +59,6 @@ export default function CustomSolutions() {
               <div style={{ flex: 1 }}>
                 <h3 style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--text)" }}>{step.title}</h3>
                 <p style={{ marginTop: "0.6rem", fontSize: "0.875rem", lineHeight: 1.75, color: "var(--muted)" }}>{step.desc}</p>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.775rem", fontWeight: 600, color: "var(--brand)" }}>
-                <svg style={{ width: "13px", height: "13px" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {step.duration}
               </div>
             </div>
           ))}

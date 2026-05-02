@@ -15,9 +15,9 @@ const navigate = [
 export function Footer() {
   return (
     <footer className="border-t border-[var(--line)] bg-[var(--panel)]">
-      <div className="container" style={{ paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
+      <div className="container" style={{ paddingTop: "3rem", paddingBottom: "2.5rem" }}>
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
           {/* Brand */}
           <div>
@@ -105,7 +105,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="mt-6 pt-5 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs" style={{ color: "var(--muted)" }}>&copy; 2026 Anand Technologies. All rights reserved.</p>
           <div className="flex gap-4">
             {["Privacy Policy", "Terms of Use", "Sitemap"].map((item) => (

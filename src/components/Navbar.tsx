@@ -44,7 +44,7 @@ export function Navbar() {
       className={`sticky top-0 z-50 bg-[var(--panel)] border-b border-[var(--line)] transition-shadow duration-200${scrolled ? " shadow-md" : ""}`}
       style={{ height: "var(--nav-h)" }}
     >
-      <div className="container h-full flex items-center justify-between gap-4">
+      <div className="container h-full flex items-center justify-between gap-6">
 
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2 no-underline">
@@ -61,12 +61,12 @@ export function Navbar() {
         </Link>
 
         {/* ── Desktop Nav (hidden on mobile) ── */}
-        <nav className="hidden lg:flex items-center gap-1 text-sm font-medium">
+        <nav className="hidden lg:flex items-center gap-2 text-sm font-medium">
           {/* Products dropdown */}
           <div ref={dropdownRef} className="relative">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center gap-1 px-3 py-2 rounded-lg border-none cursor-pointer text-sm font-medium transition-colors"
+              className="flex items-center gap-1 px-3 py-2.5 rounded-lg border-none cursor-pointer text-sm font-medium transition-colors"
               style={{ background: dropdownOpen ? "var(--soft)" : "transparent", color: "var(--muted)" }}
             >
               {t.products}
@@ -75,7 +75,7 @@ export function Navbar() {
               </svg>
             </button>
             {dropdownOpen && (
-              <div className="absolute left-0 top-full mt-1 w-80 rounded-xl border border-[var(--line)] bg-[var(--panel)] p-3 shadow-xl z-50">
+              <div className="absolute left-0 top-full mt-2 w-80 rounded-xl border border-[var(--line)] bg-[var(--panel)] p-3 shadow-xl z-50">
                 <p className="px-3 pb-2 text-xs font-bold uppercase tracking-widest" style={{ color: "var(--muted)" }}>Product Lines</p>
                 {categories.map((c) => (
                   <Link key={c.id} href={`/products?category=${c.slug}`} onClick={() => setDropdownOpen(false)}
@@ -96,7 +96,7 @@ export function Navbar() {
 
           {navLinks.map((l) => (
             <Link key={l.href} href={l.href}
-              className="px-3 py-2 rounded-lg no-underline text-sm transition-colors hover:bg-[var(--soft)]"
+              className="px-3 py-2.5 rounded-lg no-underline text-sm transition-colors hover:bg-[var(--soft)]"
               style={{ fontWeight: pathname === l.href ? 600 : 500, color: pathname === l.href ? "var(--text)" : "var(--muted)" }}>
               {l.label}
             </Link>
@@ -104,7 +104,7 @@ export function Navbar() {
         </nav>
 
         {/* ── Desktop Right Controls (hidden on mobile) ── */}
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-3">
           <button onClick={() => setDark(!dark)} title={dark ? "Light mode" : "Dark mode"}
             className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--line)] bg-transparent cursor-pointer transition-colors hover:bg-[var(--soft)]"
             style={{ color: "var(--muted)" }}>
@@ -124,14 +124,14 @@ export function Navbar() {
 
           <select value={lang} onChange={(e) => setLang(e.target.value as "en" | "kn" | "zh")}
             className="h-8 rounded-lg border border-[var(--line)] bg-[var(--panel)] px-2 text-xs font-semibold cursor-pointer"
-            style={{ color: "var(--text)", minWidth: "56px" }}>
+            style={{ color: "var(--text)", minWidth: "84px" }}>
             <option value="en">EN</option>
             <option value="kn">KN</option>
             <option value="zh">ZH</option>
           </select>
 
           <Link href="/contact"
-            className="flex h-8 items-center gap-1.5 rounded-lg px-4 text-xs font-semibold text-white no-underline transition-colors hover:opacity-90"
+            className="flex h-8 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-white no-underline transition-colors hover:opacity-90"
             style={{ background: "var(--brand)" }}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -182,9 +182,9 @@ export function Navbar() {
             </button>
             <select value={lang} onChange={(e) => setLang(e.target.value as "en" | "kn" | "zh")}
               className="h-9 rounded-lg border border-[var(--line)] bg-[var(--panel)] px-2 text-sm font-semibold cursor-pointer" style={{ color: "var(--text)" }}>
-              <option value="en">EN — English</option>
-              <option value="kn">KN — Kannada</option>
-              <option value="zh">ZH — Chinese</option>
+              <option value="en">EN English</option>
+              <option value="kn">KN Kannada</option>
+              <option value="zh">ZH Chinese</option>
             </select>
           </div>
           <Link href="/contact" onClick={() => setMobileOpen(false)}

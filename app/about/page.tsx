@@ -118,7 +118,7 @@ export default function About() {
           <p style={{ marginTop: "1rem", opacity: 0.88, maxWidth: "480px", marginInline: "auto", lineHeight: 1.75 }}>
             Share your RF requirement and our engineers will respond within one business day.
           </p>
-          <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", marginTop: "2rem", background: "white", color: "var(--brand)", fontWeight: 700, padding: "0.9rem 2.25rem", borderRadius: "10px", textDecoration: "none", fontSize: "0.95rem" }}>
+          <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: "2rem", background: "white", color: "var(--brand)", fontWeight: 700, width: "170px", height: "170px", borderRadius: "50%", textDecoration: "none", fontSize: "1rem", lineHeight: 1.35, textAlign: "center", padding: "1rem" }}>
             Contact Our Team
           </Link>
         </div>

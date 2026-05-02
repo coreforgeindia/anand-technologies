@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <span className="text-[var(--text)]">{article.title}</span>
       </nav>
 
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-4xl">
         <div className="mb-6 flex items-center gap-3">
           <span className="badge">{article.category}</span>
           <span className="text-xs text-[var(--muted)]">{article.readTime}</span>
@@ -120,9 +120,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           ))}
         </div>
 
-        <div className="mt-10 space-y-5">
+        <div className="mt-10 space-y-6">
           {article.content.map((para, i) => (
-            <p key={i} className="text-base leading-8 text-[var(--muted)]">{para}</p>
+            <p key={i} className="text-[1.13rem] leading-9 text-[var(--muted)]">{para}</p>
           ))}
         </div>
 

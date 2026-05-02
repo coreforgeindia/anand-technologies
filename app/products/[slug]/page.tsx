@@ -23,7 +23,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
     .slice(0, 3);
 
   return (
-    <main className="container py-12">
+    <main className="container py-12 pb-20">
 
       {/* Breadcrumb */}
       <nav className="mb-8 flex items-center gap-2 text-sm text-[var(--muted)]">

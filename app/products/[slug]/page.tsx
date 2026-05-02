@@ -1,0 +1,2 @@
+import { products } from "@/src/data/catalog";
+export default async function ProductDetail({params}:{params:Promise<{slug:string}>}){const {slug}=await params; const p=products.find(x=>x.slug===slug); if(!p) return <main className="container py-12">Not found</main>; return <main className="container py-12"><h1 className="text-3xl font-bold">{p.title}</h1><p className="mt-2">Frequency {p.frequencyRange}</p><p>Gain {p.gain}</p><a className="mt-4 inline-block rounded bg-sky-500 px-4 py-2" href="/contact">Add to Enquiry</a></main>}

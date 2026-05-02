@@ -1,0 +1,1 @@
+export const products=[{id:"p1",categoryId:"c1",subcategoryId:"s1",slug:"vhf-series-a",title:"VHF Antenna Series A",image:"/products/placeholder-product.svg",frequencyRange:"700 MHz to 2700 MHz",gain:"2 to 5 dBi",applications:["Telecom"],specifications:{Impedance:"50 Ohm"},datasheetUrl:"/datasheets/sample-datasheet.pdf"}];

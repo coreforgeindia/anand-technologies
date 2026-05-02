@@ -1,0 +1,2 @@
+import { products } from "@/src/data/catalog";
+export default function ProductsPage(){return <main className="container py-12"><h1 className="text-3xl font-bold">Products</h1><div className="mt-8 grid gap-4 md:grid-cols-3">{products.slice(0,12).map(p=><a key={p.id} href={`/products/${p.slug}`} className="rounded-xl border border-slate-800 p-4"><h3 className="font-semibold">{p.title}</h3><p className="text-sm text-slate-300">{p.frequencyRange}</p></a>)}</div></main>}

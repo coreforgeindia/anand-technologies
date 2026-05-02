@@ -1,0 +1,1 @@
+export function Footer(){return <footer className="mt-16 border-t border-slate-800"><div className="container py-8 text-sm text-slate-400">No 21 6th Main Road Sriganadada Kavalu Magadi Main Road Sunkadakatte Bengaluru Karnataka 560091</div></footer>}

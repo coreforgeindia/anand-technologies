@@ -33,7 +33,7 @@ export function Footer() {
                 Anand <span style={{ color: "var(--brand)" }}>Technologies</span>
               </span>
             </Link>
-            <p className="mt-3 text-xs leading-6" style={{ color: "var(--muted)" }}>
+            <p className="mt-3 text-sm leading-7" style={{ color: "var(--muted)" }}>
               Design and manufacturing partner for RF antennas, microwave components, and custom communication hardware.
             </p>
             <div className="mt-3 flex gap-1.5">
@@ -44,11 +44,11 @@ export function Footer() {
 
           {/* Navigate */}
           <div>
-            <h4 className="mb-4 text-xs font-bold uppercase tracking-widest" style={{ color: "var(--muted)" }}>Navigate</h4>
-            <ul className="space-y-2.5 list-none">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-widest" style={{ color: "var(--muted)" }}>Navigate</h4>
+            <ul className="space-y-3 list-none">
               {navigate.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-xs no-underline transition-colors hover:text-[var(--brand)]" style={{ color: "var(--muted)" }}>
+                  <Link href={l.href} className="text-sm no-underline transition-colors hover:text-[var(--brand)]" style={{ color: "var(--muted)" }}>
                     {l.label}
                   </Link>
                 </li>
@@ -58,8 +58,8 @@ export function Footer() {
 
           {/* Visit Us */}
           <div>
-            <h4 className="mb-4 text-xs font-bold uppercase tracking-widest" style={{ color: "var(--muted)" }}>Visit Us</h4>
-            <p className="text-xs leading-6" style={{ color: "var(--muted)" }}>
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-widest" style={{ color: "var(--muted)" }}>Visit Us</h4>
+            <p className="text-sm leading-7" style={{ color: "var(--muted)" }}>
               No. 21, 6th Main Road,<br/>
               Srigandada Kavalu,<br/>
               Magadi Main Road, Sunkadakatte,<br/>
@@ -69,15 +69,15 @@ export function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="mb-4 text-xs font-bold uppercase tracking-widest" style={{ color: "var(--muted)" }}>Connect</h4>
-            <ul className="space-y-2.5 list-none">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-widest" style={{ color: "var(--muted)" }}>Connect</h4>
+            <ul className="space-y-3 list-none">
               {[
                 { href: "mailto:sales@anandtechnologies.co.in", label: "sales@anandtechnologies.co.in", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
                 { href: "mailto:ceo@anandtechnologies.co.in",   label: "ceo@anandtechnologies.co.in",   icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
                 { href: "tel:+919000000000",                    label: "+91 90000 00000",                icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" },
               ].map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="flex items-center gap-2 text-xs no-underline transition-colors hover:text-[var(--brand)]" style={{ color: "var(--muted)" }}>
+                  <a href={item.href} className="flex items-center gap-2 text-sm no-underline transition-colors hover:text-[var(--brand)]" style={{ color: "var(--muted)" }}>
                     <svg className="h-3.5 w-3.5 shrink-0" style={{ color: "var(--brand)" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d={item.icon}/>
                     </svg>
@@ -106,10 +106,10 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-6 pt-5 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs" style={{ color: "var(--muted)" }}>&copy; 2026 Anand Technologies. All rights reserved.</p>
+          <p className="text-sm" style={{ color: "var(--muted)" }}>&copy; 2026 Anand Technologies. All rights reserved.</p>
           <div className="flex gap-4">
             {["Privacy Policy", "Terms of Use", "Sitemap"].map((item) => (
-              <a key={item} href="#" className="text-xs no-underline transition-colors hover:text-[var(--brand)]" style={{ color: "var(--muted)" }}>
+              <a key={item} href="#" className="text-sm no-underline transition-colors hover:text-[var(--brand)]" style={{ color: "var(--muted)" }}>
                 {item}
               </a>
             ))}

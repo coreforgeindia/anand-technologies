@@ -126,10 +126,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           ))}
         </div>
 
-        <div className="mt-12 rounded-xl border border-[var(--line)] bg-[var(--brand-light)] p-6">
-          <h3 className="font-bold text-[var(--brand-dark)]">Need custom RF components?</h3>
-          <p className="mt-2 text-sm text-[var(--muted)]">Our engineers can design and manufacture antenna solutions for your specific frequency, gain, and environmental requirements.</p>
-          <Link href="/contact" className="btn-primary mt-4 inline-flex">Contact Our Team</Link>
+        <div className="mt-12 rounded-[24px] px-8 py-12 text-center text-white" style={{ background: "linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%)" }}>
+          <h3 className="text-4xl font-bold">Need custom RF components?</h3>
+          <p className="mx-auto mt-6 max-w-2xl text-xl leading-10" style={{ opacity: 0.92 }}>
+            Our engineers can design and manufacture antenna solutions for your specific frequency, gain, and environmental requirements.
+          </p>
+          <Link href="/contact" className="mt-8 inline-flex items-center justify-center rounded-xl bg-white px-10 py-4 text-2xl font-semibold no-underline" style={{ color: "var(--brand-dark)" }}>
+            Contact Our Team
+          </Link>
         </div>
 
         <div className="mt-10 border-t border-[var(--line)] pt-8">

@@ -1,1 +1,3 @@
-export default function Page(){return <main className='container py-12'><h1 className='text-3xl font-bold'>Custom Solutions</h1></main>}
+export default function CustomSolutions(){
+return <main className="container py-12 space-y-8"><h1 className="text-4xl font-bold">Custom RF Solutions</h1><ol className="grid gap-4 md:grid-cols-2">{["Requirement analysis","RF design","Electromagnetic simulation","Prototype build","Lab testing","Production scale up"].map(step=><li key={step} className="rounded-xl border border-[var(--line)] bg-white p-6"><h2 className="font-semibold">{step}</h2><p className="mt-2 text-[var(--muted)]">Detailed engineering workflow aligned to performance compliance and deployment environment.</p></li>)}</ol></main>
+}

@@ -1,1 +1,3 @@
-export default function Page(){return <main className='container py-12'><h1 className='text-3xl font-bold'>Resources Blog</h1></main>}
+export default function Resources(){
+return <main className="container py-12 space-y-8"><h1 className="text-4xl font-bold">Resources and Blog</h1><div className="grid gap-4 md:grid-cols-3">{["Selecting GSM GPS combo antennas for fleet tracking","Understanding VSWR and impedance matching in IoT devices","How RF attenuators and splitters improve network reliability"].map(title=><article key={title} className="rounded-xl border border-[var(--line)] bg-white p-6"><h2 className="font-semibold">{title}</h2><p className="mt-2 text-sm text-[var(--muted)]">SEO ready technical article template with structured content and internal linking support.</p></article>)}</div></main>
+}

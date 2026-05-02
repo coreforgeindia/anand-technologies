@@ -45,7 +45,7 @@ export function Navbar() {
       className={`sticky top-0 z-50 bg-[var(--panel)] border-b border-[var(--line)] transition-shadow duration-200${scrolled ? " shadow-md" : ""}`}
       style={{ height: "var(--nav-h)" }}
     >
-      <div className="container h-full flex items-center justify-between gap-8">
+      <div className="container h-full grid grid-cols-[auto_1fr_auto] items-center gap-8">
 
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2 no-underline">
@@ -62,13 +62,13 @@ export function Navbar() {
         </Link>
 
         {/* ── Desktop Nav (hidden on mobile) ── */}
-        <nav className="hidden lg:flex items-center gap-3 text-sm font-medium">
+        <nav className="hidden lg:flex items-center justify-center gap-2 xl:gap-4 text-sm font-medium">
           {navLinks.map((l) => (
             l.href === "/products" ? (
               <div key={l.href} ref={dropdownRef} className="relative">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="flex items-center gap-1 px-3 py-2.5 rounded-lg border-none cursor-pointer text-sm font-medium transition-colors"
+                  className="flex items-center gap-1 px-3 py-2.5 rounded-lg border-none cursor-pointer text-sm font-semibold transition-colors"
                   style={{ background: dropdownOpen ? "var(--soft)" : "transparent", color: "var(--muted)" }}
                 >
                   {l.label}
@@ -77,18 +77,33 @@ export function Navbar() {
                   </svg>
                 </button>
                 {dropdownOpen && (
-                  <div className="absolute left-0 top-full mt-2 w-[420px] rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-2 shadow-xl z-50">
-                    <p className="px-3 pb-2 pt-1 text-xs font-bold uppercase tracking-widest" style={{ color: "var(--muted)" }}>Product Lines</p>
-                    {categories.map((c) => (
-                      <Link key={c.id} href={`/products?category=${c.slug}`} onClick={() => setDropdownOpen(false)}
-                        className="flex flex-col px-3 py-2.5 rounded-xl no-underline transition-colors hover:bg-[var(--soft)]">
-                        <span className="font-semibold text-sm" style={{ color: "var(--text)" }}>{c.name}</span>
-                        <span className="text-[0.95rem] leading-7 mt-0.5" style={{ color: "var(--muted)" }}>{c.summary}</span>
-                      </Link>
-                    ))}
-                    <div className="mt-2 pt-2 border-t border-[var(--line)]">
+                  <div className="absolute left-1/2 top-full z-50 mt-3 w-[860px] -translate-x-1/2 rounded-none border border-[#d9e0e8] bg-white p-[1cm] shadow-[0_16px_30px_rgba(11,27,48,0.12)]">
+                    <div className="grid grid-cols-[340px_1fr]">
+                      <div className="border-r border-[#e5ebf2] bg-[#f8fafc] p-8">
+                        <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.16em]" style={{ color: "#2f3f55" }}>Brand</p>
+                        <p className="mt-6 text-[1.9rem] leading-none font-bold" style={{ color: "#0f1f33" }}>BRAND Products</p>
+                        <p className="mt-4 text-[0.78rem] leading-6" style={{ color: "#5a6c82" }}>Explore RF antennas and microwave systems engineered for reliability and mission-critical performance.</p>
+                        <Link href="/products" onClick={() => setDropdownOpen(false)}
+                          className="mt-5 inline-flex items-center rounded-md px-4 py-2.5 text-[0.72rem] font-semibold no-underline text-white transition-opacity hover:opacity-90"
+                          style={{ background: "var(--brand)" }}>
+                          Explore more products
+                        </Link>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-x-8 gap-y-4 pl-8 pr-2 py-2">
+                        {categories.map((c) => (
+                          <Link key={c.id} href={`/products?category=${c.slug}`} onClick={() => setDropdownOpen(false)}
+                            className="flex flex-col rounded-md border border-transparent px-3 py-2.5 no-underline transition-colors hover:border-[#dce5ef] hover:bg-[#f8fbff]">
+                            <span className="text-[0.95rem] font-semibold leading-5" style={{ color: "#182a3d" }}>{c.name}</span>
+                            <span className="mt-1 text-[0.72rem] leading-5" style={{ color: "#667a91" }}>{c.summary}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-6 border-t border-[#e5ebf2] pt-4">
                       <Link href="/products" onClick={() => setDropdownOpen(false)}
-                        className="flex items-center px-3 py-2 rounded-xl text-base font-semibold no-underline hover:bg-[var(--brand-light)]" style={{ color: "var(--brand)" }}>
+                        className="flex items-center rounded-md px-2 py-1.5 text-[0.95rem] font-semibold no-underline hover:bg-[var(--brand-light)]" style={{ color: "var(--brand)" }}>
                         View all products &rarr;
                       </Link>
                     </div>
@@ -97,8 +112,8 @@ export function Navbar() {
               </div>
             ) : (
               <Link key={l.href} href={l.href}
-                className="px-3 py-2.5 rounded-lg no-underline text-sm transition-colors hover:bg-[var(--soft)]"
-                style={{ fontWeight: pathname === l.href ? 600 : 500, color: pathname === l.href ? "var(--text)" : "var(--muted)" }}>
+                className="px-3 py-2.5 rounded-lg no-underline text-sm font-semibold transition-colors hover:bg-[var(--soft)]"
+                style={{ color: pathname === l.href ? "var(--text)" : "var(--muted)" }}>
                 {l.label}
               </Link>
             )

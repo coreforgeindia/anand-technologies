@@ -2,25 +2,36 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Filter, ArrowLeftRight, Split, Cable, Radio, Antenna, Waves, CircuitBoard } from 'lucide-react'
+import {
+  ArrowRight, Filter, ArrowLeftRight, Split, Cable,
+  Radio, Waves, Tag, Activity, Minus, Share2, Zap, GitBranch, Wifi, Signal
+} from 'lucide-react'
 import { productCategories } from '@/lib/data'
 
 const iconMap: Record<string, React.ReactNode> = {
-  'filters': <Filter className="w-6 h-6" />,
+  'gsm-lte-antennas': <Radio className="w-6 h-6" />,
+  'gps-gnss-antennas': <Signal className="w-6 h-6" />,
+  'wifi-antennas': <Wifi className="w-6 h-6" />,
+  'vhf-uhf-antennas': <Waves className="w-6 h-6" />,
+  'high-gain-antennas': <Activity className="w-6 h-6" />,
+  'rfid-antennas': <Tag className="w-6 h-6" />,
+  'lpa-antennas': <Activity className="w-6 h-6" />,
   'duplexers': <ArrowLeftRight className="w-6 h-6" />,
   'diplexers': <Split className="w-6 h-6" />,
+  'power-splitters': <GitBranch className="w-6 h-6" />,
+  'attenuators': <Minus className="w-6 h-6" />,
+  'couplers': <Share2 className="w-6 h-6" />,
+  'band-pass-filters': <Filter className="w-6 h-6" />,
+  'lightning-arrestors': <Zap className="w-6 h-6" />,
   'rf-cable-assemblies': <Cable className="w-6 h-6" />,
-  'low-gain-antennas': <Radio className="w-6 h-6" />,
-  'high-gain-antennas': <Antenna className="w-6 h-6" />,
-  'microwave-devices': <Waves className="w-6 h-6" />,
-  'precision-rf-components': <CircuitBoard className="w-6 h-6" />,
+  'power-amplifiers': <Zap className="w-6 h-6" />,
+  'waveguide': <Waves className="w-6 h-6" />,
 }
 
 export default function ProductCategoriesGrid() {
   return (
     <section className="py-20 bg-[#F5F7F8]">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,11 +45,10 @@ export default function ProductCategoriesGrid() {
             Engineered for Every RF Challenge
           </h2>
           <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
-            From MHz-range filters to mmWave precision components — our product portfolio covers the full spectrum of RF and microwave engineering needs.
+            1,700+ products across 17 categories — from MHz-range VHF antennas to X-band waveguide components.
           </p>
         </motion.div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {productCategories.map((cat, i) => (
             <motion.div
@@ -46,7 +56,7 @@ export default function ProductCategoriesGrid() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
+              transition={{ duration: 0.4, delay: i * 0.04 }}
             >
               <Link
                 href={`/products?category=${cat.slug}`}
@@ -54,13 +64,13 @@ export default function ProductCategoriesGrid() {
               >
                 <div className="w-12 h-12 rounded-xl bg-[#E0F9F9] group-hover:bg-[#00B8B8] flex items-center justify-center mb-4 transition-colors">
                   <span className="text-[#00B8B8] group-hover:text-white transition-colors">
-                    {iconMap[cat.slug]}
+                    {iconMap[cat.slug] || <Radio className="w-6 h-6" />}
                   </span>
                 </div>
-                <h3 className="text-base font-semibold text-[#0A0A0A] mb-2 group-hover:text-[#00B8B8] transition-colors">
+                <h3 className="text-sm font-semibold text-[#0A0A0A] mb-2 group-hover:text-[#00B8B8] transition-colors">
                   {cat.name}
                 </h3>
-                <p className="text-sm text-[#6B7280] leading-relaxed">
+                <p className="text-xs text-[#6B7280] leading-relaxed line-clamp-2">
                   {cat.description}
                 </p>
                 <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-[#00B8B8] opacity-0 group-hover:opacity-100 transition-opacity">

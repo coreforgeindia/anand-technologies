@@ -7,19 +7,29 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   Menu, X, ChevronDown,
   Filter, ArrowLeftRight, Split, Cable,
-  Radio, Antenna, Waves, CircuitBoard
+  Radio, Waves, Tag, Activity, Minus,
+  Share2, Zap, GitBranch, Wifi, Signal
 } from 'lucide-react'
 import { productCategories } from '@/lib/data'
 
 const categoryIcons: Record<string, React.ReactNode> = {
-  'filters': <Filter className="w-5 h-5" />,
+  'gsm-lte-antennas': <Radio className="w-5 h-5" />,
+  'gps-gnss-antennas': <Signal className="w-5 h-5" />,
+  'wifi-antennas': <Wifi className="w-5 h-5" />,
+  'vhf-uhf-antennas': <Waves className="w-5 h-5" />,
+  'high-gain-antennas': <Activity className="w-5 h-5" />,
+  'rfid-antennas': <Tag className="w-5 h-5" />,
+  'lpa-antennas': <Activity className="w-5 h-5" />,
   'duplexers': <ArrowLeftRight className="w-5 h-5" />,
   'diplexers': <Split className="w-5 h-5" />,
+  'power-splitters': <GitBranch className="w-5 h-5" />,
+  'attenuators': <Minus className="w-5 h-5" />,
+  'couplers': <Share2 className="w-5 h-5" />,
+  'band-pass-filters': <Filter className="w-5 h-5" />,
+  'lightning-arrestors': <Zap className="w-5 h-5" />,
   'rf-cable-assemblies': <Cable className="w-5 h-5" />,
-  'low-gain-antennas': <Radio className="w-5 h-5" />,
-  'high-gain-antennas': <Antenna className="w-5 h-5" />,
-  'microwave-devices': <Waves className="w-5 h-5" />,
-  'precision-rf-components': <CircuitBoard className="w-5 h-5" />,
+  'power-amplifiers': <Zap className="w-5 h-5" />,
+  'waveguide': <Waves className="w-5 h-5" />,
 }
 
 const navLinks = [

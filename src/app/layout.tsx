@@ -50,6 +50,11 @@ export const metadata: Metadata = {
     title: 'Anand Technologies | RF & Microwave Engineering India',
     description: 'Precision RF and microwave components for mission-critical systems.',
   },
+  icons: {
+    icon: '/favicon.jpg',
+    shortcut: '/favicon.jpg',
+    apple: '/favicon.jpg',
+  },
   robots: { index: true, follow: true },
 }
 

@@ -1,13 +1,35 @@
 {
+<<<<<<< HEAD
   "$schema": "./node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "anand-technologies",
   "compatibility_date": "2026-05-04",
   "compatibility_flags": ["nodejs_compat"],
+=======
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "anand-technologies",
+  "compatibility_date": "2026-05-04",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+>>>>>>> b0b9a32f1b79a6d3064341d15c9315e89170e3d6
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+<<<<<<< HEAD
+=======
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "anand-technologies"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  },
+>>>>>>> b0b9a32f1b79a6d3064341d15c9315e89170e3d6
   "observability": {
     "enabled": true
   }

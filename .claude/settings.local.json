@@ -9,7 +9,11 @@
       "Bash(Out-String -Width 300)",
       "PowerShell($count = \\(Get-ChildItem -Path \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\build\\\\datasheets\" -Recurse -File\\).Count; Write-Host \"Count: $count\")",
       "PowerShell($items = Get-ChildItem -Path \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\build\\\\datasheets\" -Recurse; Write-Host \"Total items: $\\($items.Count\\)\")",
-      "Bash(powershell -Command \"\\(Get-Content 'C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\anand-technologies\\\\src\\\\lib\\\\data.ts' | Measure-Object -Line\\).Lines\")"
+      "Bash(powershell -Command \"\\(Get-Content 'C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\anand-technologies\\\\src\\\\lib\\\\data.ts' | Measure-Object -Line\\).Lines\")",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\anand-technologies\\\\public\\\\product-images\\\\\" -ErrorAction SilentlyContinue | Select-Object Name | Format-Table -AutoSize)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\anand-technologies\\\\public\\\\product-images\" -ErrorAction SilentlyContinue)",
+      "Bash(Format-Table Name -AutoSize)",
+      "Bash(Test-Path \"E:\\\\Anand Technologies Sort\" -PathType Container)"
     ]
   }
 }

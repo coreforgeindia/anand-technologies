@@ -7,7 +7,10 @@ import Image from 'next/image'
 import { ArrowRight, ChevronRight, Download, Mail, Phone, CheckCircle2 } from 'lucide-react'
 
 type Props = {
-  product: (typeof import('@/lib/data').sampleProducts)[0]
+  product: (typeof import('@/lib/data').sampleProducts)[0] & {
+    product_name: string
+    datasheet_url: string | null
+  }
   category?: (typeof import('@/lib/data').productCategories)[0]
 }
 
@@ -60,8 +63,10 @@ export default function ProductDetailPage({ product, category }: Props) {
                 </div>
 
                 {/* Product name + part number */}
-                <h1 className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] font-mono mb-1">{product.name}</h1>
-                <p className="text-base text-[#6B7280] font-medium mb-2">Part Number: <span className="font-mono text-[#2A2A2A]">{product.name}</span></p>
+                <h1 className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-1">{product.product_name}</h1>
+                <p className="text-base text-[#6B7280] font-medium mb-2">
+                  Part Number: <span className="font-mono font-semibold text-[#2A2A2A]">{product.name}</span>
+                </p>
                 <p className="text-lg text-[#6B7280] font-medium mb-6">{product.short_spec}</p>
 
                 {/* Product image */}
@@ -108,8 +113,9 @@ export default function ProductDetailPage({ product, category }: Props) {
 
                     <div className="grid sm:grid-cols-2 gap-4 mb-8">
                       <div className="bg-[#F5F7F8] rounded-xl p-5 border border-gray-100">
-                        <div className="text-xs font-semibold text-[#6B7280] uppercase tracking-wider mb-1">Part Number</div>
-                        <div className="font-mono font-bold text-[#0A0A0A]">{product.name}</div>
+                        <div className="text-xs font-semibold text-[#6B7280] uppercase tracking-wider mb-1">Product Name</div>
+                        <div className="font-bold text-[#0A0A0A]">{product.product_name}</div>
+                        <div className="text-xs font-mono text-[#6B7280] mt-1">{product.name}</div>
                       </div>
                       <div className="bg-[#F5F7F8] rounded-xl p-5 border border-gray-100">
                         <div className="text-xs font-semibold text-[#6B7280] uppercase tracking-wider mb-1">Frequency Range</div>

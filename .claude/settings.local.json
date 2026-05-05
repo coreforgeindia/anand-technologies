@@ -8,7 +8,8 @@
       "Bash(Format-Table -AutoSize)",
       "Bash(Out-String -Width 300)",
       "PowerShell($count = \\(Get-ChildItem -Path \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\build\\\\datasheets\" -Recurse -File\\).Count; Write-Host \"Count: $count\")",
-      "PowerShell($items = Get-ChildItem -Path \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\build\\\\datasheets\" -Recurse; Write-Host \"Total items: $\\($items.Count\\)\")"
+      "PowerShell($items = Get-ChildItem -Path \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\build\\\\datasheets\" -Recurse; Write-Host \"Total items: $\\($items.Count\\)\")",
+      "Bash(powershell -Command \"\\(Get-Content 'C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\anand-technologies\\\\src\\\\lib\\\\data.ts' | Measure-Object -Line\\).Lines\")"
     ]
   }
 }

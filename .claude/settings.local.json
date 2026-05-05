@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:drive.google.com)"
+      "WebFetch(domain:drive.google.com)",
+      "PowerShell(Get-ChildItem -Path \"E:\\\\Anand Technologies Sort\" -Recurse -File | ForEach-Object { $_.Extension.ToLower\\(\\) } | Group-Object | Sort-Object Count -Descending | Format-Table Name, Count -AutoSize)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\build\" -Recurse -Force)",
+      "Bash(Select-Object -Property FullName, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(Out-String -Width 300)",
+      "PowerShell($count = \\(Get-ChildItem -Path \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\build\\\\datasheets\" -Recurse -File\\).Count; Write-Host \"Count: $count\")",
+      "PowerShell($items = Get-ChildItem -Path \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\build\\\\datasheets\" -Recurse; Write-Host \"Total items: $\\($items.Count\\)\")"
     ]
   }
 }

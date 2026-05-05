@@ -3,14 +3,15 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import {
-  ArrowRight, MapPin, FlaskConical, Shield, Award, Users, Factory, Cpu
+  ArrowRight, MapPin, FlaskConical, Shield, Award, Users, Factory, Cpu, BadgeCheck
 } from 'lucide-react'
 
 const milestones = [
-  { year: '2004', title: 'Founded in Bengaluru', description: 'Anand Technologies established as a precision RF component design and manufacturing firm, focusing on telecom infrastructure.' },
-  { year: '2008', title: 'Defense Program Entry', description: 'First supply of MIL-SPEC RF filters and duplexers to Indian defense integrators — a milestone in credibility and precision manufacturing.' },
-  { year: '2012', title: 'ISO Certification', description: 'Achieved ISO 9001 certification, formalizing quality management processes across design, manufacturing, and test operations.' },
-  { year: '2016', title: '4G LTE Supply Scale-Up', description: 'Scaled production of LTE cavity filters and duplexers to meet India\'s 4G rollout demand, supplying major telecom OEMs and tower cos.' },
+  { year: '1989', title: 'Founded in Bengaluru', description: 'Anand Technologies established as a precision RF component design and manufacturing firm, serving India\'s growing telecom and defence sectors.' },
+  { year: '1995', title: 'Defence Program Entry', description: 'First supply of MIL-SPEC RF filters and duplexers to Indian defence integrators — a milestone in credibility and precision manufacturing.' },
+  { year: '2004', title: 'ISO 9001 Certification', description: 'Achieved ISO 9001 certification, formalizing quality management processes across design, manufacturing, and test operations.' },
+  { year: '2010', title: 'MSME Registration', description: 'Registered as Micro, Small & Medium Enterprise, reinforcing our commitment to Indian manufacturing and self-reliance.' },
+  { year: '2016', title: '4G LTE Supply Scale-Up', description: 'Scaled production of LTE cavity filters and duplexers to meet India\'s 4G rollout demand, supplying major telecom OEMs and tower companies.' },
   { year: '2019', title: 'Custom RF Solutions Launch', description: 'Launched dedicated custom engineering services for automotive V2X, IoT gateway, and industrial SCADA RF applications.' },
   { year: '2022', title: '5G NR Product Range', description: 'Introduced 5G NR sub-6 GHz and mmWave product lines — duplexers, filters, and cable assemblies for next-generation base stations.' },
   { year: '2024', title: 'State-of-the-Art Lab', description: 'Expanded RF characterization lab with additional VNA channels, PIM test capability, and environmental testing chambers.' },
@@ -59,11 +60,26 @@ export default function AboutPage() {
                 About Us
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0A0A0A] mb-6 leading-tight">
-                Two Decades of RF Engineering Excellence from Bengaluru
+                35+ Years of RF Engineering Excellence from Bengaluru
               </h1>
               <p className="text-xl text-[#6B7280] leading-relaxed mb-8">
                 Anand Technologies was founded on a singular conviction: India's telecom, defense, and industrial sectors deserve precision RF components engineered and manufactured at home, to the highest international standards.
               </p>
+
+              {/* Trust badges */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                {[
+                  { label: '35+ Years Experience', icon: <Award className="w-4 h-4" /> },
+                  { label: 'MSME Certified', icon: <BadgeCheck className="w-4 h-4" /> },
+                  { label: 'Defence Sector Authorised', icon: <Shield className="w-4 h-4" /> },
+                  { label: '20+ Years Leadership', icon: <Users className="w-4 h-4" /> },
+                ].map((badge) => (
+                  <span key={badge.label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#E0F9F9] text-[#00B8B8]">
+                    {badge.icon} {badge.label}
+                  </span>
+                ))}
+              </div>
+
               <div className="flex items-center gap-2 text-sm text-[#6B7280]">
                 <MapPin className="w-4 h-4 text-[#00B8B8]" />
                 Bengaluru, Karnataka — India's Silicon Valley and aerospace capital
@@ -148,7 +164,7 @@ export default function AboutPage() {
             className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4">Milestones</h2>
-            <p className="text-lg text-[#6B7280] max-w-xl mx-auto">Twenty years of continuous engineering progress.</p>
+            <p className="text-lg text-[#6B7280] max-w-xl mx-auto">35+ years of continuous engineering progress.</p>
           </motion.div>
 
           <div className="relative">

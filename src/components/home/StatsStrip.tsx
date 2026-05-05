@@ -4,9 +4,9 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 
 const stats = [
-  { value: 20, suffix: '+', label: 'Years of Engineering Excellence', description: 'Deep domain expertise in RF/microwave systems' },
-  { value: 500, suffix: '+', label: 'Products in Portfolio', description: 'Filters, antennas, duplexers, assemblies & more' },
-  { value: 60, suffix: '+', label: 'Years Leadership Experience', description: 'Techno-commercial strength across the team' },
+  { value: 35, suffix: '+', label: 'Years of Engineering Excellence', description: 'Deep domain expertise in RF/microwave systems since 1989' },
+  { value: 889, suffix: '+', label: 'Products in Portfolio', description: 'Filters, antennas, duplexers, cable assemblies & more' },
+  { value: 20, suffix: '+', label: 'Years Leadership Experience', description: 'MSME & Defence-sector authorised manufacturer' },
   { value: 99, suffix: '%', label: 'On-Time Delivery Rate', description: 'Reliable supply chain for critical programs' },
 ]
 

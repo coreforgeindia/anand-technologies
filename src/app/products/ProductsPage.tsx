@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { Search, ArrowRight, ChevronRight } from 'lucide-react'
-import { productCategories, sampleProducts } from '@/lib/data'
+import { productCategories, sampleProducts, getProductName } from '@/lib/data'
 
 function ProductsContent() {
   const searchParams = useSearchParams()
@@ -152,9 +152,10 @@ function ProductsContent() {
                           {productCategories.find((c) => c.slug === product.category)?.name || product.category}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-[#0A0A0A] mb-1 group-hover:text-[#00B8B8] transition-colors font-mono">
-                        {product.name}
+                      <h3 className="text-lg font-bold text-[#0A0A0A] mb-0.5 group-hover:text-[#00B8B8] transition-colors">
+                        {getProductName(product.id) || product.short_spec}
                       </h3>
+                      <p className="text-xs font-mono text-[#6B7280] mb-2">{product.name}</p>
                       <p className="text-sm font-medium text-[#6B7280] mb-3">{product.short_spec}</p>
                       <div className="flex items-center gap-2 mb-4">
                         <span className="text-xs px-2.5 py-1 rounded-full bg-[#F5F7F8] text-[#2A2A2A] font-mono">

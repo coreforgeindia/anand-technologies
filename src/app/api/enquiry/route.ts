@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
-const gasUrl = process.env.GOOGLE_APPS_SCRIPT_URL!
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
+const gasUrl = process.env.GOOGLE_APPS_SCRIPT_URL
 
 export async function POST(request: Request) {
   try {
@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     // Store in Supabase
-    const supabase = createClient(supabaseUrl, supabaseServiceKey)
+    const supabase = createClient(supabaseUrl, supabaseKey)
     const { error: dbError } = await supabase.from('enquiries').insert({
       name,
       company: company || '',
@@ -27,9 +27,10 @@ export async function POST(request: Request) {
 
     if (dbError) {
       console.error('Supabase error:', dbError)
+      return NextResponse.json({ error: 'Failed to save enquiry' }, { status: 500 })
     }
 
-    // Trigger Google Apps Script
+    // Send to Google Apps Script (emails + Google Sheet)
     if (gasUrl) {
       try {
         await fetch(gasUrl, {
@@ -40,13 +41,12 @@ export async function POST(request: Request) {
             company: company || '',
             email,
             phone,
-            products: (product_list || []).join(', '),
+            product: (product_list || []).join(', '),
             message,
-            timestamp: new Date().toISOString(),
           }),
         })
       } catch (gasError) {
-        console.error('Google Apps Script error:', gasError)
+        console.error('GAS error:', gasError)
       }
     }
 

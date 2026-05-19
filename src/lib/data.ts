@@ -3,7 +3,9 @@ const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
 
 export function datasheetUrl(filename: string): string | null {
   if (!SUPABASE_URL || !filename) return null
-  return `${SUPABASE_URL}/storage/v1/object/public/Datasheets/${encodeURIComponent(filename)}`
+  // Supabase storage: spaces → %20, but keep other chars as-is (parentheses, dots are fine)
+  const encoded = filename.split('').map(c => c === ' ' ? '%20' : c).join('')
+  return `${SUPABASE_URL}/storage/v1/object/public/Datasheets/${encoded}`
 }
 
 // ─── PRODUCT NAME + DATASHEET MAPPING ───────────────────────────────────────

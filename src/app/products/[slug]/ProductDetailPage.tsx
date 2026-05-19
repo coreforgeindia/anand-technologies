@@ -71,7 +71,7 @@ export default function ProductDetailPage({ product, category }: Props) {
 
                 {/* Product image */}
                 {product.image_url && (
-                  <div className="mb-8 rounded-2xl border border-gray-100 overflow-hidden bg-[#F5F7F8] flex items-center justify-center p-6" style={{ minHeight: 220 }}>
+                  <div className="relative mb-8 rounded-2xl border border-gray-100 overflow-hidden bg-[#F5F7F8] flex items-center justify-center p-6" style={{ minHeight: 220 }}>
                     <Image
                       src={product.image_url}
                       alt={product.name}
@@ -79,6 +79,11 @@ export default function ProductDetailPage({ product, category }: Props) {
                       height={220}
                       className="object-contain max-h-52"
                     />
+                    <div className="pointer-events-none absolute inset-0 flex items-end justify-end p-4">
+                      <span className="text-xs font-bold tracking-widest uppercase select-none opacity-30" style={{ color: '#00B8B8', letterSpacing: '0.15em' }}>
+                        © Anand Technologies
+                      </span>
+                    </div>
                   </div>
                 )}
 
@@ -154,22 +159,14 @@ export default function ProductDetailPage({ product, category }: Props) {
                       >
                         Request Quote <ArrowRight className="w-4 h-4" />
                       </Link>
-                      {product.datasheet_url ? (
+                      {product.datasheet_url && (
                         <a
                           href={product.datasheet_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          download
                           className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-[#0A0A0A] rounded-xl border border-gray-200 hover:border-[#00B8B8] hover:text-[#00B8B8] transition-all"
                         >
                           <Download className="w-4 h-4" /> Download Datasheet
                         </a>
-                      ) : (
-                        <button
-                          onClick={() => setActiveTab('specifications')}
-                          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-[#0A0A0A] rounded-xl border border-gray-200 hover:border-[#00B8B8] hover:text-[#00B8B8] transition-all"
-                        >
-                          <Download className="w-4 h-4" /> View Datasheet Info
-                        </button>
                       )}
                     </div>
                   </motion.div>
@@ -217,37 +214,30 @@ export default function ProductDetailPage({ product, category }: Props) {
 
                     {/* Datasheet */}
                     <h2 className="text-xl font-bold text-[#0A0A0A] mb-5">Datasheet</h2>
-                    {product.datasheet_url ? (
-                      <div className="rounded-2xl border border-[#00B8B8]/30 bg-[#E0F9F9] p-6 flex items-center justify-between gap-4">
-                        <div>
-                          <div className="font-semibold text-[#0A0A0A] mb-1">{product.name} - Product Datasheet</div>
-                          <div className="text-sm text-[#6B7280]">PDF - Official Anand Technologies specification sheet</div>
-                        </div>
+                    <div className="rounded-2xl border border-[#00B8B8]/30 bg-[#E0F9F9] p-6 flex items-center justify-between gap-4">
+                      <div>
+                        <div className="font-semibold text-[#0A0A0A] mb-1">{product.product_name} - Product Datasheet</div>
+                        <div className="text-sm text-[#6B7280]">PDF - Official Anand Technologies specification sheet</div>
+                      </div>
+                      {product.datasheet_url ? (
                         <a
                           href={product.datasheet_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          download
                           className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl hover:opacity-90 transition-all"
                           style={{ background: '#00B8B8' }}
                         >
-                          <Download className="w-4 h-4" /> Download PDF
+                          <Download className="w-4 h-4" /> Download Datasheet
                         </a>
-                      </div>
-                    ) : (
-                      <div className="rounded-2xl border border-gray-200 p-6 flex items-center justify-between gap-4">
-                        <div>
-                          <div className="font-semibold text-[#0A0A0A] mb-1">Datasheet available on request</div>
-                          <div className="text-sm text-[#6B7280]">Contact our team to receive the full product specification sheet.</div>
-                        </div>
+                      ) : (
                         <Link
                           href={`/contact?product=${encodeURIComponent(product.name)}`}
                           className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl hover:opacity-90 transition-all"
                           style={{ background: '#00B8B8' }}
                         >
-                          <Mail className="w-4 h-4" /> Request Datasheet
+                          <Mail className="w-4 h-4" /> Contact for Datasheet
                         </Link>
-                      </div>
-                    )}
+                      )}
+                    </div>
 
                     {/* Quote CTA */}
                     <div className="mt-8 flex flex-wrap gap-3">

@@ -340,14 +340,14 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-[#6B7280] mb-2">
                   <Phone className="w-4 h-4 flex-shrink-0" style={{ color: '#00B8B8' }} />
-                  <a href="tel:+919901674459" className="hover:text-[#00B8B8] transition-colors">
-                    +91 99016 74459
+                  <a href="tel:+918762921780" className="hover:text-[#00B8B8] transition-colors">
+                    +91 87629 21780
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-[#6B7280] mb-3">
                   <Phone className="w-4 h-4 flex-shrink-0" style={{ color: '#00B8B8' }} />
-                  <a href="tel:+918023487088" className="hover:text-[#00B8B8] transition-colors">
-                    080 2348 7088
+                  <a href="tel:+918762921780" className="hover:text-[#00B8B8] transition-colors">
+                    +91 87629 21780
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-[#6B7280]">

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import {
   Menu, X, ChevronDown,
   Filter, ArrowLeftRight, Split, Cable,
@@ -93,9 +94,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: '#00B8B8' }}>
-                <Waves className="w-5 h-5 text-white" />
-              </div>
+              <Image src="/favicon.jpg" alt="Anand Technologies" width={40} height={40} className="rounded-lg" />
               <div className="hidden sm:block">
                 <div className="text-lg font-bold text-[#0A0A0A] leading-none">Anand</div>
                 <div className="text-xs font-medium text-[#00B8B8] tracking-widest uppercase leading-none">Technologies</div>
@@ -233,9 +232,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between p-5 border-b border-gray-100">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#00B8B8' }}>
-                    <Waves className="w-4 h-4 text-white" />
-                  </div>
+                  <Image src="/favicon.jpg" alt="Anand Technologies" width={32} height={32} className="rounded-lg" />
                   <span className="font-bold text-[#0A0A0A]">Anand Technologies</span>
                 </div>
                 <button

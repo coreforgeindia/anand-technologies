@@ -13,7 +13,10 @@
       "Bash(Get-ChildItem \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\anand-technologies\\\\public\\\\product-images\\\\\" -ErrorAction SilentlyContinue | Select-Object Name | Format-Table -AutoSize)",
       "Bash(Get-ChildItem \"C:\\\\Users\\\\Dhanush F G\\\\Desktop\\\\anand-technologies\\\\public\\\\product-images\" -ErrorAction SilentlyContinue)",
       "Bash(Format-Table Name -AutoSize)",
-      "Bash(Test-Path \"E:\\\\Anand Technologies Sort\" -PathType Container)"
+      "Bash(Test-Path \"E:\\\\Anand Technologies Sort\" -PathType Container)",
+      "PowerShell(python --version)",
+      "PowerShell(pip show pdfplumber 2>$null)",
+      "PowerShell(pip show pypdf 2>$null)"
     ]
   }
 }

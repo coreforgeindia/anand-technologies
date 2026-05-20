@@ -1,9 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowRight, ChevronRight, Download, Mail, Phone, CheckCircle2 } from 'lucide-react'
 
 type Props = {
@@ -12,6 +11,66 @@ type Props = {
     datasheet_url: string | null
   }
   category?: (typeof import('@/lib/data').productCategories)[0]
+}
+
+function WatermarkedImage({ src, alt }: { src: string; alt: string }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [loaded, setLoaded] = useState(false)
+
+  const draw = useCallback(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const img = new window.Image()
+    img.crossOrigin = 'anonymous'
+    img.onload = () => {
+      // Scale to fit within 720×440 max while keeping aspect ratio
+      const maxW = 720
+      const maxH = 440
+      const scale = Math.min(maxW / img.naturalWidth, maxH / img.naturalHeight, 1)
+      canvas.width = Math.round(img.naturalWidth * scale)
+      canvas.height = Math.round(img.naturalHeight * scale)
+
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+
+      // Tiled diagonal watermark
+      ctx.save()
+      ctx.font = 'bold 11px Arial'
+      ctx.fillStyle = 'rgba(0,184,184,0.22)'
+      ctx.textAlign = 'left'
+
+      const text = '© Anand Technologies'
+      const stepX = 160
+      const stepY = 60
+
+      for (let y = -stepY; y < canvas.height + stepY * 2; y += stepY) {
+        for (let x = -stepX; x < canvas.width + stepX * 2; x += stepX) {
+          ctx.save()
+          ctx.translate(x, y)
+          ctx.rotate(-Math.PI / 5)
+          ctx.fillText(text, 0, 0)
+          ctx.restore()
+        }
+      }
+      ctx.restore()
+      setLoaded(true)
+    }
+    img.src = src
+  }, [src])
+
+  useEffect(() => { draw() }, [draw])
+
+  return (
+    <canvas
+      ref={canvasRef}
+      aria-label={alt}
+      onContextMenu={(e) => e.preventDefault()}
+      className="object-contain max-h-52 max-w-full"
+      style={{ display: loaded ? 'block' : 'none' }}
+    />
+  )
 }
 
 export default function ProductDetailPage({ product, category }: Props) {
@@ -69,21 +128,10 @@ export default function ProductDetailPage({ product, category }: Props) {
                 </p>
                 <p className="text-lg text-[#6B7280] font-medium mb-6">{product.short_spec}</p>
 
-                {/* Product image */}
+                {/* Product image with canvas watermark baked in */}
                 {product.image_url && (
-                  <div className="relative mb-8 rounded-2xl border border-gray-100 overflow-hidden bg-[#F5F7F8] flex items-center justify-center p-6" style={{ minHeight: 220 }}>
-                    <Image
-                      src={product.image_url}
-                      alt={product.name}
-                      width={360}
-                      height={220}
-                      className="object-contain max-h-52"
-                    />
-                    <div className="pointer-events-none absolute inset-0 flex items-end justify-end p-4">
-                      <span className="text-xs font-bold tracking-widest uppercase select-none opacity-30" style={{ color: '#00B8B8', letterSpacing: '0.15em' }}>
-                        © Anand Technologies
-                      </span>
-                    </div>
+                  <div className="mb-8 rounded-2xl border border-gray-100 overflow-hidden bg-[#F5F7F8] flex items-center justify-center p-6" style={{ minHeight: 220 }}>
+                    <WatermarkedImage src={product.image_url} alt={product.name} />
                   </div>
                 )}
 
@@ -276,7 +324,7 @@ export default function ProductDetailPage({ product, category }: Props) {
                     <Mail className="w-4 h-4" /> Email Enquiry
                   </Link>
                   <a
-                    href="tel:+918025723143"
+                    href="tel:+918762921780"
                     className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-semibold text-[#0A0A0A] rounded-xl border border-gray-200 hover:border-[#00B8B8] hover:text-[#00B8B8] transition-all"
                   >
                     <Phone className="w-4 h-4" /> Call Sales

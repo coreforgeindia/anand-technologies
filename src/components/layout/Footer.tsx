@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Waves, MapPin, Phone, Mail, ExternalLink } from 'lucide-react'
+import Image from 'next/image'
+import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react'
 import { productCategories } from '@/lib/data'
 
 export default function Footer() {
@@ -10,9 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: '#00B8B8' }}>
-                <Waves className="w-5 h-5 text-white" />
-              </div>
+              <Image src="/favicon.jpg" alt="Anand Technologies" width={36} height={36} className="rounded-lg" />
               <div>
                 <div className="text-base font-bold leading-none">Anand Technologies</div>
                 <div className="text-xs text-[#00B8B8] tracking-widest uppercase leading-none mt-0.5">RF & Microwave</div>
@@ -86,8 +85,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#00B8B8] flex-shrink-0" />
-                <a href="tel:+919901674459" className="text-sm text-[#6B7280] hover:text-[#00B8B8] transition-colors">
-                  +91 99016 74459
+                <a href="tel:+918762921780" className="text-sm text-[#6B7280] hover:text-[#00B8B8] transition-colors">
+                  +91 87629 21780
                 </a>
               </li>
               <li className="flex items-center gap-3">

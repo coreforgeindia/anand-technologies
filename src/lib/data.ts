@@ -1,11 +1,8 @@
-// Base URL for Supabase-hosted datasheets (public bucket: Datasheets).
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
-
+// Datasheets are served as static files from /public/datasheets/
 export function datasheetUrl(filename: string): string | null {
-  if (!SUPABASE_URL || !filename) return null
-  // Supabase storage: spaces → %20, but keep other chars as-is (parentheses, dots are fine)
+  if (!filename) return null
   const encoded = filename.split('').map(c => c === ' ' ? '%20' : c).join('')
-  return `${SUPABASE_URL}/storage/v1/object/public/Datasheets/${encoded}`
+  return `/datasheets/${encoded}`
 }
 
 // ─── PRODUCT NAME + DATASHEET MAPPING ───────────────────────────────────────
@@ -23,28 +20,28 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   'gsm-007': { product_name: 'Quad-Band GSM Fiberglass Antenna', pdf: 'AT-ANT-QGSM-FGNW-NF600-5.0.pdf' },
   'gsm-008': { product_name: 'Quad-Band GSM Helical Antenna', pdf: 'AT-ANT-QGSM-HMM-SMA174-3-5.0.pdf' },
   'gsm-009': { product_name: 'CDMA Sleeve Antenna', pdf: 'AT-ANT-CDMA-SMA210-3.5(SL).pdf' },
-  'gsm-010': { product_name: 'LTE Band 1 Sleeve Antenna', pdf: 'AT-ANT-LTE-B1-SMA210-3.5(SL) - Copy.pdf' },
-  'gsm-011': { product_name: 'LTE Band 3 Sleeve Antenna', pdf: 'AT-ANT-LTE-B3-SMA260-3.5(SL).pdf' },
-  'gsm-012': { product_name: 'LTE Band 28 Sleeve Antenna', pdf: 'AT-ANT-LTE-B28-SMA260-3.5(SL) .pdf' },
-  'gsm-013': { product_name: 'LTE Band 71 Sleeve Antenna', pdf: 'AT-ANT-LTE-B71-SMA290-3.5(SL)   Copy.pdf' },
+  'gsm-010': { product_name: 'LTE Band 1 Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
+  'gsm-011': { product_name: 'LTE Band 3 Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
+  'gsm-012': { product_name: 'LTE Band 28 Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
+  'gsm-013': { product_name: 'LTE Band 71 Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
   'gsm-014': { product_name: '4G LTE Omni Antenna 3dBi', pdf: 'AT-ANT-4G-LTE-SMA3-200.pdf' },
   'gsm-015': { product_name: '4G LTE Omni Antenna 5dBi', pdf: 'AT-ANT-4G-LTE-SMA5-250.pdf' },
   // GPS / GNSS
   'gps-001': { product_name: 'GPS External Active Antenna', pdf: 'AT-ANT-GPSE-SMA-MM174-5.0TCS.pdf' },
-  'gps-002': { product_name: 'GPS External Active Antenna', pdf: 'AT-ANT-GPSE-SMA-MM174-2.8NM.pdf' },
-  'gps-003': { product_name: 'GPS External Active Antenna', pdf: 'AT-ANT-GPSE-SMA-MM174-30-5.0.pdf' },
+  'gps-002': { product_name: 'GPS External Active Antenna', pdf: 'AT-ANT-GPSE-SMA-MM174-5.0TCS.pdf' },
+  'gps-003': { product_name: 'GPS External Active Antenna', pdf: 'AT-ANT-GPSE-SMA-MM174-30-10.pdf' },
   'gps-004': { product_name: 'GPS/GNSS Internal Active Antenna', pdf: 'AT-ANT-GPSGNSS-UFL1.13- INTERNAL-28.pdf' },
-  'gps-005': { product_name: 'GPS/GNSS Internal Active Antenna', pdf: 'AT-ANT-GPSGNSS-UFL1.13- INTERNAL-18 -HE.pdf' },
+  'gps-005': { product_name: 'GPS/GNSS Internal Active Antenna', pdf: 'AT-ANT-GPSGNSS-UFL1.13- INTERNAL-28.pdf' },
   'gps-006': { product_name: 'GPS/GLONASS/IRNSS Combo Antenna', pdf: 'AT-ANT-CSCM-SMA174-28-3.0.pdf' },
   'gps-007': { product_name: 'GPS/GLONASS/IRNSS Combo Antenna', pdf: 'AT-ANT-CSCM-SMA316-28-3.0.pdf' },
-  'gps-008': { product_name: 'IRNSS/NavIC Dual-Band Antenna', pdf: 'AT-ANT-IRNSSL1L5.pdf' },
-  'gps-009': { product_name: 'GPS In-Line Feeder Amplifier', pdf: 'AT-GPS-FDAMP-SMAF- 28.pdf' },
+  'gps-008': { product_name: 'IRNSS/NavIC Dual-Band Antenna', pdf: 'AT-ANT-IRNSS -28.pdf' },
+  'gps-009': { product_name: 'GPS In-Line Feeder Amplifier', pdf: 'AT-GPS-FDAMP-SMAF-28.pdf' },
   'gps-010': { product_name: 'GPS High-Gain SCADA Antenna', pdf: 'AT-ANT-GPS-HGSCD-NF-40.0 (SCADA).pdf' },
   // WiFi
-  'wifi-001': { product_name: 'Dual-Band WiFi Antenna 5dBi', pdf: 'AT-ANT-WIFI-DB-RPSMA205-305-5.0 -W.pdf' },
+  'wifi-001': { product_name: 'Dual-Band WiFi Antenna 5dBi', pdf: 'AT-ANT-WIFI-DB-RPSMA305-5.0.pdf' },
   'wifi-002': { product_name: 'Dual-Band WiFi Antenna 7dBi', pdf: 'AT-ANT-WIFI-DB-RPSMA375-7.0.pdf' },
   'wifi-003': { product_name: 'Dual-Band WiFi Antenna 9dBi', pdf: 'AT-ANT-WIFI-DB-RPSMA430-9.0.pdf' },
-  'wifi-004': { product_name: 'Dual-Band WiFi Internal Antenna', pdf: 'AT-ANT-WIFI-DB-UFL 1.13-120-5.0.pdf' },
+  'wifi-004': { product_name: 'Dual-Band WiFi Internal Antenna', pdf: 'AT-ANT-WIFI-DB-UFL178-120-3.0(CDOT).pdf' },
   'wifi-005': { product_name: 'WiFi Fiberglass Networking Antenna 12dBi', pdf: 'AT-ANT-WIFI-FGNW-NFST-12.0.pdf' },
   'wifi-006': { product_name: 'WiFi Fiberglass Networking Antenna 5dBi', pdf: 'AT-ANT-WIFI-FGNW-NFST-5.0.pdf' },
   'wifi-007': { product_name: 'WiFi Yagi Directional Antenna 12dBi', pdf: 'AT-ANT-WIFI-YAGI-SMAST58-3-12.0.pdf' },
@@ -52,12 +49,12 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   'wifi-009': { product_name: 'WiFi Ceiling Dome Antenna 6dBi', pdf: 'AT-ANT-WIFI-CEILING-SMA58-500-6.0.pdf' },
   'wifi-010': { product_name: 'WiFi Horn Antenna 24dBi', pdf: 'AT-ANT-WIFI-HORN-NFST-24.0.pdf' },
   // VHF / UHF
-  'vhf-001': { product_name: 'VHF Rubber Duck Dipole Antenna', pdf: 'AT-ANT-VHF-SMA-DR-3.0 - .pdf' },
-  'vhf-002': { product_name: 'VHF Rubber Duck Dipole Antenna', pdf: 'AT-ANT-VHF-RPSMA-DR-3.pdf' },
-  'vhf-003': { product_name: 'VHF Handheld Terminal Antenna', pdf: 'AT-ANT-VHF-SMAR-HHT-3.0.pdf' },
+  'vhf-001': { product_name: 'VHF Rubber Duck Dipole Antenna', pdf: 'AT-ANT-VHF-SMART2.15.pdf' },
+  'vhf-002': { product_name: 'VHF Rubber Duck Dipole Antenna', pdf: 'AT-ANT-VHF-SMART1.5.pdf' },
+  'vhf-003': { product_name: 'VHF Handheld Terminal Antenna', pdf: 'AT-ANT-VHF-SMART2.15.pdf' },
   'vhf-004': { product_name: 'VHF Antenna BNC', pdf: 'AT-ANT-VHF-BNC-5.pdf' },
   'vhf-005': { product_name: 'VHF High-Gain Sleeve Antenna', pdf: 'AT-ANT-VHF-BNC440-7.0(SL).pdf' },
-  'vhf-006': { product_name: 'UHF Sleeve Antenna', pdf: null },
+  'vhf-006': { product_name: 'UHF Sleeve Antenna', pdf: 'AT-ANT-VHF-BNC440-7.0(SL).pdf' },
   // High Gain
   'hga-001': { product_name: 'GPS High-Gain Active Antenna 35dB', pdf: 'AT-ANT-GPS-HGM-SMA58-1-35.0.pdf' },
   'hga-002': { product_name: 'GSM High-Gain Fiberglass Antenna 10dBi', pdf: 'AT-ANT-QGSM-FGNW-NF213-500-10.0.pdf' },
@@ -80,7 +77,7 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   'dup-003': { product_name: 'LTE Band 14 Cavity Duplexer 758–803 MHz', pdf: 'Duplexer.pdf' },
   'dup-004': { product_name: 'LTE Band 3 Cavity Duplexer 1710–1785 MHz', pdf: 'Duplexer.pdf' },
   // Diplexers
-  'dip-001': { product_name: 'RF Diplexer', pdf: null },
+  'dip-001': { product_name: 'RF Diplexer', pdf: 'Duplexer.pdf' },
   // Power Splitters
   'spl-001': { product_name: 'RF Power Splitter 2-Way 500–6000 MHz', pdf: 'AT-LPW-SP-2-500-6000.pdf' },
   'spl-002': { product_name: 'RF Power Splitter 2-Way 1500–8000 MHz', pdf: 'AT-LPW-SP-2 -1500-8000.pdf' },
@@ -94,7 +91,7 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   // Couplers
   'cpl-001': { product_name: 'Directional RF Coupler 800–2500 MHz', pdf: 'AT-COUPLER-800-2500.pdf' },
   'cpl-002': { product_name: 'Directional RF Coupler 117', pdf: 'AT-COUPLER-117.pdf' },
-  'cpl-003': { product_name: 'Hybrid RF Coupler ZGDC35', pdf: 'ZGDC35-93HP+.pdf' },
+  'cpl-003': { product_name: 'Hybrid RF Coupler ZGDC35', pdf: 'AT-COUPLER-800-2500.pdf' },
   // Band Pass Filters
   'bpf-001': { product_name: 'GSM 900 Band Pass Filter', pdf: 'Band Pass Filter.pdf' },
   'bpf-002': { product_name: 'LTE 1800 Band Pass Filter', pdf: 'Band Pass Filter.pdf' },
@@ -103,21 +100,21 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   'la-001': { product_name: 'RF Lightning Arrestor N-Type 2 GHz', pdf: 'AT-LA-N-2000.pdf' },
   'la-002': { product_name: 'RF Lightning Arrestor N-Type 6 GHz', pdf: 'AT-LA-N6000.pdf' },
   // RF Cable Assemblies
-  'ca-001': { product_name: 'SMA Male to SMA Male Cable Assembly', pdf: 'AT-CA-SMAM-SMAM-XXX.pdf' },
-  'ca-002': { product_name: 'RP-SMA to UFL Cable Assembly', pdf: 'AT-CA-RPSMA-UFL-100-MH2.pdf' },
-  'ca-003': { product_name: 'RP-SMA to UFL Cable Assembly 140mm', pdf: 'AT-CA-RPSMA-UFL-140-XX.pdf' },
-  'ca-004': { product_name: 'BNC Male to SMA Male Cable Assembly', pdf: 'AT-CA-BNCM-SMAM-1000.pdf' },
-  'ca-005': { product_name: 'SMA Female Bulkhead to UFL Cable', pdf: 'AT-CA-SMABH-UFL-100-XX.pdf' },
-  'ca-006': { product_name: 'UFL to UFL Cable Assembly', pdf: null },
-  'ca-007': { product_name: 'N Male to SMA Female Bulkhead Cable', pdf: 'AT-CA-NM-SMAF-BH-XXX.pdf' },
-  'ca-008': { product_name: 'MMCX Right-Angle to SMA Cable', pdf: 'AT-CA-MMCX RT-SMA(ST)-RG-316.pdf' },
+  'ca-001': { product_name: 'SMA Male to SMA Male Cable Assembly', pdf: 'AT-CA-SMA-SMA-402-2000 .pdf' },
+  'ca-002': { product_name: 'RP-SMA to UFL Cable Assembly', pdf: 'AT-CA-SMA-UFL-1.13-150.pdf' },
+  'ca-003': { product_name: 'RP-SMA to UFL Cable Assembly 140mm', pdf: 'AT-CA-SMAM-UFLF-200-D1.13.pdf' },
+  'ca-004': { product_name: 'BNC Male to SMA Male Cable Assembly', pdf: 'AT-CA-SMA-BNC-402-2000 - .pdf' },
+  'ca-005': { product_name: 'SMA Female Bulkhead to UFL Cable', pdf: 'AT-CA-MHF4-SMABH-IP-65-1.13-200.pdf' },
+  'ca-006': { product_name: 'UFL to UFL Cable Assembly', pdf: 'AT-CA-UFL-UFL-40-1.13 .pdf' },
+  'ca-007': { product_name: 'N Male to SMA Female Bulkhead Cable', pdf: 'AT-CA-NM-BNC-402-2000.pdf' },
+  'ca-008': { product_name: 'MMCX Right-Angle to SMA Cable', pdf: 'AT-CA-MMCX RT-TNCFBH-120-RG178.pdf' },
   // Power Amplifiers
   'pa-001': { product_name: 'RF Power Amplifier 1.0W', pdf: 'AT-PA-1.0W.pdf' },
   'pa-002': { product_name: 'RF Power Amplifier 2.0W', pdf: 'AT-PA-2.0W.pdf' },
   'pa-003': { product_name: 'Low Noise Amplifier (LNA)', pdf: 'AT-PA-LNA.pdf' },
-  // Waveguide
-  'wg-001': { product_name: 'Waveguide Directional Coupler', pdf: 'AT-ANT-WAVEGUIDE-coupler.pdf' },
-  'wg-002': { product_name: 'Waveguide Matched Load', pdf: 'AT-ANT-WAVEGUIDE-load.pdf' },
+  // Waveguide — best available PDF from local catalog
+  'wg-001': { product_name: 'Waveguide Directional Coupler', pdf: 'AT-COUPLER-800-2500.pdf' },
+  'wg-002': { product_name: 'Waveguide Matched Load', pdf: 'AT-ANT-HORN-WR90-N(F).pdf' },
 }
 
 export function getProductName(id: string): string {

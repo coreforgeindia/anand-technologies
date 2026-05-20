@@ -48,7 +48,7 @@ export default function CTASection() {
               Request a Quote <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+918000000000"
+              href="tel:+918762921780"
               className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white rounded-xl border border-white/20 hover:border-[#00B8B8] hover:text-[#00B8B8] transition-all"
             >
               <Phone className="w-4 h-4" />

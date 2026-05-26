@@ -16,20 +16,29 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
     }
 
-    // Fire-and-forget — GAS handles redirects internally, don't fail on response status
-    fetch(gasUrl, {
+    const payload = JSON.stringify({
+      name,
+      company: company || '',
+      email,
+      phone,
+      product: (product_list || []).join(', '),
+      message,
+    })
+
+    // Use waitUntil so Cloudflare Worker stays alive until GAS completes
+    const ctx = (request as unknown as { waitUntil?: (p: Promise<unknown>) => void }).waitUntil
+    const gasFetch = fetch(gasUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name,
-        company: company || '',
-        email,
-        phone,
-        product: (product_list || []).join(', '),
-        message,
-      }),
+      body: payload,
       redirect: 'follow',
     }).catch((err) => console.error('GAS fetch error:', err))
+
+    if (ctx) {
+      ctx(gasFetch)
+    } else {
+      await gasFetch
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {

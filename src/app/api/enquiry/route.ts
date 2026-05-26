@@ -1,8 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
 const gasUrl = process.env.GOOGLE_APPS_SCRIPT_URL
 
 export async function POST(request: Request) {
@@ -14,40 +11,27 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    // Store in Supabase
-    const supabase = createClient(supabaseUrl, supabaseKey)
-    const { error: dbError } = await supabase.from('enquiries').insert({
-      name,
-      company: company || '',
-      email,
-      phone,
-      product_list: product_list || [],
-      message,
-    })
-
-    if (dbError) {
-      console.error('Supabase error:', dbError)
-      return NextResponse.json({ error: 'Failed to save enquiry' }, { status: 500 })
+    if (!gasUrl) {
+      console.error('GOOGLE_APPS_SCRIPT_URL is not set')
+      return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
     }
 
-    // Send to Google Apps Script (emails + Google Sheet)
-    if (gasUrl) {
-      try {
-        await fetch(gasUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name,
-            company: company || '',
-            email,
-            phone,
-            product: (product_list || []).join(', '),
-            message,
-          }),
-        })
-      } catch (gasError) {
-        console.error('GAS error:', gasError)
-      }
+    const gasResponse = await fetch(gasUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        company: company || '',
+        email,
+        phone,
+        product: (product_list || []).join(', '),
+        message,
+      }),
+    })
+
+    if (!gasResponse.ok) {
+      console.error('GAS error:', gasResponse.status, await gasResponse.text())
+      return NextResponse.json({ error: 'Failed to submit enquiry' }, { status: 500 })
     }
 
     return NextResponse.json({ success: true })

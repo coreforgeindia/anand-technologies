@@ -58,7 +58,10 @@ export default function DatasheetModal({ productName, datasheetUrl, onClose }: P
         }),
       })
 
-      if (!res.ok) throw new Error('Failed')
+      if (!res.ok) {
+        const errBody = await res.json().catch(() => ({}))
+        throw new Error((errBody as { error?: string }).error || 'Failed')
+      }
 
       const { url } = await res.json()
       const filename = decodeURIComponent(datasheetUrl.split('/').pop() || 'datasheet.pdf')
@@ -70,9 +73,9 @@ export default function DatasheetModal({ productName, datasheetUrl, onClose }: P
       document.body.removeChild(a)
 
       setState('done')
-    } catch {
+    } catch (err) {
       setState('idle')
-      setErrors({ submit: 'Something went wrong. Please try again.' })
+      setErrors({ submit: (err instanceof Error ? err.message : 'Something went wrong. Please try again.') })
     }
   }
 

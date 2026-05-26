@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server'
-import { getCloudflareContext } from '@opennextjs/cloudflare'
 
 const gasUrl = process.env.GOOGLE_APPS_SCRIPT_URL
 
@@ -14,7 +13,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    // Log to GAS / Sheet2 — fire and forget
+    const filename = decodeURIComponent(datasheet_url.split('/').pop() || '')
+    if (!filename) {
+      return NextResponse.json({ error: 'Invalid datasheet URL' }, { status: 400 })
+    }
+
+    // Log to Google Sheet — fire and forget
     if (gasUrl) {
       fetch(gasUrl, {
         method: 'POST',
@@ -27,34 +31,16 @@ export async function POST(request: Request) {
           phone,
           purpose,
           product: product_name,
-          datasheet: datasheet_url,
+          datasheet: filename,
         }),
         redirect: 'follow',
-      }).catch((err) => console.error('GAS log error:', err))
+      }).catch((err) => console.error('GAS error:', err))
     }
 
-    // Fetch the PDF from the static assets binding (works on Cloudflare and local dev)
-    const { env } = await getCloudflareContext({ async: true })
-    const assetUrl = new URL(datasheet_url, request.url)
-    const assetResponse = await (env.ASSETS as { fetch: (r: Request) => Promise<Response> }).fetch(
-      new Request(assetUrl.toString())
-    )
-
-    if (!assetResponse.ok) {
-      return NextResponse.json({ error: 'Datasheet file not found' }, { status: 404 })
-    }
-
-    const filename = decodeURIComponent(datasheet_url.split('/').pop() || 'datasheet.pdf')
-
-    return new NextResponse(assetResponse.body, {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="${filename}"`,
-      },
-    })
+    // Return the public URL — browser will download it directly
+    return NextResponse.json({ url: datasheet_url })
   } catch (error) {
-    console.error('Download API error:', error)
+    console.error('Download error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

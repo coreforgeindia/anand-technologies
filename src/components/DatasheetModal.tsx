@@ -60,16 +60,14 @@ export default function DatasheetModal({ productName, datasheetUrl, onClose }: P
 
       if (!res.ok) throw new Error('Failed')
 
-      const blob = await res.blob()
-      const objectUrl = URL.createObjectURL(blob)
-      const filename = datasheetUrl.split('/').pop() || 'datasheet.pdf'
+      const { url } = await res.json()
+      const filename = decodeURIComponent(datasheetUrl.split('/').pop() || 'datasheet.pdf')
       const a = document.createElement('a')
-      a.href = objectUrl
-      a.download = decodeURIComponent(filename)
+      a.href = url
+      a.download = filename
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
-      setTimeout(() => URL.revokeObjectURL(objectUrl), 10000)
 
       setState('done')
     } catch {

@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
-import { readFile } from 'fs/promises'
-import path from 'path'
+import { getCloudflareContext } from '@opennextjs/cloudflare'
 
 const gasUrl = process.env.GOOGLE_APPS_SCRIPT_URL
+
+export const runtime = 'edge'
 
 export async function POST(request: Request) {
   try {
@@ -13,47 +14,43 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    if (!gasUrl) {
-      return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
+    // Log to GAS / Sheet2 — fire and forget
+    if (gasUrl) {
+      fetch(gasUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sheet: 'Sheet2',
+          name,
+          company,
+          email,
+          phone,
+          purpose,
+          product: product_name,
+          datasheet: datasheet_url,
+        }),
+        redirect: 'follow',
+      }).catch((err) => console.error('GAS log error:', err))
     }
 
-    // Log to GAS / Sheet2 — fire and forget
-    fetch(gasUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        sheet: 'Sheet2',
-        name,
-        company,
-        email,
-        phone,
-        purpose,
-        product: product_name,
-        datasheet: datasheet_url,
-      }),
-      redirect: 'follow',
-    }).catch((err) => console.error('GAS log error:', err))
+    // Fetch the PDF from the static assets binding (works on Cloudflare and local dev)
+    const { env } = await getCloudflareContext({ async: true })
+    const assetUrl = new URL(datasheet_url, request.url)
+    const assetResponse = await (env.ASSETS as { fetch: (r: Request) => Promise<Response> }).fetch(
+      new Request(assetUrl.toString())
+    )
 
-    // datasheet_url is like /datasheets/AT-ANT-QGSM-SMA110-3.0%20(SL).pdf
-    // Resolve to the actual file in /public
-    const relative = decodeURIComponent(datasheet_url.replace(/^\//, ''))
-    const filePath = path.join(process.cwd(), 'public', relative)
-
-    let fileBuffer: Buffer
-    try {
-      fileBuffer = await readFile(filePath)
-    } catch {
+    if (!assetResponse.ok) {
       return NextResponse.json({ error: 'Datasheet file not found' }, { status: 404 })
     }
 
-    const filename = path.basename(filePath)
+    const filename = decodeURIComponent(datasheet_url.split('/').pop() || 'datasheet.pdf')
 
-    return new NextResponse(new Uint8Array(fileBuffer), {
+    return new NextResponse(assetResponse.body, {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename}"`,
-        'Content-Length': String(fileBuffer.length),
       },
     })
   } catch (error) {

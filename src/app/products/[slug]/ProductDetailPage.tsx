@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, ChevronRight, Download, Mail, Phone, CheckCircle2 } from 'lucide-react'
+import DatasheetModal from '@/components/DatasheetModal'
 
 type Props = {
   product: (typeof import('@/lib/data').sampleProducts)[0] & {
@@ -75,6 +76,7 @@ function WatermarkedImage({ src, alt }: { src: string; alt: string }) {
 
 export default function ProductDetailPage({ product, category }: Props) {
   const [activeTab, setActiveTab] = useState<'overview' | 'specifications'>('overview')
+  const [showModal, setShowModal] = useState(false)
 
   return (
     <>
@@ -208,13 +210,12 @@ export default function ProductDetailPage({ product, category }: Props) {
                         Request Quote <ArrowRight className="w-4 h-4" />
                       </Link>
                       {product.datasheet_url && (
-                        <a
-                          href={product.datasheet_url}
-                          download
+                        <button
+                          onClick={() => setShowModal(true)}
                           className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-[#0A0A0A] rounded-xl border border-gray-200 hover:border-[#00B8B8] hover:text-[#00B8B8] transition-all"
                         >
                           <Download className="w-4 h-4" /> Download Datasheet
-                        </a>
+                        </button>
                       )}
                     </div>
                   </motion.div>
@@ -268,14 +269,13 @@ export default function ProductDetailPage({ product, category }: Props) {
                         <div className="text-sm text-[#6B7280]">PDF - Official Anand Technologies specification sheet</div>
                       </div>
                       {product.datasheet_url ? (
-                        <a
-                          href={product.datasheet_url}
-                          download
+                        <button
+                          onClick={() => setShowModal(true)}
                           className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl hover:opacity-90 transition-all"
                           style={{ background: '#00B8B8' }}
                         >
                           <Download className="w-4 h-4" /> Download Datasheet
-                        </a>
+                        </button>
                       ) : (
                         <Link
                           href={`/contact?product=${encodeURIComponent(product.name)}`}
@@ -367,6 +367,14 @@ export default function ProductDetailPage({ product, category }: Props) {
           </div>
         </div>
       </section>
+
+      {showModal && product.datasheet_url && (
+        <DatasheetModal
+          productName={product.product_name}
+          datasheetUrl={product.datasheet_url}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </>
   )
 }

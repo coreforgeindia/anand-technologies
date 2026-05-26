@@ -60,7 +60,7 @@ export default function AboutPage() {
                 About Us
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0A0A0A] mb-6 leading-tight">
-                35+ Years of RF Engineering Excellence from Bengaluru
+                20+ Years of RF Engineering Excellence from Bengaluru
               </h1>
               <p className="text-xl text-[#6B7280] leading-relaxed mb-8">
                 Anand Technologies was founded on a singular conviction: India's telecom, defense, and industrial sectors deserve precision RF components engineered and manufactured at home, to the highest international standards.
@@ -69,7 +69,7 @@ export default function AboutPage() {
               {/* Trust badges */}
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
-                  { label: '35+ Years Experience', icon: <Award className="w-4 h-4" /> },
+                  { label: '20+ Years Experience', icon: <Award className="w-4 h-4" /> },
                   { label: 'MSME Certified', icon: <BadgeCheck className="w-4 h-4" /> },
                   { label: 'Defence Sector Authorised', icon: <Shield className="w-4 h-4" /> },
                   { label: '20+ Years Leadership', icon: <Users className="w-4 h-4" /> },
@@ -164,7 +164,7 @@ export default function AboutPage() {
             className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4">Milestones</h2>
-            <p className="text-lg text-[#6B7280] max-w-xl mx-auto">35+ years of continuous engineering progress.</p>
+            <p className="text-lg text-[#6B7280] max-w-xl mx-auto">20+ years of continuous engineering progress.</p>
           </motion.div>
 
           <div className="relative">

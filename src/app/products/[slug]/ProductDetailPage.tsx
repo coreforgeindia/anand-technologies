@@ -350,7 +350,7 @@ export default function ProductDetailPage({ product, category }: Props) {
                 <h3 className="text-base font-bold mb-3">Why Anand Technologies?</h3>
                 <ul className="space-y-2 text-sm text-white/90">
                   {[
-                    '35+ years of RF engineering',
+                    '20+ years of RF engineering',
                     'In-house design & manufacturing',
                     '100% tested before shipment',
                     'MIL-SPEC capability',

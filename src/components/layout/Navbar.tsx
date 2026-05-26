@@ -95,7 +95,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
               <Image src="/favicon.jpg" alt="Anand Technologies" width={40} height={40} className="rounded-lg" />
-              <div className="hidden sm:block">
+              <div>
                 <div className="text-lg font-bold text-[#0A0A0A] leading-none">Anand</div>
                 <div className="text-xs font-medium text-[#00B8B8] tracking-widest uppercase leading-none">Technologies</div>
               </div>

@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server'
+import { readFile } from 'fs/promises'
+import path from 'path'
 
 const gasUrl = process.env.GOOGLE_APPS_SCRIPT_URL
-const r2BaseUrl = process.env.NEXT_PUBLIC_R2_BASE_URL
 
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, purpose, product_name, datasheet_url } = body
+    const { name, company, email, phone, purpose, product_name, datasheet_url } = body
 
-    if (!name || !email || !phone || !purpose || !datasheet_url) {
+    if (!name || !company || !email || !phone || !purpose || !datasheet_url) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
@@ -16,13 +17,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
     }
 
-    // Log to Google Sheet (Sheet2) via GAS
+    // Log to GAS / Sheet2 — fire and forget
     fetch(gasUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         sheet: 'Sheet2',
         name,
+        company,
         email,
         phone,
         purpose,
@@ -32,12 +34,28 @@ export async function POST(request: Request) {
       redirect: 'follow',
     }).catch((err) => console.error('GAS log error:', err))
 
-    // Build the full R2 URL
-    const fullUrl = datasheet_url.startsWith('http')
-      ? datasheet_url
-      : `${r2BaseUrl}${datasheet_url}`
+    // datasheet_url is like /datasheets/AT-ANT-QGSM-SMA110-3.0%20(SL).pdf
+    // Resolve to the actual file in /public
+    const relative = decodeURIComponent(datasheet_url.replace(/^\//, ''))
+    const filePath = path.join(process.cwd(), 'public', relative)
 
-    return NextResponse.json({ url: fullUrl })
+    let fileBuffer: Buffer
+    try {
+      fileBuffer = await readFile(filePath)
+    } catch {
+      return NextResponse.json({ error: 'Datasheet file not found' }, { status: 404 })
+    }
+
+    const filename = path.basename(filePath)
+
+    return new NextResponse(fileBuffer, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `attachment; filename="${filename}"`,
+        'Content-Length': String(fileBuffer.length),
+      },
+    })
   } catch (error) {
     console.error('Download API error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })

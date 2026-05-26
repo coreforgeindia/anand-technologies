@@ -23,11 +23,12 @@ type State = 'idle' | 'submitting' | 'done'
 export default function DatasheetModal({ productName, datasheetUrl, onClose }: Props) {
   const [state, setState] = useState<State>('idle')
   const [errors, setErrors] = useState<Record<string, string>>({})
-  const [form, setForm] = useState({ name: '', email: '', phone: '', purpose: '' })
+  const [form, setForm] = useState({ name: '', company: '', email: '', phone: '', purpose: '' })
 
   const validate = () => {
     const e: Record<string, string> = {}
     if (!form.name.trim()) e.name = 'Required'
+    if (!form.company.trim()) e.company = 'Required'
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Valid email required'
     if (!form.phone.trim() || !/^\+?[\d\s\-]{8,15}$/.test(form.phone)) e.phone = 'Valid phone required'
     if (!form.purpose) e.purpose = 'Please select a purpose'
@@ -42,11 +43,13 @@ export default function DatasheetModal({ productName, datasheetUrl, onClose }: P
     setState('submitting')
 
     try {
+      // API streams the PDF directly — blob it and trigger download
       const res = await fetch('/api/download', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: form.name,
+          company: form.company,
           email: form.email,
           phone: form.phone,
           purpose: form.purpose,
@@ -56,17 +59,19 @@ export default function DatasheetModal({ productName, datasheetUrl, onClose }: P
       })
 
       if (!res.ok) throw new Error('Failed')
-      const { url } = await res.json()
-      setState('done')
 
-      // Trigger download
+      const blob = await res.blob()
+      const objectUrl = URL.createObjectURL(blob)
+      const filename = datasheetUrl.split('/').pop() || 'datasheet.pdf'
       const a = document.createElement('a')
-      a.href = url
-      a.download = ''
-      a.target = '_blank'
+      a.href = objectUrl
+      a.download = decodeURIComponent(filename)
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
+      setTimeout(() => URL.revokeObjectURL(objectUrl), 10000)
+
+      setState('done')
     } catch {
       setState('idle')
       setErrors({ submit: 'Something went wrong. Please try again.' })
@@ -145,6 +150,7 @@ export default function DatasheetModal({ productName, datasheetUrl, onClose }: P
                 </p>
 
                 {field('name', 'Full Name', 'text', 'Your name')}
+                {field('company', 'Company Name', 'text', 'Your company')}
                 {field('email', 'Business Email', 'email', 'you@company.com')}
                 {field('phone', 'Phone', 'tel', '+91 98XXX XXXXX')}
 

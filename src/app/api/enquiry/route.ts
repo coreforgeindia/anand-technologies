@@ -16,7 +16,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
     }
 
-    const gasResponse = await fetch(gasUrl, {
+    // Fire-and-forget — GAS handles redirects internally, don't fail on response status
+    fetch(gasUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -27,12 +28,8 @@ export async function POST(request: Request) {
         product: (product_list || []).join(', '),
         message,
       }),
-    })
-
-    if (!gasResponse.ok) {
-      console.error('GAS error:', gasResponse.status, await gasResponse.text())
-      return NextResponse.json({ error: 'Failed to submit enquiry' }, { status: 500 })
-    }
+      redirect: 'follow',
+    }).catch((err) => console.error('GAS fetch error:', err))
 
     return NextResponse.json({ success: true })
   } catch (error) {

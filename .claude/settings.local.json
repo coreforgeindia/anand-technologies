@@ -16,7 +16,8 @@
       "Bash(Test-Path \"E:\\\\Anand Technologies Sort\" -PathType Container)",
       "PowerShell(python --version)",
       "PowerShell(pip show pdfplumber 2>$null)",
-      "PowerShell(pip show pypdf 2>$null)"
+      "PowerShell(pip show pypdf 2>$null)",
+      "Read(//c/Users/Dhanush F G/Desktop/products/**)"
     ]
   }
 }

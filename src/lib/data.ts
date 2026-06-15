@@ -7,7 +7,7 @@ export function datasheetUrl(filename: string): string | null {
 
 // ─── PRODUCT NAME + DATASHEET MAPPING ───────────────────────────────────────
 // product_name: human-readable display name shown on the product page
-// pdf: exact filename as uploaded to R2 (must match character-for-character)
+// pdf: exact filename in /public/datasheets/ (must match character-for-character)
 
 const productMeta: Record<string, { product_name: string; pdf: string | null }> = {
   // GSM / LTE

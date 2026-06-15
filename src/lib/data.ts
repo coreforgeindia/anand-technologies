@@ -227,7 +227,7 @@ export const sampleProducts = [
     description: 'Quad-band GSM/GPRS/EDGE sleeve-type external antenna with SMA male connector and 210mm cable. Covers all major GSM 850/900/1800/1900 bands.',
     specs: { 'Frequency': '824–960 / 1710–2170 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 210mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1', 'Polarization': 'Vertical' },
     datasheet_url: null as string | null,
-    image_url: '/product-images/lgsm_1.png',
+    image_url: '/product-images/AT-ANT-QGSM-SMA210-3.5 (SL)-photo.png',
     created_at: '2024-01-01',
   },
   {
@@ -237,7 +237,7 @@ export const sampleProducts = [
     description: 'Compact quad-band GSM sleeve antenna with SMA male connector and 110mm cable. Ideal for space-constrained modem and router applications.',
     specs: { 'Frequency': '824–960 / 1710–2170 MHz', 'Gain': '3.0 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 110mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
     datasheet_url: null as string | null,
-    image_url: '/product-images/lgsm_2.png',
+    image_url: '/product-images/AT-ANT-QGSM-SMA110-3.0 (SL)-photo.png',
     created_at: '2024-01-01',
   },
   {
@@ -247,7 +247,7 @@ export const sampleProducts = [
     description: 'Long-cable quad-band GSM sleeve antenna for panel-mounted and DIN-rail industrial applications requiring cable routing.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '5.0 dBi', 'Connector': 'SMA Male', 'Cable': 'RG174, 305mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
     datasheet_url: null as string | null,
-    image_url: '/product-images/lgsm_3.png',
+    image_url: '/product-images/AT-ANT-QGSM-SMA305-5.0 (SL)-photo.png',
     created_at: '2024-01-01',
   },
   {
@@ -256,7 +256,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Right-angle SMA modem antenna for GSM/3G modems. 70mm stub with right-angle SMA male connector for board-edge mounting.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '3.0 dBi', 'Connector': 'SMA Male RA', 'Length': '70mm', 'Impedance': '50 Ω', 'VSWR': '< 2.5:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_4.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-QGSM-SMAR70-3.0-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-005', name: 'AT-ANT-QGSM-SMAR90-3.0', slug: 'at-ant-qgsm-smar90-30',
@@ -264,7 +264,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Compact right-angle stub antenna for GSM/3G/4G modem boards. SMA male right-angle connector, 90mm length.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '3.0 dBi', 'Connector': 'SMA Male RA', 'Length': '90mm', 'Impedance': '50 Ω', 'VSWR': '< 2.5:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_5.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-QGSM-SMAR90-3.0-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-006', name: 'AT-ANT-QGSM-UFL1.13-0.18-3.0', slug: 'at-ant-qgsm-ufl-018-30',
@@ -272,7 +272,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Internal PCB-mount quad-band GSM antenna with UFL connector and 1.13mm coax, 180mm cable. Designed for embedded M2M and IoT modules.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '3.0 dBi', 'Connector': 'UFL (IPEX)', 'Cable': '1.13mm, 180mm', 'Impedance': '50 Ω', 'Mount': 'Adhesive / PCB' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_6.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-QGSM-UFL1.13-0.18-3.0-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-007', name: 'AT-ANT-QGSM-FGNW-NF600-5.0', slug: 'at-ant-qgsm-fgnw-nf600-50',
@@ -288,7 +288,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Helical coil quad-band GSM antenna with SMA male connector. High-gain helical design for improved link margin in challenging environments.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '5.0 dBi', 'Type': 'Helical', 'Connector': 'SMA Male', 'Cable': 'RG174, 3m', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_8.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-QGSM-SMA174-3-3.0-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-009', name: 'AT-ANT-CDMA-SMA210-3.5(SL)', slug: 'at-ant-cdma-sma210-35-sl',
@@ -296,7 +296,7 @@ export const sampleProducts = [
     frequency_range: '824–894 / 1850–1990 MHz',
     description: 'CDMA 800/1900 MHz sleeve antenna with SMA male connector and 210mm cable. Used in CDMA modems, fixed wireless terminals, and M2M devices.',
     specs: { 'Frequency': '824–894 / 1850–1990 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 210mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_9.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-CDMA-SMA210-3.5-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-010', name: 'AT-ANT-LTE-B1-SMA210-3.5(SL)', slug: 'at-ant-lte-b1-sma210-35-sl',
@@ -304,7 +304,7 @@ export const sampleProducts = [
     frequency_range: '1920–2170 MHz',
     description: 'LTE Band 1 (2100 MHz) sleeve antenna with SMA male connector. Optimised for 3G UMTS/WCDMA and LTE Band 1 operation.',
     specs: { 'Frequency': '1920–2170 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 210mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_10.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-LTE-ENH-SMA260-3.5-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-011', name: 'AT-ANT-LTE-B3-SMA260-3.5(SL)', slug: 'at-ant-lte-b3-sma260-35-sl',
@@ -312,7 +312,7 @@ export const sampleProducts = [
     frequency_range: '1710–1880 MHz',
     description: 'LTE Band 3 (1800 MHz) sleeve antenna, the primary band for Indian 4G deployments. SMA male with 260mm RG174 cable.',
     specs: { 'Frequency': '1710–1880 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 260mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_11.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-LTE-ENH-SMA260-3.5-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-012', name: 'AT-ANT-LTE-B28-SMA260-3.5(SL)', slug: 'at-ant-lte-b28-sma260-35-sl',
@@ -320,7 +320,7 @@ export const sampleProducts = [
     frequency_range: '700–803 MHz',
     description: 'LTE Band 28 (700 MHz APT) sleeve antenna for rural and deep-indoor 4G coverage. SMA male connector with 260mm cable.',
     specs: { 'Frequency': '700–803 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 260mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_12.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-LTE-ENH-SMA260-3.5-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-013', name: 'AT-ANT-LTE-B71-SMA290-3.5(SL)', slug: 'at-ant-lte-b71-sma290-35-sl',
@@ -328,7 +328,7 @@ export const sampleProducts = [
     frequency_range: '617–698 MHz',
     description: 'LTE Band 71 (600 MHz) sleeve antenna for extended rural coverage. Long 290mm cable for panel-mount routing.',
     specs: { 'Frequency': '617–698 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 290mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_13.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-LTE-ENH-SMA260-3.5-photo.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-014', name: 'AT-ANT-4G-LTE-SMA3-200', slug: 'at-ant-4g-lte-sma3-200',

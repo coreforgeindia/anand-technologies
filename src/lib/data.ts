@@ -20,21 +20,16 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   'gsm-007': { product_name: 'Quad-Band GSM Fiberglass Antenna', pdf: 'AT-ANT-QGSM-FGNW-NF600-5.0.pdf' },
   'gsm-008': { product_name: 'Quad-Band GSM Helical Antenna', pdf: 'AT-ANT-QGSM-HMM-SMA174-3-5.0.pdf' },
   'gsm-009': { product_name: 'CDMA Sleeve Antenna', pdf: 'AT-ANT-CDMA-SMA210-3.5(SL).pdf' },
-  'gsm-010': { product_name: 'LTE Band 1 Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
-  'gsm-011': { product_name: 'LTE Band 3 Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
-  'gsm-012': { product_name: 'LTE Band 28 Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
-  'gsm-013': { product_name: 'LTE Band 71 Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
+  'gsm-010': { product_name: 'LTE Enhanced Sleeve Antenna', pdf: 'AT-ANT-LTE-ENH-SMA260-3.5(CDOT).pdf' },
   'gsm-014': { product_name: '4G LTE Omni Antenna 3dBi', pdf: 'AT-ANT-4G-LTE-SMA3-200.pdf' },
   'gsm-015': { product_name: '4G LTE Omni Antenna 5dBi', pdf: 'AT-ANT-4G-LTE-SMA5-250.pdf' },
   // GPS / GNSS
   'gps-001': { product_name: 'GPS External Active Antenna', pdf: 'AT-ANT-GPSE-SMA-MM174-5.0TCS.pdf' },
-  'gps-002': { product_name: 'GPS External Active Antenna', pdf: 'AT-ANT-GPSE-SMA-MM174-5.0TCS.pdf' },
-  'gps-003': { product_name: 'GPS External Active Antenna', pdf: 'AT-ANT-GPSE-SMA-MM174-30-10.pdf' },
+  'gps-003': { product_name: 'GPS External Active Antenna', pdf: null },
   'gps-004': { product_name: 'GPS/GNSS Internal Active Antenna', pdf: 'AT-ANT-GPSGNSS-UFL1.13- INTERNAL-28.pdf' },
-  'gps-005': { product_name: 'GPS/GNSS Internal Active Antenna', pdf: 'AT-ANT-GPSGNSS-UFL1.13- INTERNAL-28.pdf' },
   'gps-006': { product_name: 'GSM/GPS Combo Antenna RG174 3m', pdf: 'AT-ANT-CSCM-SMA174-28-3.0.pdf' },
   'gps-007': { product_name: 'GSM/GPS Combo Antenna RG316 3m', pdf: 'AT-ANT-CSCM-SMA316-28-3.0.pdf' },
-  'gps-008': { product_name: 'IRNSS/NavIC Dual-Band Antenna', pdf: 'AT-ANT-IRNSS -28.pdf' },
+  'gps-008': { product_name: 'IRNSS/NavIC Antenna', pdf: 'AT-ANT-IRNSS.pdf' },
   'gps-009': { product_name: 'GPS In-Line Feeder Amplifier', pdf: 'AT-GPS-FDAMP-SMAF-28.pdf' },
   'gps-010': { product_name: 'GPS High-Gain SCADA Antenna', pdf: 'AT-ANT-GPS-HGSCD-NF-40.0 (SCADA).pdf' },
   // WiFi
@@ -51,10 +46,8 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   // VHF / UHF
   'vhf-001': { product_name: 'UHF Omni Antenna 2.15 dBi SMA', pdf: 'AT-ANT-VHF-SMART2.15.pdf' },
   'vhf-002': { product_name: 'UHF Omni Antenna 1.5 dBi SMA', pdf: 'AT-ANT-VHF-SMART1.5.pdf' },
-  'vhf-003': { product_name: 'UHF Omni Antenna 2.15 dBi SMA RA', pdf: 'AT-ANT-VHF-SMART2.15.pdf' },
-  'vhf-004': { product_name: 'UHF Antenna BNC 5 dBi', pdf: 'AT-ANT-VHF-BNC-5.pdf' },
+  'vhf-003': { product_name: 'VHF Antenna BNC 5 dBi', pdf: 'AT-ANT-VHF-BNC-5.pdf' },
   'vhf-005': { product_name: 'UHF High-Gain Sleeve Antenna BNC 7 dBi', pdf: 'AT-ANT-VHF-BNC440-7.0(SL).pdf' },
-  'vhf-006': { product_name: 'UHF Sleeve Antenna BNC 7 dBi', pdf: 'AT-ANT-VHF-BNC440-7.0(SL).pdf' },
   // High Gain
   'hga-001': { product_name: 'GPS High-Gain Active Antenna 35dB', pdf: 'AT-ANT-GPS-HGM-SMA58-1-35.0.pdf' },
   'hga-002': { product_name: 'GSM High-Gain Fiberglass Antenna 10dBi', pdf: 'AT-ANT-QGSM-FGNW-NF213-500-10.0.pdf' },
@@ -91,7 +84,6 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   // Couplers
   'cpl-001': { product_name: 'Directional RF Coupler 800–2500 MHz', pdf: 'AT-COUPLER-800-2500.pdf' },
   'cpl-002': { product_name: 'Aviation Band Coupler 117.975–137 MHz', pdf: 'AT-COUPLER-117.pdf' },
-  'cpl-003': { product_name: 'High-Power RF Coupler 800–2500 MHz', pdf: 'AT-COUPLER-800-2500.pdf' },
   // Band Pass Filters
   'bpf-001': { product_name: 'Band Pass Filter 1090 MHz', pdf: 'Band Pass Filter.pdf' },
   'bpf-002': { product_name: 'Band Pass Filter 4460 MHz', pdf: 'Band Pass Filter.pdf' },
@@ -100,21 +92,20 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   'la-001': { product_name: 'RF Lightning Arrestor N-Type 2 GHz', pdf: 'AT-LA-N-2000.pdf' },
   'la-002': { product_name: 'RF Lightning Arrestor N-Type 6 GHz', pdf: 'AT-LA-N6000.pdf' },
   // RF Cable Assemblies
-  'ca-001': { product_name: 'SMA Male to SMA Male Cable Assembly', pdf: 'AT-CA-SMA-SMA-402-2000 .pdf' },
-  'ca-002': { product_name: 'RP-SMA to UFL Cable Assembly', pdf: 'AT-CA-SMA-UFL-1.13-150.pdf' },
-  'ca-003': { product_name: 'RP-SMA to UFL Cable Assembly 140mm', pdf: 'AT-CA-SMAM-UFLF-200-D1.13.pdf' },
+  'ca-001': { product_name: 'IPEX MHF4 to SMA Bulkhead IP65 Cable Assembly', pdf: 'AT-CA-MHF4-SMABH-IP-65-1.13-200.pdf' },
+  'ca-002': { product_name: 'MMCX Right-Angle to TNC Female Bulkhead Cable', pdf: 'AT-CA-MMCX RT-TNCFBH-120-RG178.pdf' },
+  'ca-003': { product_name: 'N Male to BNC Male Cable Assembly', pdf: 'AT-CA-NM-BNC-402-2000.pdf' },
   'ca-004': { product_name: 'BNC Male to SMA Male Cable Assembly', pdf: 'AT-CA-SMA-BNC-402-2000 - .pdf' },
-  'ca-005': { product_name: 'SMA Female Bulkhead to UFL Cable', pdf: 'AT-CA-MHF4-SMABH-IP-65-1.13-200.pdf' },
-  'ca-006': { product_name: 'UFL to UFL Cable Assembly', pdf: 'AT-CA-UFL-UFL-40-1.13 .pdf' },
-  'ca-007': { product_name: 'N Male to SMA Female Bulkhead Cable', pdf: 'AT-CA-NM-BNC-402-2000.pdf' },
-  'ca-008': { product_name: 'MMCX Right-Angle to SMA Cable', pdf: 'AT-CA-MMCX RT-TNCFBH-120-RG178.pdf' },
+  'ca-005': { product_name: 'SMA Male to UFL Female Coaxial Cable Assembly', pdf: 'AT-CA-SMAM-UFLF-200-D1.13.pdf' },
+  'ca-006': { product_name: 'SMA Male to SMA Male Cable Assembly', pdf: 'AT-CA-SMA-SMA-402-2000 .pdf' },
+  'ca-007': { product_name: 'IPEX MHF to SMA Bulkhead Cable Assembly', pdf: 'AT-CA-SMA-UFL-1.13-150.pdf' },
+  'ca-008': { product_name: 'UFL to UFL Cable Assembly', pdf: 'AT-CA-UFL-UFL-40-1.13 .pdf' },
   // Power Amplifiers
   'pa-001': { product_name: 'RF Power Amplifier 1.0W', pdf: 'AT-PA-1.0W.pdf' },
   'pa-002': { product_name: 'RF Power Amplifier 2.0W', pdf: 'AT-PA-2.0W.pdf' },
   'pa-003': { product_name: 'Low Noise Amplifier (LNA)', pdf: 'AT-PA-LNA.pdf' },
   // Waveguide
   'wg-001': { product_name: 'WR-90 Standard Gain Horn Antenna 20 dB', pdf: 'AT-ANT-HORN-WR90-N(F).pdf' },
-  'wg-002': { product_name: 'WR-90 Standard Gain Horn Antenna 20 dB', pdf: 'AT-ANT-HORN-WR90-N(F).pdf' },
 }
 
 export function getProductName(id: string): string {

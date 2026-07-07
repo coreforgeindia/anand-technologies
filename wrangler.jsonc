@@ -10,16 +10,31 @@
 		"directory": ".open-next/assets",
 		"binding": "ASSETS"
 	},
-	"r2_buckets": [
-		{
-			"binding": "DATASHEETS",
-			"bucket_name": "anand-technologies-datasheets"
-		}
-	],
 	"vars": {
 		"GOOGLE_APPS_SCRIPT_URL": "https://script.google.com/macros/s/AKfycbzxLrQbllfmlslQis1fMTT32wAM037rRE7Jz7TpdNftRd86Hjy3rMb8PK1jtq2wAPFK6A/exec"
 	},
 	"observability": {
 		"enabled": true
+	},
+	"env": {
+		"dev": {
+			"name": "anand-technologies-dev",
+			"assets": {
+				"directory": ".open-next/assets",
+				"binding": "ASSETS"
+			},
+			"vars": {
+				"GOOGLE_APPS_SCRIPT_URL": "https://script.google.com/macros/s/AKfycbzxLrQbllfmlslQis1fMTT32wAM037rRE7Jz7TpdNftRd86Hjy3rMb8PK1jtq2wAPFK6A/exec"
+			},
+			"routes": [
+				{
+					"pattern": "dev.anandtechnologies.co.in",
+					"custom_domain": true
+				}
+			],
+			"observability": {
+				"enabled": true
+			}
+		}
 	}
 }

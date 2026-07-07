@@ -58,7 +58,7 @@ function WatermarkedImage({ src, alt }: { src: string; alt: string }) {
       ctx.restore()
       setLoaded(true)
     }
-    img.src = src
+    img.src = encodeURI(src)
   }, [src])
 
   useEffect(() => { draw() }, [draw])

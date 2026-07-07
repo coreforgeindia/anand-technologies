@@ -227,7 +227,7 @@ export const sampleProducts = [
     description: 'Quad-band GSM/GPRS/EDGE sleeve-type external antenna with SMA male connector and 210mm cable. Covers all major GSM 850/900/1800/1900 bands.',
     specs: { 'Frequency': '824–960 / 1710–2170 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 210mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1', 'Polarization': 'Vertical' },
     datasheet_url: null as string | null,
-    image_url: '/product-images/AT-ANT-QGSM-SMA210-3.5 (SL)-photo.png',
+    image_url: '/product-images/GSM LTE Antenna/AT-ANT-QGSM-SMA210-3.5(SL).png',
     created_at: '2024-01-01',
   },
   {
@@ -237,7 +237,7 @@ export const sampleProducts = [
     description: 'Compact quad-band GSM sleeve antenna with SMA male connector and 110mm cable. Ideal for space-constrained modem and router applications.',
     specs: { 'Frequency': '824–960 / 1710–2170 MHz', 'Gain': '3.0 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 110mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
     datasheet_url: null as string | null,
-    image_url: '/product-images/AT-ANT-QGSM-SMA110-3.0 (SL)-photo.png',
+    image_url: '/product-images/GSM LTE Antenna/AT-ANT-QGSM-SMA110-3.0(SL).png',
     created_at: '2024-01-01',
   },
   {
@@ -247,7 +247,7 @@ export const sampleProducts = [
     description: 'Long-cable quad-band GSM sleeve antenna for panel-mounted and DIN-rail industrial applications requiring cable routing.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '5.0 dBi', 'Connector': 'SMA Male', 'Cable': 'RG174, 305mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
     datasheet_url: null as string | null,
-    image_url: '/product-images/AT-ANT-QGSM-SMA305-5.0 (SL)-photo.png',
+    image_url: '/product-images/GSM LTE Antenna/AT-ANT-QGSM-SMA305-5.0(SL).png',
     created_at: '2024-01-01',
   },
   {
@@ -256,7 +256,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Right-angle SMA modem antenna for GSM/3G modems. 70mm stub with right-angle SMA male connector for board-edge mounting.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '3.0 dBi', 'Connector': 'SMA Male RA', 'Length': '70mm', 'Impedance': '50 Ω', 'VSWR': '< 2.5:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-QGSM-SMAR70-3.0-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-QGSM-SMAR70-3.0.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-005', name: 'AT-ANT-QGSM-SMAR90-3.0', slug: 'at-ant-qgsm-smar90-30',
@@ -264,7 +264,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Compact right-angle stub antenna for GSM/3G/4G modem boards. SMA male right-angle connector, 90mm length.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '3.0 dBi', 'Connector': 'SMA Male RA', 'Length': '90mm', 'Impedance': '50 Ω', 'VSWR': '< 2.5:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-QGSM-SMAR90-3.0-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-QGSM-SMAR90-3.0.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-006', name: 'AT-ANT-QGSM-UFL1.13-0.18-3.0', slug: 'at-ant-qgsm-ufl-018-30',
@@ -272,7 +272,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Internal PCB-mount quad-band GSM antenna with UFL connector and 1.13mm coax, 180mm cable. Designed for embedded M2M and IoT modules.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '3.0 dBi', 'Connector': 'UFL (IPEX)', 'Cable': '1.13mm, 180mm', 'Impedance': '50 Ω', 'Mount': 'Adhesive / PCB' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-QGSM-UFL1.13-0.18-3.0-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-QGSM-UFL1.13-0.18-3.0.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-007', name: 'AT-ANT-QGSM-FGNW-NF600-5.0', slug: 'at-ant-qgsm-fgnw-nf600-50',
@@ -280,7 +280,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Heavy-duty outdoor fiberglass GSM antenna with N Female connector and 600mm radome. Suitable for cellular base repeaters, industrial routers, and outdoor access points.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '5.0 dBi', 'Connector': 'N Female', 'Radome Length': '600mm', 'Material': 'Fibreglass', 'IP Rating': 'IP65', 'Impedance': '50 Ω', 'VSWR': '< 1.5:1', 'Mount': 'Pole mount included' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_7.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-QGSM-FGNW-NF600-5.0.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-008', name: 'AT-ANT-QGSM-HMM-SMA174-3-5.0', slug: 'at-ant-qgsm-hmm-sma174-3-50',
@@ -288,7 +288,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Helical coil quad-band GSM antenna with SMA male connector. High-gain helical design for improved link margin in challenging environments.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '5.0 dBi', 'Type': 'Helical', 'Connector': 'SMA Male', 'Cable': 'RG174, 3m', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-QGSM-SMA174-3-3.0-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-QGSM-HMM-SMA174-3-5.0.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-009', name: 'AT-ANT-CDMA-SMA210-3.5(SL)', slug: 'at-ant-cdma-sma210-35-sl',
@@ -296,7 +296,7 @@ export const sampleProducts = [
     frequency_range: '824–894 / 1850–1990 MHz',
     description: 'CDMA 800/1900 MHz sleeve antenna with SMA male connector and 210mm cable. Used in CDMA modems, fixed wireless terminals, and M2M devices.',
     specs: { 'Frequency': '824–894 / 1850–1990 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 210mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-CDMA-SMA210-3.5-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-CDMA-SMA210-3.5(SL).png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-010', name: 'AT-ANT-LTE-B1-SMA210-3.5(SL)', slug: 'at-ant-lte-b1-sma210-35-sl',
@@ -304,7 +304,7 @@ export const sampleProducts = [
     frequency_range: '1920–2170 MHz',
     description: 'LTE Band 1 (2100 MHz) sleeve antenna with SMA male connector. Optimised for 3G UMTS/WCDMA and LTE Band 1 operation.',
     specs: { 'Frequency': '1920–2170 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 210mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-LTE-ENH-SMA260-3.5-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-LTE-ENH-SMA260-3.5(CDOT).png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-011', name: 'AT-ANT-LTE-B3-SMA260-3.5(SL)', slug: 'at-ant-lte-b3-sma260-35-sl',
@@ -312,7 +312,7 @@ export const sampleProducts = [
     frequency_range: '1710–1880 MHz',
     description: 'LTE Band 3 (1800 MHz) sleeve antenna, the primary band for Indian 4G deployments. SMA male with 260mm RG174 cable.',
     specs: { 'Frequency': '1710–1880 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 260mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-LTE-ENH-SMA260-3.5-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-LTE-ENH-SMA260-3.5(CDOT).png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-012', name: 'AT-ANT-LTE-B28-SMA260-3.5(SL)', slug: 'at-ant-lte-b28-sma260-35-sl',
@@ -320,7 +320,7 @@ export const sampleProducts = [
     frequency_range: '700–803 MHz',
     description: 'LTE Band 28 (700 MHz APT) sleeve antenna for rural and deep-indoor 4G coverage. SMA male connector with 260mm cable.',
     specs: { 'Frequency': '700–803 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 260mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-LTE-ENH-SMA260-3.5-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-LTE-ENH-SMA260-3.5(CDOT).png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-013', name: 'AT-ANT-LTE-B71-SMA290-3.5(SL)', slug: 'at-ant-lte-b71-sma290-35-sl',
@@ -328,7 +328,7 @@ export const sampleProducts = [
     frequency_range: '617–698 MHz',
     description: 'LTE Band 71 (600 MHz) sleeve antenna for extended rural coverage. Long 290mm cable for panel-mount routing.',
     specs: { 'Frequency': '617–698 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 290mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-LTE-ENH-SMA260-3.5-photo.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-LTE-ENH-SMA260-3.5(CDOT).png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-014', name: 'AT-ANT-4G-LTE-SMA3-200', slug: 'at-ant-4g-lte-sma3-200',
@@ -336,7 +336,7 @@ export const sampleProducts = [
     frequency_range: '700–2700 MHz',
     description: 'Wideband 4G LTE omnidirectional antenna covering all major LTE bands from 700 MHz to 2700 MHz. SMA male with 200mm cable.',
     specs: { 'Frequency': '700–2700 MHz', 'Gain': '3 dBi', 'Connector': 'SMA Male', 'Cable': '200mm', 'Impedance': '50 Ω', 'VSWR': '< 2.5:1', 'Polarization': 'Vertical' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_14.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-4G-LTE-SMA3-200.png', created_at: '2024-01-01',
   },
   {
     id: 'gsm-015', name: 'AT-ANT-4G-LTE-SMA5-250', slug: 'at-ant-4g-lte-sma5-250',
@@ -344,7 +344,7 @@ export const sampleProducts = [
     frequency_range: '700–2700 MHz',
     description: 'High-gain wideband 4G LTE antenna for CPE routers and industrial gateways. SMA male with 250mm cable.',
     specs: { 'Frequency': '700–2700 MHz', 'Gain': '5 dBi', 'Connector': 'SMA Male', 'Cable': '250mm', 'Impedance': '50 Ω', 'VSWR': '< 2.5:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgsm_15.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GSM LTE Antenna/AT-ANT-4G-LTE-SMA5-250.png', created_at: '2024-01-01',
   },
 
   // ── GPS / GNSS ANTENNAS ─────────────────────────────────────────────────────
@@ -354,7 +354,7 @@ export const sampleProducts = [
     frequency_range: '1575.425 ±3 MHz',
     description: 'GPS L1 active external antenna with 27.5 dB LNA. SMA male connector, 5m RG174 cable, magnetic mount. Supply 1.5–3.0V DC.',
     specs: { 'Frequency': '1575.425 ±3 MHz', 'LNA Gain': '27.5 dB', 'Patch Gain': '3.5 dBi', 'Noise Figure': '1.5 dB', 'Connector': 'SMA Male', 'Cable': 'RG174, 5m', 'Supply Voltage': '1.5–3.0V DC', 'Mount': 'Magnetic', 'Dimensions': '38.5 × 46 mm', 'Impedance': '50 Ω', 'Polarization': 'RHCP', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgps_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-GPSE-SMA-MM174-5.0TCS.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-002', name: 'AT-ANT-GPSE-SMA-MM174-2.8NM', slug: 'at-ant-gpse-sma-mm174-28nm',
@@ -362,7 +362,7 @@ export const sampleProducts = [
     frequency_range: '1575.425 ±3 MHz',
     description: 'GPS L1 active external antenna with 28 dB LNA, SMA male connector and RG174 cable, magnetic mount. For tracking, telematics, and navigation receivers.',
     specs: { 'Frequency': '1575.425 ±3 MHz', 'LNA Gain': '28 dB', 'Patch Gain': '3.5 dBi', 'Noise Figure': '1.5 dB', 'Connector': 'SMA Male', 'Cable': 'RG174', 'Supply Voltage': '2.7–5.0V DC', 'Mount': 'Magnetic', 'Impedance': '50 Ω', 'Polarization': 'RHCP', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgps_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-GPSE-SMA-MM174-5.0TCS.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-003', name: 'AT-ANT-GPSE-SMA-MM174-30-10', slug: 'at-ant-gpse-smam-mm174-30-10',
@@ -370,7 +370,7 @@ export const sampleProducts = [
     frequency_range: '1575.425 MHz',
     description: 'Long-cable GPS active antenna with 27.5 dB LNA for extended cable runs. SMA male with 10m RG174 cable, magnetic mount. Dimensions 49×49 mm.',
     specs: { 'Frequency': '1575.425 MHz', 'LNA Gain': '27.5 dB', 'Patch Gain': '3.5 dBi', 'Noise Figure': '1.5 dB', 'Connector': 'SMA Male', 'Cable': 'RG174, 10m', 'Supply Voltage': '2.75–5.0V', 'Mount': 'Magnetic', 'Dimensions': '49 × 49 mm', 'Impedance': '50 Ω', 'Polarization': 'RHCP', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgps_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-GPSE-SMAM-MM174-30-5.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-004', name: 'AT-ANT-GPSGNSS-UFL1.13-INTERNAL-28', slug: 'at-ant-gpsgnss-ufl-internal-28',
@@ -378,7 +378,7 @@ export const sampleProducts = [
     frequency_range: '1575.425 ±3 MHz',
     description: 'Miniature internal GPS/GNSS active patch antenna. 28 dB LNA, direct PCB solder (no UFL connector), 120mm microcoaxial cable. Dimensions 25.4×25.4 mm.',
     specs: { 'Frequency': '1575.425 ±3 MHz', 'LNA Gain': '28 dB', 'Patch Gain': '4 dBi', 'Noise Figure': '1.5 dB', 'Connection': 'Direct PCB solder', 'Cable': 'Microcoaxial, 120mm', 'Supply Voltage': '2.75–5.0V', 'Dimensions': '25.4 × 25.4 mm', 'Polarization': 'RHCP', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/pcb_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-GPSGNSS-UFL1.13-INTERNAL-28.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-005', name: 'AT-ANT-GPSGNSS-UFL1.13-120-INT-18', slug: 'at-ant-gpsgnss-ufl-120-int-18',
@@ -386,7 +386,7 @@ export const sampleProducts = [
     frequency_range: '1575.425 ±3 MHz',
     description: 'Compact internal GPS/GNSS patch antenna, 22 dB LNA, direct PCB solder. Dimensions 20×20 mm.',
     specs: { 'Frequency': '1575.425 ±3 MHz', 'LNA Gain': '22 dB', 'Patch Gain': '3.5 dBi', 'Noise Figure': '1.5 dB', 'Connection': 'Direct PCB solder', 'Supply Voltage': '2.75–5.0V', 'Dimensions': '20 × 20 mm', 'Polarization': 'RHCP', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/pcb_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-GPSGNSS-UFL1.13-INTERNAL-28.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-006', name: 'AT-ANT-CSCM-SMA174-28-3.0', slug: 'at-ant-cscm-sma174-28-30',
@@ -394,7 +394,7 @@ export const sampleProducts = [
     frequency_range: 'GPS 1575.425 MHz / GSM 850/900/1800/1900 MHz',
     description: 'Combo antenna integrating GPS L1 active patch (RHCP) and quad-band GSM omni element. GPS: RPSMA connector, 27.5 dB LNA. GSM: SMA male. 3m RG174 cable. Screw mount.',
     specs: { 'GPS Frequency': '1575.425 ±3 MHz', 'GSM Frequency': '850 / 900 / 1800 / 1900 MHz', 'GPS LNA Gain': '> 27.5 dB', 'GPS Patch Gain': '3.5 ±0.5 dBi', 'GSM Gain': '2.5 ±0.5 dBi', 'Noise Figure': '< 1.2–1.3 dB', 'GPS Connector': 'RPSMA', 'GSM Connector': 'SMA Male', 'Cable': 'RG174, 3m', 'Supply Voltage': '2.7–5.0V', 'Polarization': 'GPS: RHCP / GSM: Omni', 'Dimensions': '30 × Ø46 mm', 'Mount': 'Screw', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/combo_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-CSCM-SMA174-28-3.0.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-007', name: 'AT-ANT-CSCM-SMA316-28-3.0', slug: 'at-ant-cscm-sma316-28-30',
@@ -402,7 +402,7 @@ export const sampleProducts = [
     frequency_range: 'GPS 1575.425 MHz / GSM 850/900/1800/1900 MHz',
     description: 'GSM/GPS combo antenna with RG316 low-loss cable. GPS RPSMA connector, 27.5 dB LNA. GSM SMA male. 3m cable. Screw mount. Dimensions 30×Ø53 mm.',
     specs: { 'GPS Frequency': '1575.425 ±3 MHz', 'GSM Frequency': '850 / 900 / 1800 / 1900 MHz', 'GPS LNA Gain': '> 27.5 dB', 'GPS Patch Gain': '3.5 ±0.5 dBi', 'GSM Gain': '2.5 ±0.5 dBi', 'GPS Connector': 'RPSMA', 'GSM Connector': 'SMA Male', 'Cable': 'RG316, 3m', 'Supply Voltage': '2.7–5.0V', 'Polarization': 'GPS: RHCP / GSM: Omni', 'Dimensions': '30 × Ø53 mm', 'Mount': 'Screw', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/combo_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-CSCM-SMA316-28-3.0.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-008', name: 'AT-ANT-IRNSSL1L5', slug: 'at-ant-irnssl1l5',
@@ -410,7 +410,7 @@ export const sampleProducts = [
     frequency_range: '1176.45 MHz (L5) / 1227.6 MHz (L1)',
     description: 'Dedicated dual-band IRNSS/NavIC antenna covering both L1 and L5 frequencies. Designed for Indian navigation system receivers in defense and transport applications.',
     specs: { 'Frequency': '1176.45 MHz (L5) & 1227.6 MHz (L1)', 'Type': 'Active patch', 'LNA Gain': '28 dB', 'Connector': 'SMA Male', 'IP Rating': 'IP67', 'Temperature': '-40°C to +85°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/irnss_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-IRNSS-5.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-009', name: 'AT-GPS-FDAMP-SMAF-28', slug: 'at-gps-fdamp-smaf-28',
@@ -418,7 +418,7 @@ export const sampleProducts = [
     frequency_range: '1575.42 MHz',
     description: 'In-line GPS signal amplifier to compensate cable loss on long antenna feeder runs. 28 dB gain, SMA female in/out, DC pass-through.',
     specs: { 'Frequency': '1575.42 MHz', 'Gain': '28 dB', 'Noise Figure': '< 2.0 dB', 'Connector': 'SMA Female (in/out)', 'Supply Voltage': '3.3–5V (DC via coax)', 'Current': '< 25 mA', 'Impedance': '50 Ω' },
-    datasheet_url: null as string | null, image_url: '/product-images/lgps_4.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-GPS-FDAMP-SMAF-28.png', created_at: '2024-01-01',
   },
   {
     id: 'gps-010', name: 'AT-ANT-GPS-HGSCD-NF-40.0(SCADA)', slug: 'at-ant-gps-hgscd-nf-400-scada',
@@ -426,7 +426,7 @@ export const sampleProducts = [
     frequency_range: '1575.42 MHz',
     description: 'High-gain GPS antenna specifically designed for SCADA and RTK applications. 40 dB LNA, N Female connector, ruggedised outdoor housing with pole mount.',
     specs: { 'Frequency': '1575.42 MHz', 'LNA Gain': '40 dB', 'Noise Figure': '< 1.0 dB', 'Connector': 'N Female', 'IP Rating': 'IP67', 'Supply Voltage': '5–12V', 'Temperature': '-55°C to +85°C', 'Mount': 'Pole mount' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hgps_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/GPS  GNSS Antennas/AT-ANT-GPS-HGSCD-NF-40.0 (SCADA).png', created_at: '2024-01-01',
   },
 
   // ── WiFi ANTENNAS ───────────────────────────────────────────────────────────
@@ -436,7 +436,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 / 5150–5850 MHz',
     description: 'Dual-band 2.4/5 GHz WiFi antenna with RP-SMA male connector. 5 dBi gain across both bands. Weatherproof version for outdoor access points.',
     specs: { 'Frequency': '2.4 GHz & 5 GHz', 'Gain': '5 dBi', 'Connector': 'RP-SMA Male', 'Cable': 'RG174, 205/305mm', 'VSWR': '< 2.0:1', 'Impedance': '50 Ω', 'Polarization': 'Vertical' },
-    datasheet_url: null as string | null, image_url: '/product-images/wifi_low_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-DB-RPSMA305-5.0.png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-002', name: 'AT-ANT-WIFI-DB-RPSMA375-7.0', slug: 'at-ant-wifi-db-rpsma375-70',
@@ -444,7 +444,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 / 5150–5850 MHz',
     description: 'High-gain dual-band WiFi antenna with 7 dBi gain and RP-SMA connector. Suitable for IEEE 802.11 a/b/g/n/ac access points and CPE devices.',
     specs: { 'Frequency': '2.4 & 5 GHz', 'Gain': '7 dBi', 'Connector': 'RP-SMA Male', 'Cable': '375mm', 'VSWR': '< 2.0:1', 'Impedance': '50 Ω' },
-    datasheet_url: null as string | null, image_url: '/product-images/wifi_low_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-DB-RPSMA375-7.0.png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-003', name: 'AT-ANT-WIFI-DB-RPSMA430-9.0', slug: 'at-ant-wifi-db-rpsma430-90',
@@ -452,7 +452,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 / 5150–5850 MHz',
     description: 'High-gain 9 dBi dual-band WiFi antenna with RP-SMA connector and 430mm cable. Ideal for long-range outdoor WiFi links and industrial routers.',
     specs: { 'Frequency': '2.4 & 5 GHz', 'Gain': '9 dBi', 'Connector': 'RP-SMA Male', 'Cable': '430mm', 'VSWR': '< 2.0:1', 'Impedance': '50 Ω' },
-    datasheet_url: null as string | null, image_url: '/product-images/wifi_low_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-DB-RPSMA430-9.0.png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-004', name: 'AT-ANT-WIFI-DB-UFL178-120-3.0(CDOT)', slug: 'at-ant-wifi-db-ufl-120-cdot',
@@ -460,7 +460,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 / 4900–5875 MHz',
     description: 'Dual-band WiFi internal antenna with UFL connector and 120mm RG178 cable. CDOT approved. Gain 2.1 dBi @ 2.45 GHz to 3.4 dBi @ 5.875 GHz.',
     specs: { 'Frequency': '2400–2500 / 4900–5875 MHz', 'Gain': '2.1 dBi @ 2.45 GHz / 3.4 dBi @ 5.875 GHz', 'VSWR': '2.1 max', 'Connector': 'UFL', 'Cable': 'RG178, 120mm', 'Dimensions': '102±2 × Ø9.5 mm', 'Impedance': '50 Ω', 'Polarization': 'Vertical / Horizontal', 'Mount': 'Adjustable straight / right angle', 'Temperature': '-25 to +45°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/wifi_low_4.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-DB-UFL178-120-3.0(CDOT).png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-005', name: 'AT-ANT-WIFI-FGNW-NFST-12.0', slug: 'at-ant-wifi-fgnw-nfst-120',
@@ -468,7 +468,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 MHz',
     description: 'High-gain outdoor fiberglass WiFi omnidirectional antenna with 12 dBi gain. N Female connector with stainless steel pole mount for outdoor access points and mesh networks.',
     specs: { 'Frequency': '2400–2500 MHz', 'Gain': '12 dBi', 'Connector': 'N Female (stainless)', 'Radome': 'Fibreglass UV-stabilised', 'VSWR': '< 1.5:1', 'IP Rating': 'IP67', 'Wind Rating': '150 km/h', 'Mount': 'Pole mount (stainless)' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hwifi_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-FGNW-NFST-12.0.png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-006', name: 'AT-ANT-WIFI-FGNW-NFST-5.0', slug: 'at-ant-wifi-fgnw-nfst-50',
@@ -476,7 +476,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 MHz',
     description: 'Outdoor fiberglass omnidirectional WiFi antenna with 5 dBi gain. Compact form factor for urban access points and smart city deployments.',
     specs: { 'Frequency': '2400–2500 MHz', 'Gain': '5 dBi', 'Connector': 'N Female', 'IP Rating': 'IP65', 'VSWR': '< 1.5:1', 'Mount': 'Pole mount' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hwifi_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-FGNW-NFST-5.0.png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-007', name: 'AT-ANT-WIFI-YAGI-SMAST58-3-12.0', slug: 'at-ant-wifi-yagi-12dbi',
@@ -484,7 +484,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 MHz',
     description: 'Yagi-UDA directional antenna for 2.4 GHz WiFi. Available in 7, 9, 10, 12, 14, 16 dBi configurations. N or TNC Female connector. Roof / wall mount.',
     specs: { 'Frequency': '2400–2500 MHz', 'Gain Options': '7 / 9 / 10 / 12 / 14 / 16 dBi', 'Type': 'Yagi-UDA', 'Connector': 'N or TNC Female', 'Impedance': '50 Ω', 'Mount': 'Roof / wall', 'Polarization': 'Vertical / Horizontal', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/yagi.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-YAGI-SMAST58-3-12.0.png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-008', name: 'AT-ANT-WIFI-PP-NF-18.0', slug: 'at-ant-wifi-pp-nf-180',
@@ -492,7 +492,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 MHz',
     description: 'High-gain flat panel directional WiFi antenna for sector coverage and point-to-point backhaul. 18 dBi gain, N Female connector.',
     specs: { 'Frequency': '2400–2500 MHz', 'Gain': '18 dBi', 'Type': 'Panel / flat patch array', 'Connector': 'N Female', 'HPBW (Az/El)': '≈ 15° / 15°', 'VSWR': '< 1.5:1', 'IP Rating': 'IP65', 'Mount': 'Wall / pole' },
-    datasheet_url: null as string | null, image_url: '/product-images/patch.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-PP-NF-18.0.png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-009', name: 'AT-ANT-WIFI-CEILING-SMA58-500-6.0', slug: 'at-ant-wifi-ceiling-6dbi',
@@ -500,7 +500,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 MHz',
     description: 'Indoor ceiling-mount omnidirectional WiFi antenna. 6 dBi gain, RP-SMA connector, RG58 0.5m cable. Dimensions 150×Ø165 mm.',
     specs: { 'Frequency': '2400–2500 MHz', 'Gain': '6 dBi', 'Type': 'Ceiling Mount Omni', 'Connector': 'RP-SMA', 'Cable': 'RG58, 0.5m', 'Dimensions': '150±5 × Ø165±5 mm', 'Impedance': '50 Ω', 'Polarization': 'Vertical', 'Mount': 'Ceiling mount', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/wifi_low_5.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-CEILING-SMA58-500-6.0.png', created_at: '2024-01-01',
   },
   {
     id: 'wifi-010', name: 'AT-ANT-WIFI-HORN-NFST-24.0', slug: 'at-ant-wifi-horn-24dbi',
@@ -508,7 +508,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 MHz',
     description: 'High-gain horn antenna for long-range directional WiFi links. 24 dBi gain, circular polarization, N Female connector. Dimensions 430×Ø200 mm.',
     specs: { 'Frequency': '2400–2500 MHz', 'Gain': '24 dBi', 'Type': 'Horn', 'Connector': 'N Female', 'Polarization': 'Circular', 'Dimensions': '430 × Ø200 mm', 'Impedance': '50 Ω', 'Mount': 'Ceiling / pole', 'Temperature': '-20 to +65°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hwifi_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Wifi antenna/AT-ANT-WIFI-HORN-NFST-24.0.png', created_at: '2024-01-01',
   },
 
   // ── VHF / UHF ANTENNAS ──────────────────────────────────────────────────────
@@ -518,7 +518,7 @@ export const sampleProducts = [
     frequency_range: '136–174 MHz',
     description: 'VHF dipole rubber duck antenna with RP-SMA male connector for two-way radios and land mobile communications. Length approx. 420mm.',
     specs: { 'Frequency': '136–174 MHz', 'Gain': '3 dBi', 'Type': 'Rubber Duck / Dipole', 'Connector': 'RP-SMA Male', 'Length': '≈ 420mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lvhf_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/VHF-UHF Antenna/AT-ANT-VHF-SMART2.15.png', created_at: '2024-01-01',
   },
   {
     id: 'vhf-002', name: 'AT-ANT-VHF-SMAR-HHT-3.0', slug: 'at-ant-vhf-smar-hht-30',
@@ -526,7 +526,7 @@ export const sampleProducts = [
     frequency_range: '136–174 MHz',
     description: 'VHF handheld terminal antenna with right-angle SMA male connector. Helical stub design for portable radios and handheld terminals.',
     specs: { 'Frequency': '136–174 MHz', 'Gain': '3 dBi', 'Type': 'Helical Stub', 'Connector': 'SMA Male RA', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lvhf_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/VHF-UHF Antenna/AT-ANT-VHF-SMART1.5.png', created_at: '2024-01-01',
   },
   {
     id: 'vhf-003', name: 'AT-ANT-VHF-BNC-5.0', slug: 'at-ant-vhf-bnc-50',
@@ -534,7 +534,7 @@ export const sampleProducts = [
     frequency_range: '136–174 MHz',
     description: 'VHF antenna with BNC male connector and vertical polarization for two-way radio and public safety communications.',
     specs: { 'Frequency': '136–174 MHz', 'Gain': '5 dBi', 'Connector': 'BNC Male', 'Impedance': '50 Ω', 'VSWR': '< 1.5:1', 'Polarization': 'Vertical' },
-    datasheet_url: null as string | null, image_url: '/product-images/lvhf_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/VHF-UHF Antenna/AT-ANT-VHF-BNC-5.png', created_at: '2024-01-01',
   },
   {
     id: 'vhf-004', name: 'AT-ANT-VHF-SMA-DR-3.0', slug: 'at-ant-vhf-sma-dr-30',
@@ -542,7 +542,7 @@ export const sampleProducts = [
     frequency_range: '136–174 MHz',
     description: 'VHF dipole rubber duck antenna with SMA male connector for two-way radios and land mobile communications. Length approx. 420mm.',
     specs: { 'Frequency': '136–174 MHz', 'Gain': '3 dBi', 'Type': 'Rubber Duck / Dipole', 'Connector': 'SMA Male', 'Length': '≈ 420mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/lvhf_4.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/VHF-UHF Antenna/AT-ANT-VHF-SMART1.5.png', created_at: '2024-01-01',
   },
   {
     id: 'vhf-005', name: 'AT-ANT-VHF-BNC440-7.0(SL)', slug: 'at-ant-vhf-bnc440-70-sl',
@@ -550,7 +550,7 @@ export const sampleProducts = [
     frequency_range: '136–174 MHz',
     description: 'VHF high-gain sleeve antenna with BNC male connector and 440mm length. For fixed base station and repeater applications in the VHF land mobile band.',
     specs: { 'Frequency': '136–174 MHz', 'Gain': '7 dBi', 'Type': 'Sleeve', 'Connector': 'BNC Male', 'Cable': '440mm', 'Impedance': '50 Ω', 'VSWR': '< 1.5:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hvhf_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/VHF-UHF Antenna/AT-ANT-VHF-BNC440-7.0(SL).png', created_at: '2024-01-01',
   },
   {
     id: 'vhf-006', name: 'AT-ANT-UHF-SMA210-3.5(SL)', slug: 'at-ant-uhf-sma210-35-sl',
@@ -558,7 +558,7 @@ export const sampleProducts = [
     frequency_range: '400–470 MHz',
     description: 'UHF sleeve antenna covering 400–470 MHz with SMA male connector and RG174 210mm cable. For UHF land mobile, TETRA, and IoT applications.',
     specs: { 'Frequency': '400–470 MHz', 'Gain': '3.5 dBi', 'Type': 'Sleeve', 'Connector': 'SMA Male', 'Cable': 'RG174, 210mm', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hvhf_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/VHF-UHF Antenna/AT-ANT-VHF-BNC440-7.0(SL).png', created_at: '2024-01-01',
   },
 
   // ── HIGH GAIN ANTENNAS ──────────────────────────────────────────────────────
@@ -568,7 +568,7 @@ export const sampleProducts = [
     frequency_range: '1575.42 MHz',
     description: 'High-gain GPS active antenna with 35 dB LNA for long cable runs. SMA male with RG58 1m cable and large-aperture patch element for maximum signal capture.',
     specs: { 'Frequency': '1575.42 MHz', 'LNA Gain': '35 dB', 'Noise Figure': '< 1.0 dB', 'Connector': 'SMA Male', 'Cable': 'RG58, 1m', 'Supply': '3.3–5V', 'IP Rating': 'IP67', 'Temperature': '-40°C to +85°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hgps_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/HIGH GAIN Antennas/AT-ANT-GPS-HGM-SMA58-1-35.0.png', created_at: '2024-01-01',
   },
   {
     id: 'hga-002', name: 'AT-ANT-QGSM-FGNW-NF213-500-10.0', slug: 'at-ant-qgsm-fgnw-nf213-500-100',
@@ -576,7 +576,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'High-gain outdoor omnidirectional GSM/3G fiberglass antenna for base repeaters and long-range coverage. 10 dBi gain, N Female, 500mm radome.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '10 dBi', 'Connector': 'N Female', 'Radome': 'Fibreglass, 500mm', 'IP Rating': 'IP67', 'VSWR': '< 1.5:1', 'Mount': 'Pole mount' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hgsm_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/HIGH GAIN Antennas/AT-ANT-QGSM-FGNW-NF213-500-10.0.png', created_at: '2024-01-01',
   },
   {
     id: 'hga-003', name: 'AT-ANT-QGSM-FGNW-NF213-500-7.0', slug: 'at-ant-qgsm-fgnw-nf213-500-70',
@@ -584,7 +584,7 @@ export const sampleProducts = [
     frequency_range: '824–2170 MHz',
     description: 'Medium-gain outdoor fiberglass GSM antenna with 7 dBi gain. For urban repeater and multi-operator DAS applications.',
     specs: { 'Frequency': '824–2170 MHz', 'Gain': '7 dBi', 'Connector': 'N Female', 'IP Rating': 'IP65', 'VSWR': '< 1.5:1', 'Mount': 'Pole' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hgsm_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/HIGH GAIN Antennas/AT-ANT-QGSM-FGNW-NF213-500-7.0.png', created_at: '2024-01-01',
   },
   {
     id: 'hga-004', name: 'AT-ANT-WIFI-BFIRE-NF240-500-24.0', slug: 'at-ant-wifi-bfire-nf240-500-240',
@@ -592,7 +592,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 MHz',
     description: 'Ultra high-gain backfire directional antenna for long-range 2.4 GHz WiFi links. 24 dBi gain, N Female connector, very narrow beam for point-to-point links over several km.',
     specs: { 'Frequency': '2400–2500 MHz', 'Gain': '24 dBi', 'Type': 'Backfire', 'Connector': 'N Female', 'HPBW': '≈ 8°', 'VSWR': '< 1.5:1', 'Mount': 'Pole / tripod' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hwifi_4.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/HIGH GAIN Antennas/AT-ANT-WIFI-BFIRE-NF240-500-24.0.png', created_at: '2024-01-01',
   },
   {
     id: 'hga-005', name: 'AT-ANT-WIFI-PRB-NFST-500-24.0', slug: 'at-ant-wifi-prb-nfst-500-240',
@@ -600,7 +600,7 @@ export const sampleProducts = [
     frequency_range: '2400–2500 MHz',
     description: 'Parabolic reflector WiFi antenna with 24 dBi gain for long-range point-to-point wireless backhaul links at 2.4 GHz.',
     specs: { 'Frequency': '2400–2500 MHz', 'Gain': '24 dBi', 'Type': 'Parabolic reflector', 'Connector': 'N Female', 'HPBW': '≈ 8°', 'F/B Ratio': '> 35 dB', 'IP Rating': 'IP65', 'Mount': 'Pole / tripod' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hwifi_5.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/HIGH GAIN Antennas/AT-ANT-WIFI-PRB-NFST-500-24.0.png', created_at: '2024-01-01',
   },
   {
     id: 'hga-006', name: 'AT-ANT-VHF-PM-BNC174-200-6.0', slug: 'at-ant-vhf-pm-bnc174-200-60',
@@ -608,7 +608,7 @@ export const sampleProducts = [
     frequency_range: '136–174 MHz',
     description: 'High-gain VHF pole-mount antenna with BNC male and RG174 cable. For fixed base station and repeater applications in the VHF land mobile band.',
     specs: { 'Frequency': '136–174 MHz', 'Gain': '6 dBi', 'Connector': 'BNC Male', 'Cable': 'RG174, 200mm', 'VSWR': '< 1.5:1', 'Mount': 'Pole', 'IP Rating': 'IP65' },
-    datasheet_url: null as string | null, image_url: '/product-images/high/hvhf_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/HIGH GAIN Antennas/AT-ANT-VHF-PM-BNC174-200-6.0.png', created_at: '2024-01-01',
   },
 
   // ── RFID ANTENNAS ───────────────────────────────────────────────────────────
@@ -618,7 +618,7 @@ export const sampleProducts = [
     frequency_range: '865–868 MHz / 902–928 MHz',
     description: 'UHF RFID gate/panel antenna covering 865–868 MHz (India) and 902–928 MHz (US ISM). Supply 3–5V DC. Operating temperature -20 to +60°C.',
     specs: { 'Frequency': '902–928 MHz / 865–868 MHz', 'Supply Voltage': '3–5V DC', 'Impedance': '50 Ω', 'Operating Temperature': '-20 to +60°C', 'Description': 'RFID Gate Antenna' },
-    datasheet_url: null as string | null, image_url: '/product-images/rfid_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RFID Antennas/AT-ANT-UHF-RFID.png', created_at: '2024-01-01',
   },
   {
     id: 'rfid-002', name: 'AT-ANT-LF-HF-RFID', slug: 'at-ant-lf-hf-rfid',
@@ -626,7 +626,7 @@ export const sampleProducts = [
     frequency_range: '125 kHz / 134.34 kHz / 13.56 MHz',
     description: 'LF and HF RFID antenna. LF: 125 kHz / 134.34 kHz. HF: 13.56 MHz. Supply 3–5V DC. Operating temperature -40 to +85°C.',
     specs: { 'LF Frequency': '125 / 134.34 kHz', 'HF Frequency': '13.56 MHz', 'Supply Voltage': '3–5V DC', 'Impedance': '50 Ω', 'Operating Temperature': '-40 to +85°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/rfid_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RFID Antennas/AT-ANT-LF-HF-RFID.png', created_at: '2024-01-01',
   },
   {
     id: 'rfid-003', name: 'AT-UHF-RFID-2CH4PO-MR6132 A', slug: 'at-uhf-rfid-2ch4po-mr6132a',
@@ -634,7 +634,7 @@ export const sampleProducts = [
     frequency_range: '865–868 MHz / 902–928 MHz',
     description: 'UHF RFID reader module. Ant 1+3 (TX+RX team 1), Ant 2+4 (TX+RX team 2). RS232 / RJ45 TCP-IP / RS485 interface. IP Level 56.',
     specs: { 'Frequency': '902–928 MHz or 865–868 MHz', 'Protocol': 'ISO18000-6B, ISO18000-6C (EPC GEN2)', 'Operation Mode': 'FHSS', 'RF Output Power': '0–30 dBm (software configurable)', 'Antenna Ports': '4 (2 TX + 2 RX)', 'Interface': 'RS232 / RJ45 TCP/IP / RS485', 'IP Level': '56', 'Supply': 'DC +9V', 'Dimensions': '310 × 210 × 40 mm', 'Weight': '2 kg', 'Operating Temperature': '-20 to +80°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/rfid_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RFID Antennas/AT-UHF-RFID-2CH4PO-MR6132 A.png', created_at: '2024-01-01',
   },
 
   // ── LPA / WIDEBAND ANTENNAS ─────────────────────────────────────────────────
@@ -644,7 +644,7 @@ export const sampleProducts = [
     frequency_range: '20–3000 MHz',
     description: 'Broadband log-periodic dipole array antenna covering 20 MHz to 3 GHz. For EMC testing, SIGINT, spectrum monitoring, and wideband RF measurement.',
     specs: { 'Frequency': '20–3000 MHz', 'Gain': '6–9 dBi (avg)', 'Type': 'Log-Periodic Dipole Array', 'Connector': 'N Female', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1', 'Polarization': 'Linear', 'Power': '100W' },
-    datasheet_url: null as string | null, image_url: '/product-images/lpa_low_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/LPA  wideband Antennas/LPA-20-3000MHz.png', created_at: '2024-01-01',
   },
   {
     id: 'lpa-002', name: 'LPA-1-30MHz', slug: 'lpa-1-30mhz',
@@ -652,7 +652,7 @@ export const sampleProducts = [
     frequency_range: '1–30 MHz',
     description: 'HF log-periodic antenna for 1–30 MHz coverage. Used in HF communications monitoring, SIGINT, and shortwave broadcasting measurement.',
     specs: { 'Frequency': '1–30 MHz', 'Gain': '5–8 dBi', 'Type': 'Log-Periodic', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Polarization': 'Linear horizontal', 'Power': '200W' },
-    datasheet_url: null as string | null, image_url: '/product-images/lpa_low_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/LPA  wideband Antennas/LPA-1-30MHz.png', created_at: '2024-01-01',
   },
   {
     id: 'lpa-003', name: 'LPA-30-500MHz', slug: 'lpa-30-500mhz',
@@ -660,7 +660,7 @@ export const sampleProducts = [
     frequency_range: '30–500 MHz',
     description: 'VHF/UHF log-periodic antenna from 30–500 MHz for EMC pre-compliance, military comms monitoring, and broadcast monitoring.',
     specs: { 'Frequency': '30–500 MHz', 'Gain': '6–9 dBi', 'Connector': 'N Female', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1', 'Polarization': 'Linear', 'Power': '150W' },
-    datasheet_url: null as string | null, image_url: '/product-images/lpa_low_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/LPA  wideband Antennas/LPA-30-500MHz.png', created_at: '2024-01-01',
   },
   {
     id: 'lpa-004', name: 'LPA-500-6000MHz', slug: 'lpa-500-6000mhz',
@@ -668,7 +668,7 @@ export const sampleProducts = [
     frequency_range: '500–6000 MHz',
     description: 'Wideband log-periodic antenna covering 500 MHz to 6 GHz. Ideal for 5G/WiFi/cellular spectrum monitoring, EMC testing, and wideband signal intelligence.',
     specs: { 'Frequency': '500–6000 MHz', 'Gain': '7–10 dBi', 'Connector': 'N Female', 'Impedance': '50 Ω', 'VSWR': '< 2.0:1', 'Polarization': 'Linear', 'Power': '50W' },
-    datasheet_url: null as string | null, image_url: '/product-images/lpa_low_4.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/LPA  wideband Antennas/LPA-500-6000MHz.png', created_at: '2024-01-01',
   },
 
   // ── DUPLEXERS ───────────────────────────────────────────────────────────────
@@ -678,7 +678,7 @@ export const sampleProducts = [
     frequency_range: '136–174 MHz',
     description: 'VHF cavity duplexer covering the 136–174 MHz land mobile band. Engineered for low insertion loss and high TX-RX isolation in base stations and repeaters.',
     specs: { 'Frequency': '136–174 MHz', 'Type': 'Cavity Duplexer', 'Insertion Loss': '< 1.5 dB', 'TX-RX Isolation': '> 75 dB', 'Return Loss': '16 dB min', 'Power': '50W', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Material': 'Aluminium, Silver Plating' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/duplex_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Dupelexers/DUPLEXER-136-174MHz.png', created_at: '2024-01-01',
   },
   {
     id: 'dup-002', name: 'DUPLEXER-703-733MHz', slug: 'duplexer-703-733mhz',
@@ -686,7 +686,7 @@ export const sampleProducts = [
     frequency_range: '703–733 MHz',
     description: 'Cavity duplexer for the 703–733 MHz LTE Band 28 lower segment. High isolation cavity design for 4G base station TX/RX separation.',
     specs: { 'Frequency': '703–733 MHz', 'Type': 'Cavity Duplexer', 'Insertion Loss': '< 1.5 dB', 'TX-RX Isolation': '> 75 dB', 'Return Loss': '16 dB min', 'Power': '50W', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Material': 'Aluminium, Silver Plating' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/duplex_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Dupelexers/DUPLEXER-703-733MHz.png', created_at: '2024-01-01',
   },
   {
     id: 'dup-003', name: 'DUPLEXER-758-803MHz', slug: 'duplexer-758-803mhz',
@@ -694,7 +694,7 @@ export const sampleProducts = [
     frequency_range: '758–803 MHz',
     description: 'Cavity duplexer for the 758–803 MHz LTE Band 28 upper segment. High isolation cavity design for 4G base station TX/RX separation.',
     specs: { 'Frequency': '758–803 MHz', 'Type': 'Cavity Duplexer', 'Insertion Loss': '< 1.5 dB', 'TX-RX Isolation': '> 75 dB', 'Return Loss': '16 dB min', 'Power': '50W', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Material': 'Aluminium, Silver Plating' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/duplex_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Dupelexers/DUPLEXER-758-803MHz.png', created_at: '2024-01-01',
   },
   {
     id: 'dup-004', name: 'DUPLEXER-1710-1785MHz', slug: 'duplexer-1710-1785mhz',
@@ -702,7 +702,7 @@ export const sampleProducts = [
     frequency_range: '1710–1785 MHz',
     description: 'Cavity duplexer for the 1710–1785 MHz DCS 1800 / LTE Band 3 uplink band. High isolation cavity design for cellular base station TX/RX separation.',
     specs: { 'Frequency': '1710–1785 MHz', 'Type': 'Cavity Duplexer', 'Insertion Loss': '< 1.5 dB', 'TX-RX Isolation': '> 75 dB', 'Return Loss': '16 dB min', 'Power': '50W', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Material': 'Aluminium, Silver Plating' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/duplex_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Dupelexers/DUPLEXER-1710-1785MHz.png', created_at: '2024-01-01',
   },
 
   // ── DIPLEXERS ───────────────────────────────────────────────────────────────
@@ -712,7 +712,7 @@ export const sampleProducts = [
     frequency_range: 'TX 136–148 MHz / RX 148–174 MHz',
     description: 'RF diplexer for combining or separating two distinct frequency bands on a single antenna port. Custom-specified passband frequencies available for cellular, WiFi, and private network applications.',
     specs: { 'TX Band': '136–148 MHz', 'RX Band': '148–174 MHz', 'Insertion Loss TX': '< 1.5 dB', 'Insertion Loss RX': '< 1.5 dB', 'TX-RX Isolation': '> 70 dB', 'VSWR': '< 1.3:1', 'Power': '50W avg', 'Connector': 'N Female', 'Temperature': '-30°C to +70°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/duplex_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/OV-DIPLEXR-006072023.png', created_at: '2024-01-01',
   },
 
   // ── POWER SPLITTERS ─────────────────────────────────────────────────────────
@@ -722,7 +722,7 @@ export const sampleProducts = [
     frequency_range: '500–6000 MHz',
     description: 'Compact 1-to-2 resistive power splitter covering 500 MHz to 6 GHz. Excellent amplitude and phase balance for signal distribution in antenna test setups and indoor DAS.',
     specs: { 'Frequency': '500–6000 MHz', 'Division': '1×2', 'Insertion Loss': '< 4.0 dB (each port)', 'Amplitude Balance': '±0.5 dB', 'Phase Balance': '±5°', 'Port Isolation': '> 20 dB', 'VSWR': '< 1.5:1', 'Connector': 'SMA Female', 'Power': '1W max' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/ps_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/POWER SPLITTER/AT-LPW-SP-2-500-6000.png', created_at: '2024-01-01',
   },
   {
     id: 'spl-002', name: 'AT-LPW-SP-2-1500-8000', slug: 'at-lpw-sp-2-1500-8000',
@@ -730,7 +730,7 @@ export const sampleProducts = [
     frequency_range: '1500–8000 MHz',
     description: '1-to-2 power splitter for the cellular and microwave bands from 1.5 GHz to 8 GHz. Used in base station monitoring, antenna alignment, and lab test setups.',
     specs: { 'Frequency': '1500–8000 MHz', 'Division': '1×2', 'Insertion Loss': '< 4.5 dB', 'Amplitude Balance': '±0.5 dB', 'Port Isolation': '> 20 dB', 'VSWR': '< 1.5:1', 'Connector': 'SMA Female' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/ps_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/POWER SPLITTER/AT-LPW-SP-2-1500-8000.png', created_at: '2024-01-01',
   },
   {
     id: 'spl-003', name: 'AT-LPW-SP-4-8000', slug: 'at-lpw-sp-4-8000',
@@ -738,7 +738,7 @@ export const sampleProducts = [
     frequency_range: '500–8000 MHz',
     description: '1-to-4 power splitter covering up to 8 GHz. For 4-way signal distribution in MIMO test beds, antenna array setups, and multi-receiver RF systems.',
     specs: { 'Frequency': '500–8000 MHz', 'Division': '1×4', 'Insertion Loss': '< 7.5 dB (each port)', 'Amplitude Balance': '±0.5 dB', 'Phase Balance': '±5°', 'Port Isolation': '> 20 dB', 'VSWR': '< 1.5:1', 'Connector': 'SMA Female' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/ps_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/POWER SPLITTER/AT-LPW-SP-4-8000.png', created_at: '2024-01-01',
   },
   {
     id: 'spl-004', name: 'AT-LPW-SP-16-6000', slug: 'at-lpw-sp-16-6000',
@@ -746,7 +746,7 @@ export const sampleProducts = [
     frequency_range: '500–6000 MHz',
     description: '1-to-16 power splitter for large DAS, repeater signal distribution networks, and multi-antenna test systems. Compact housing with SMA female connectors.',
     specs: { 'Frequency': '500–6000 MHz', 'Division': '1×16', 'Insertion Loss': '< 14 dB (each port)', 'Amplitude Balance': '±1.0 dB', 'VSWR': '< 1.8:1', 'Connector': 'SMA Female', 'Housing': 'Aluminium' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/ps_4.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/POWER SPLITTER/AT-LPW-SP-16-6000.png', created_at: '2024-01-01',
   },
   {
     id: 'spl-005', name: 'AT-gps-splitter', slug: 'at-gps-splitter',
@@ -754,7 +754,7 @@ export const sampleProducts = [
     frequency_range: '1575.42 MHz',
     description: 'Active GPS signal splitter with built-in LNA to compensate split loss. Distributes one GPS antenna signal to 4 receivers without degradation. DC pass-through on port 1.',
     specs: { 'Frequency': '1575.42 MHz', 'Division': '1×4 active', 'Gain': '0 dB net (compensated)', 'DC Pass': 'Port 1 (antenna power)', 'Supply': '5V, 200mA', 'Connector': 'SMA Female', 'Noise Figure': '< 3 dB' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/ps_5.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/POWER SPLITTER/AT-GPS-SPLITTER-2.png', created_at: '2024-01-01',
   },
 
   // ── ATTENUATORS ─────────────────────────────────────────────────────────────
@@ -764,7 +764,7 @@ export const sampleProducts = [
     frequency_range: 'DC–3 GHz',
     description: 'Fixed RF attenuator with N-type connector. Available in 3, 6, 10, 20, 30, 40 dB. 80W power handling.',
     specs: { 'Frequency': 'DC–3 GHz', 'Attenuation': '3 / 6 / 10 / 20 / 30 / 40 dB', 'Accuracy': '0.6 dB (DC–3 GHz)', 'Power': '80W', 'VSWR': '< 1.30:1 (DC–3 GHz)', 'Connector': 'N-Type', 'Impedance': '50 Ω', 'Temperature': '-55 to +125°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/attenu_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/ATTenuator/AttenuatorFX-H2.png', created_at: '2024-01-01',
   },
   {
     id: 'att-002', name: 'AttenuatorVA1', slug: 'attenuator-va1',
@@ -772,7 +772,7 @@ export const sampleProducts = [
     frequency_range: 'DC–2.7 GHz',
     description: 'Manual step variable RF attenuator, 0–31 dB range in 1 dB steps. DC to 2.7 GHz coverage.',
     specs: { 'Frequency': 'DC–2.7 GHz', 'Attenuation Range': '0–31 dB', 'Step Size': '1 dB', 'Insertion Loss': '0.7 dB @ 2 GHz / 1.2 dB @ 2.7 GHz', 'Accuracy': '0.5 dB max @ 1 GHz', 'VSWR': '< 1.50:1', 'Power': '2W', 'Impedance': '50 Ω', 'Temperature': '-40 to +85°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/attenu_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/ATTenuator/AttenuatorVA-1.png', created_at: '2024-01-01',
   },
   {
     id: 'att-003', name: 'AttenuatordkVA-90', slug: 'attenuator-dkva-90',
@@ -780,7 +780,7 @@ export const sampleProducts = [
     frequency_range: 'DC–3 GHz',
     description: 'Dual knob variable attenuator with 0–100/110 dB range in 1 dB steps (two controls: 1–10 dB and 10–90 dB). SMA female connectors.',
     specs: { 'Frequency': 'DC–3 GHz', 'Range': '0–100 / 110 dB', 'Step Size': '1 dB', 'VSWR': '≤ 1.50 (DC–2.5 GHz)', 'Insertion Loss': '≤ 1.45 dB', 'Accuracy': '±0.5 dB (< 50 dB) / ±5% (> 50 dB)', 'Power': '10W', 'Connector': 'SMA Female', 'Impedance': '50 Ω', 'Temperature': '-25 to +85°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/attenu_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/ATTenuator/AttenuatordkVA-90.png', created_at: '2024-01-01',
   },
 
   // ── COUPLERS ────────────────────────────────────────────────────────────────
@@ -790,7 +790,7 @@ export const sampleProducts = [
     frequency_range: '800–2500 MHz',
     description: 'Directional RF coupler for power monitoring and signal sampling, 800–2500 MHz. –5 dB coupling, N Female connectors, 200W average power.',
     specs: { 'Frequency': '800–2500 MHz', 'Coupling': '–5 dB', 'Inband Ripple': '±0.6 dB', 'Directivity': '≥ 20 dB', 'Insertion Loss': '≤ 2.0 dB', 'VSWR': '≤ 1.20', 'Power': '200W avg / 1500W peak', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Dimensions': '120 × 40 mm' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/coup_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Couplers/AT-COUPLER-800-2500.png', created_at: '2024-01-01',
   },
   {
     id: 'cpl-002', name: 'AT-COUPLER-117', slug: 'at-coupler-117',
@@ -798,7 +798,7 @@ export const sampleProducts = [
     frequency_range: '117.975–137 MHz',
     description: 'Dual-cavity band pass coupler for VHF aviation band (117.975–137 MHz). 4-port, 19" rack-mountable. Minimum 100 kHz channel spacing.',
     specs: { 'Frequency': '117.975–137 MHz', 'Type': 'Dual Cavity Band Pass', 'Insertion Loss': '0.2–0.5 dB adj', 'Return Loss': '< –14 dB', 'VSWR': '< 1.5:1', 'Isolation O/P–O/P': '> 20 dB', 'Isolation O/P–I/P': '> 20 dB', 'Selectivity': '> 15 dB @ 500 kHz offset', 'Min Channel': '100 kHz', 'Connector': 'N Female', 'Ports': '4', 'Temperature': '-30 to +60°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/coup_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/Couplers/AT-COUPLER-117.png', created_at: '2024-01-01',
   },
 
   // ── BAND PASS FILTERS ───────────────────────────────────────────────────────
@@ -808,7 +808,7 @@ export const sampleProducts = [
     frequency_range: '880–960 MHz',
     description: 'Cavity band pass filter for the GSM 900 band (880–960 MHz). Low insertion loss with high out-of-band rejection for base station channel selection.',
     specs: { 'Passband': '880–960 MHz', 'Insertion Loss': '< 1.5 dB', 'Return Loss': '18 dB', 'Rejection (±50 MHz)': '> 50 dBc', 'Power': '20W avg', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Temperature': '-40°C to +85°C', 'Material': 'Aluminium, Silver Plating' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/micro_bpf.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/BAND PASS FILTERS/AT-BPF-GSM900.png', created_at: '2024-01-01',
   },
   {
     id: 'bpf-002', name: 'AT-BPF-LTE1800', slug: 'at-bpf-lte1800',
@@ -816,7 +816,7 @@ export const sampleProducts = [
     frequency_range: '1710–1880 MHz',
     description: 'Cavity band pass filter for the LTE Band 3 / DCS 1800 band (1710–1880 MHz). High rejection for 4G base station interference suppression.',
     specs: { 'Passband': '1710–1880 MHz', 'Insertion Loss': '< 1.2 dB', 'Return Loss': '20 dB', 'Rejection (±100 MHz)': '> 55 dBc', 'Power': '20W avg', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Material': 'Aluminium, Silver Plating' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/micro_bpf.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/BAND PASS FILTERS/AT-BPF-LTE1800.png', created_at: '2024-01-01',
   },
   {
     id: 'bpf-003', name: 'AT-BPF-2400-WIFI', slug: 'at-bpf-2400-wifi',
@@ -824,7 +824,7 @@ export const sampleProducts = [
     frequency_range: '2400–2485 MHz',
     description: 'Band pass filter for the 2.4 GHz WiFi / ISM band (2400–2485 MHz). 35 dB rejection with N Female connectors for interference rejection in WiFi systems.',
     specs: { 'Passband': '2400–2485 MHz', 'Insertion Loss': '< 1.0 dB', 'Return Loss': '18 dB', 'Rejection (±200 MHz)': '> 40 dBc', 'Power': '5W', 'Connector': 'N Female', 'Impedance': '50 Ω', 'Material': 'Aluminium, Silver Plating' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/micro_bpf.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/BAND PASS FILTERS/AT-BPF-2400-WIFI.png', created_at: '2024-01-01',
   },
 
   // ── LIGHTNING ARRESTORS ─────────────────────────────────────────────────────
@@ -834,7 +834,7 @@ export const sampleProducts = [
     frequency_range: 'DC–2000 MHz',
     description: 'Gas discharge tube RF lightning arrestor with N Male/Female connectors. Protects antenna feedlines from lightning surges up to 2 GHz. Outdoor IP67 rated.',
     specs: { 'Frequency': 'DC–2000 MHz', 'Insertion Loss': '< 0.3 dB', 'VSWR': '< 1.2:1', 'Discharge Current': '20 kA (8/20 µs)', 'DC Breakdown': '90V', 'Connector': 'N Male – N Female', 'IP Rating': 'IP67', 'Temperature': '-40°C to +85°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/light_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/LIghtning arrestors/AT-LA-N-2000.png', created_at: '2024-01-01',
   },
   {
     id: 'la-002', name: 'AT-LA-N6000', slug: 'at-la-n6000',
@@ -842,7 +842,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6000 MHz',
     description: 'Wideband gas discharge tube RF lightning arrestor covering DC to 6 GHz. Suitable for 5G sub-6 GHz antenna feedlines and outdoor WiFi installations.',
     specs: { 'Frequency': 'DC–6000 MHz', 'Insertion Loss': '< 0.5 dB', 'VSWR': '< 1.3:1', 'Discharge Current': '20 kA (8/20 µs)', 'DC Breakdown': '90V', 'Connector': 'N Male – N Female', 'IP Rating': 'IP67' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/light_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/LIghtning arrestors/AT-LA-N6000.png', created_at: '2024-01-01',
   },
 
   // ── RF CABLE ASSEMBLIES ─────────────────────────────────────────────────────
@@ -852,7 +852,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6 GHz',
     description: 'IPEX MHF4 (HSC comp) to SMA female bulkhead IP65 cable assembly on 1.13mm coax. Available in 110/180/200/220mm lengths for weatherproof panel-mount antenna connections.',
     specs: { 'Frequency': 'DC–6 GHz', 'Connector A': 'IPEX MHF4 (HSC comp)', 'Connector B': 'SMA Female Bulkhead, IP65', 'Cable': '1.13mm', 'Length': '110 / 180 / 200 / 220 mm', 'Impedance': '50 Ω', 'Dielectric Strength': 'AC 1.0 kV', 'Capacitance': '97 pF' },
-    datasheet_url: null as string | null, image_url: '/product-images/rf/stand_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RF Cable Assemblies/AT-CA-MHF4-SMABH-IP-65-1.13-200.png', created_at: '2024-01-01',
   },
   {
     id: 'ca-002', name: 'AT-CA-MMCX RT-TNCFBH-120-RG178', slug: 'at-ca-mmcx-rt-tncfbh-120-rg178',
@@ -860,7 +860,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6 GHz',
     description: 'MMCX right-angle to TNC female bulkhead cable assembly on RG178 PTFE coax, 120mm. For compact module-to-panel RF connections in industrial and automotive devices.',
     specs: { 'Frequency': 'DC–6 GHz', 'Connector A': 'MMCX Right-Angle', 'Connector B': 'TNC Female Bulkhead', 'Cable': 'RG178 (PTFE), 120mm', 'Dielectric Type': 'PTFE', 'Impedance': '50 Ω', 'Max Operating Voltage': '1200 V', 'Voltage Withstand (Vrms)': '2000' },
-    datasheet_url: null as string | null, image_url: '/product-images/rf/pre_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RF Cable Assemblies/AT-CA-MMCX RT-TNCFBH-120-RG178.png', created_at: '2024-01-01',
   },
   {
     id: 'ca-003', name: 'AT-CA-NM-BNC-402-2000', slug: 'at-ca-nm-bnc-402-2000',
@@ -868,7 +868,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6 GHz',
     description: 'N Male to BNC male low-loss cable assembly on RG402 semi-rigid coax, 2000mm. Copper-clad steel inner conductor with FEP dielectric for test and instrumentation.',
     specs: { 'Frequency': 'DC–6 GHz', 'Connector A': 'N Male', 'Connector B': 'BNC Male', 'Cable': 'RG402', 'Inner Conductor': 'Copper Clad Steel, Silver', 'Jacket': 'FEP (Blue)', 'Capacitance': '95 pF', 'Velocity of Propagation': '69.90', 'Impedance': '50 Ω' },
-    datasheet_url: null as string | null, image_url: '/product-images/rf/pre_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RF Cable Assemblies/AT-CA-NM-BNC-402-2000.png', created_at: '2024-01-01',
   },
   {
     id: 'ca-004', name: 'AT-CA-SMA-BNC-402-2000', slug: 'at-ca-sma-bnc-402-2000',
@@ -876,7 +876,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6 GHz',
     description: 'BNC male to SMA male cable assembly on PE dielectric coax, 2000mm. For test bench connections between BNC instruments and SMA antenna/DUT ports.',
     specs: { 'Frequency': 'DC–6 GHz', 'Connector A': 'BNC Male', 'Connector B': 'SMA Male', 'Cable': 'RG402', 'Dielectric Type': 'PE', 'Velocity of Propagation': '69.90', 'Voltage': '1900 Vrms', 'Insulators': 'PTFE', 'Impedance': '50 Ω' },
-    datasheet_url: null as string | null, image_url: '/product-images/rf/stand_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RF Cable Assemblies/AT-CA-SMA-BNC-402-2000.png', created_at: '2024-01-01',
   },
   {
     id: 'ca-005', name: 'AT-CA-SMAM-UFLF-200-D1.13', slug: 'at-ca-smam-uflf-200-d113',
@@ -884,7 +884,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6 GHz',
     description: 'SMA female / SMAP male to UFL female RF coaxial cable assembly. Cable diameter options 0.81/0.86/1.13/1.37/1.42mm with single or double shields.',
     specs: { 'Frequency': 'DC–6 GHz', 'Connector A': 'SMA Female / SMAP Male', 'Connector B': 'UFL Female', 'Cable Diameter': '0.81 / 0.86 / 1.13 / 1.37 / 1.42 mm', 'Cable Conductor': 'Standard', 'Cable Inner Conductor': 'Copper, Silver', 'Shields': 'Single / Double', 'Impedance': '50 Ω' },
-    datasheet_url: null as string | null, image_url: '/product-images/rf/stand_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RF Cable Assemblies/AT-CA-SMAM-UFLF-200-D1.13.png', created_at: '2024-01-01',
   },
   {
     id: 'ca-006', name: 'AT-CA-SMA-SMA-402-2000', slug: 'at-ca-sma-sma-402-2000',
@@ -892,7 +892,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6 GHz',
     description: 'UFL to UFL / SMA to SMA RF coaxial cable assembly on PE dielectric coax, 2000mm. 69.90% velocity for low-loss interconnects up to 6 GHz.',
     specs: { 'Frequency': 'DC–6 GHz', 'Connector A': 'SMA Male', 'Connector B': 'SMA Male', 'Cable': 'RG402', 'Dielectric Type': 'PE', 'Velocity': '69.90%', 'Voltage': '1900 Vrms', 'Impedance': '50 Ω' },
-    datasheet_url: null as string | null, image_url: '/product-images/rf/mixed_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RF Cable Assemblies/AT-CA-SMA-SMA-402-2000.png', created_at: '2024-01-01',
   },
   {
     id: 'ca-007', name: 'AT-CA-SMA-UFL-1.13-150', slug: 'at-ca-sma-ufl-113-150',
@@ -900,7 +900,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6 GHz',
     description: 'SMA to UFL / IPEX MHF (HSC comp) to SMA bulkhead cable assembly on 1.13mm coax, custom 150mm length. For internal module to panel antenna connections.',
     specs: { 'Frequency': 'DC–6 GHz', 'Connector A': 'SMA', 'Connector B': 'UFL / IPEX MHF', 'Cable': '1.13mm, 150mm', 'Insulation Resistance': '1000 MOhm-Km MAX', 'Conductor Resistance': '1400 Ohm-Km @ 20C', 'Dielectric Strength': 'AC 1.0 kV', 'Impedance': '50 Ω', 'Capacitance': '97 pF' },
-    datasheet_url: null as string | null, image_url: '/product-images/rf/mixed_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RF Cable Assemblies/AT-CA-SMA-UFL-1.13-150.png', created_at: '2024-01-01',
   },
   {
     id: 'ca-008', name: 'AT-CA-UFL-UFL-40-1.13', slug: 'at-ca-ufl-ufl-40-113',
@@ -908,7 +908,7 @@ export const sampleProducts = [
     frequency_range: 'DC–6 GHz',
     description: 'MMCX right-angle to SMA straight / UFL to UFL ultra-short jumper assembly on 1.13mm coax, 40mm. For board-to-board RF connections inside compact embedded systems.',
     specs: { 'Frequency': 'DC–6 GHz', 'Connector A': 'UFL / MMCX Right-Angle', 'Connector B': 'UFL / SMA Straight', 'Cable': '1.13mm, 40mm', 'Polarization': 'Vertical', 'Impedance': '50 Ω', 'VSWR': '≤ 1.6', 'Temperature': '-45 to 85°C' },
-    datasheet_url: null as string | null, image_url: '/product-images/rf/mixed_4.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/RF Cable Assemblies/AT-CA-UFL-UFL-40-1.13.png', created_at: '2024-01-01',
   },
 
   // ── POWER AMPLIFIERS ────────────────────────────────────────────────────────
@@ -918,7 +918,7 @@ export const sampleProducts = [
     frequency_range: '800–2500 MHz',
     description: '1W (30 dBm) RF power amplifier module for cellular band signal boosters and test equipment. SMA connectors.',
     specs: { 'Frequency': '800–2500 MHz', 'Output Power': '30 dBm (1W)', 'Gain': '30 dB', 'IP3': '+40 dBm', 'Supply': '+5V / 800mA', 'Connector': 'SMA Female', 'Efficiency': '25%' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/pa_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/POWER AMPLIFIER/AT-PA-1.0W.png', created_at: '2024-01-01',
   },
   {
     id: 'pa-002', name: 'AT-PA-2.0W', slug: 'at-pa-20w',
@@ -926,7 +926,7 @@ export const sampleProducts = [
     frequency_range: '800–2500 MHz',
     description: '2W (33 dBm) RF power amplifier for repeaters and signal boosters. Higher output stage with heat sink.',
     specs: { 'Frequency': '800–2500 MHz', 'Output Power': '33 dBm (2W)', 'Gain': '33 dB', 'Supply': '+5V / 1.5A', 'Connector': 'SMA Female', 'Efficiency': '28%', 'Cooling': 'Heat sink required' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/pa_2.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/POWER AMPLIFIER/AT-PA-2.0W.png', created_at: '2024-01-01',
   },
   {
     id: 'pa-003', name: 'AT-PA-LNA', slug: 'at-pa-lna',
@@ -934,7 +934,7 @@ export const sampleProducts = [
     frequency_range: '500–3000 MHz',
     description: 'Ultra-low noise amplifier module for receiver front-ends. 20 dB gain with < 1 dB noise figure covering 500 MHz to 3 GHz.',
     specs: { 'Frequency': '500–3000 MHz', 'Gain': '20 dB', 'Noise Figure': '< 1 dB', 'IP3 (Input)': '+10 dBm', 'Supply': '+3.3 or +5V / 80mA', 'Connector': 'SMA Female', 'P1dB': '+18 dBm' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/pa_3.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/POWER AMPLIFIER/AT-PA-LNA.png', created_at: '2024-01-01',
   },
 
   // ── WAVEGUIDE COMPONENTS ────────────────────────────────────────────────────
@@ -944,7 +944,7 @@ export const sampleProducts = [
     frequency_range: '8.2–12.4 GHz',
     description: 'WR-90 standard gain horn antenna for X-band (8.2–12.4 GHz). 20 dB gain, linear polarization, N Female connector. WR-90 flange, for radar, EMC testing, and microwave measurement.',
     specs: { 'Frequency': '8.2–12.4 GHz', 'Gain': '20 dB', 'Type': 'Standard Gain Horn', 'Connector': 'N Female', 'VSWR': '< 1.3:1', 'Polarization': 'Linear', 'Waveguide Size': 'WR-90', 'Impedance': '50 Ω' },
-    datasheet_url: null as string | null, image_url: '/product-images/micro/coup_1.png', created_at: '2024-01-01',
+    datasheet_url: null as string | null, image_url: '/product-images/AT-ANT-HORN-WR90-N(F).png', created_at: '2024-01-01',
   },
 ]
 

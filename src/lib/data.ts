@@ -66,9 +66,9 @@ const productMeta: Record<string, { product_name: string; pdf: string | null }> 
   'lpa-004': { product_name: 'Log-Periodic Wideband Antenna 500 MHz–6 GHz', pdf: '500-6000MHz.pdf' },
   // Duplexers
   'dup-001': { product_name: 'Cavity Duplexer DUPLEXER-136-174MHz)', pdf: 'Duplexer.pdf' },
-  'dup-002': { product_name: 'Cavity Duplexer AT-MD-4700 (Tx 4400–4520 / Rx 4640–4760 MHz)', pdf: 'Duplexer.pdf' },
-  'dup-003': { product_name: 'Cavity Duplexer AT-MD-4940 (Tx 4880–5000 / Rx 4640–4760 MHz)', pdf: 'Duplexer.pdf' },
-  'dup-004': { product_name: 'Cavity Duplexer AT-MDU-2875 (Tx 2680 / Rx 2510 MHz)', pdf: 'Duplexer.pdf' },
+  'dup-002': { product_name: 'Cavity Duplexer AT-MD-4700 (Tx 703–733 / Rx 758–788 MHz)', pdf: 'Duplexer.pdf' },
+  'dup-003': { product_name: 'Cavity Duplexer AT-MD-4940 (Tx 791–821 / Rx 832–862 MHz)', pdf: 'Duplexer.pdf' },
+  'dup-004': { product_name: 'Cavity Duplexer AT-MDU-2875 (Tx 1710–1785 / Rx 1805–1880 MHz)', pdf: 'Duplexer.pdf' },
   // Diplexers
   'dip-001': { product_name: 'RF Diplexer, Dual-Band Frequency Combiner', pdf: 'Duplexer.pdf' },
   // Power Splitters

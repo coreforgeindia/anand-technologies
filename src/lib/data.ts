@@ -482,9 +482,9 @@ export const sampleProducts = [
   {
     id: 'vhf-003', name: 'AT-ANT-VHF-BNC-5', slug: 'at-ant-vhf-bnc-5',
     category: 'vhf-uhf-antennas', short_spec: 'VHF Antenna, BNC Male, 5 dBi',
-    frequency_range: '136–174 MHz',
+    frequency_range: '433 MHz',
     description: 'VHF antenna with BNC male connector and vertical polarization for two-way radio and public safety communications.',
-    specs: { 'Frequency': '136–174 MHz', 'Gain': '5 dBi', 'Connector': 'BNC Male', 'Impedance': '50 Ω', 'VSWR': '< 1.5:1', 'Polarization': 'Vertical' },
+    specs: { 'Frequency': '433 MHz', 'Gain': '5 dBi', 'Connector': 'BNC Male', 'Impedance': '50 Ω', 'VSWR': '< 1.5:1', 'Polarization': 'Vertical' },
     datasheet_url: null as string | null, image_url: '/product-images/VHF-UHF Antenna/AT-ANT-VHF-BNC-5.png', created_at: '2024-01-01',
   },
   {

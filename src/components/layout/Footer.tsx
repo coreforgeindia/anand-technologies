@@ -99,31 +99,29 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col items-center gap-4">
-          <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-[#6B7280]">
-              © {new Date().getFullYear()} Anand Technologies. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6">
-              <Link href="/privacy" className="text-sm text-[#6B7280] hover:text-[#00B8B8] transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-sm text-[#6B7280] hover:text-[#00B8B8] transition-colors">
-                Terms of Use
-              </Link>
-            </div>
-          </div>
-          <p className="text-xs text-[#6B7280]/70 text-center">
-            Designed, Developed & Maintained by{' '}
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-[#6B7280]">
+            © {new Date().getFullYear()} Anand Technologies. All rights reserved.
+          </p>
+          <p className="text-sm text-[#6B7280]">
+            Designed, Developed &amp; Maintained by{' '}
             <a
               href="https://coreforgeindia.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent font-semibold hover:from-purple-400 hover:to-pink-400 transition-all"
+              className="text-[#00B8B8] font-semibold hover:text-[#00d4d4] transition-colors"
             >
               CoreForge
             </a>
           </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="text-sm text-[#6B7280] hover:text-[#00B8B8] transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-sm text-[#6B7280] hover:text-[#00B8B8] transition-colors">
+              Terms of Use
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

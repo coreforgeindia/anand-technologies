@@ -1,0 +1,25 @@
+tree 2051478f05f826597dbee586baa18ebdddfb80e2
+parent 8ea09384e972b6a3e1f4b4126a67b0d501232a07
+author TrevaOStech <tech@treva.in> 1781566630 +0530
+committer TrevaOStech <tech@treva.in> 1781566630 +0530
+
+fix(products): correct part names to exactly match the catalogue PDF
+
+Audited every product part number against the official Anand Technologies
+v2.0 catalogue and corrected mismatches:
+
+- VHF/UHF: all 6 models renamed to PDF (RPSMA-DR, SMAR-HHT, BNC-5.0,
+  SMA-DR, BNC440-7.0(SL), UHF-SMA210-3.5(SL)) with 136-174 / 400-470 MHz
+- GPS/GNSS: gps-002 -> MM174-2.8NM; gps-004/005 -> GPSGNSS-UFL1.13 names
+- Duplexers: AT-MD-* -> DUPLEXER-136-174 / 703-733 / 758-803 / 1710-1785MHz
+- Diplexer: AT-MD-Series -> OV-DIPLEXR-006072023 (TX 136-148 / RX 148-174)
+- Attenuators: -> AttenuatorFX-H2 / AttenuatorVA1 / AttenuatordkVA-90
+- Band Pass Filters: AT-MF-* -> AT-BPF-GSM900 / LTE1800 / 2400-WIFI
+- RF Cable Assemblies: all 8 renamed+specced to PDF (MHF4-SMABH, MMCX-TNCFBH,
+  NM-BNC-402, SMA-BNC-402, SMAM-UFLF, SMA-SMA-402, SMA-UFL, UFL-UFL)
+- Waveguide: WR-90 size corrected, removed invented -V2 duplicate
+- Couplers: removed invented -HP duplicate (PDF lists 2 couplers only)
+
+Product count 88 -> 86 (removed 2 non-catalogue duplicates).
+
+Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>

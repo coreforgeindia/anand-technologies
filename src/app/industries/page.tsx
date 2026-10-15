@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/seo'
 import IndustriesPage from './IndustriesPage'
 
-export const metadata: Metadata = {
-  title: 'Industries Served | Telecom, Defense, Automotive, IoT, Industrial',
+export const metadata = createPageMetadata({
+  title: 'RF Solutions Across Key Industries',
   description:
-    'Anand Technologies provides precision RF and microwave solutions for telecom operators, defense integrators, automotive OEMs, industrial automation, and IoT applications across India.',
-}
+    'Explore RF and microwave components for telecom networks, defense systems, automotive platforms, industrial automation, and IoT applications.',
+  path: '/industries',
+})
 
 export default function Page() {
   return <IndustriesPage />

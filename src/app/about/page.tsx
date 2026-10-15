@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/seo'
 import AboutPage from './AboutPage'
 
-export const metadata: Metadata = {
-  title: 'About Us | RF & Microwave Engineering Company India',
+export const metadata = createPageMetadata({
+  title: 'About Us',
   description:
-    'Anand Technologies is a Bengaluru-based RF and microwave engineering manufacturer with 20+ years of expertise. Serving telecom, defense, industrial, and IoT sectors across India.',
-}
+    'Learn about Anand Technologies, a Bengaluru RF and microwave engineering manufacturer serving telecom, defense, industrial, and IoT applications.',
+  path: '/about',
+})
 
 export default function Page() {
   return <AboutPage />

@@ -5,6 +5,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
+import { SITE_URL } from '@/lib/seo'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -17,13 +18,13 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://anandtech.in'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Anand Technologies | RF & Microwave Engineering India',
+    default: 'RF & Microwave Engineering India | Anand Technologies',
     template: '%s | Anand Technologies',
   },
   description:
-    "Anand Technologies is India's trusted RF and microwave engineering manufacturer. Precision filters, duplexers, antennas, and custom RF solutions for telecom, defense, automotive, and IoT applications.",
+    'RF filters, duplexers, antennas, and custom microwave components engineered in Bengaluru, India for telecom, defense, automotive, industrial, and IoT systems.',
   keywords: [
     'RF manufacturer India',
     'microwave components supplier India',
@@ -40,17 +41,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://anandtech.in',
+    url: SITE_URL,
     siteName: 'Anand Technologies',
-    title: 'Anand Technologies | RF & Microwave Engineering India',
+    title: 'RF & Microwave Engineering India | Anand Technologies',
     description:
-      "Precision RF and microwave components for mission-critical systems. Trusted by India's leading telecom, defense, and industrial organizations.",
+      'Precision RF and microwave components engineered in Bengaluru for telecom, defense, automotive, industrial, and IoT systems.',
+    images: [
+      {
+        url: `${SITE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: 'Anand Technologies RF and microwave engineering',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Anand Technologies | RF & Microwave Engineering India',
+    title: 'RF & Microwave Engineering India | Anand Technologies',
     description: 'Precision RF and microwave components for mission-critical systems.',
+    images: [`${SITE_URL}/opengraph-image`],
   },
+  alternates: { canonical: '/' },
   icons: {
     icon: '/favicon.jpg',
     shortcut: '/favicon.jpg',
@@ -64,9 +75,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const organizationStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Anand Technologies',
+    url: SITE_URL,
+    logo: `${SITE_URL}/favicon.jpg`,
+    description:
+      "RF and microwave engineering manufacturer serving telecom, defense, automotive, industrial, and IoT applications.",
+  }
+
+  const websiteStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Anand Technologies',
+    url: SITE_URL,
+    inLanguage: 'en-IN',
+  }
+
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
+        />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NJJSDJCL"

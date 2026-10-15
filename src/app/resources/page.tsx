@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/seo'
 import ResourcesPage from './ResourcesPage'
 
-export const metadata: Metadata = {
-  title: 'RF Engineering Resources | Technical Guides, Blogs & Application Notes',
+export const metadata = createPageMetadata({
+  title: 'RF Engineering Guides & Articles',
   description:
-    'Technical articles, RF engineering guides, and application notes from Anand Technologies. Filter selection, antenna gain, 5G RF challenges, and more.',
-}
+    'Read practical RF engineering guides and application notes about antennas, filters, 5G, RF cables, splitters, and microwave components.',
+  path: '/resources',
+})
 
 export default function Page() {
   return <ResourcesPage />

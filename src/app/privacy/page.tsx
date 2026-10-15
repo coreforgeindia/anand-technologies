@@ -1,10 +1,11 @@
-import type { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/seo'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Anand Technologies website and enquiry form.',
-}
+  description: 'Read how Anand Technologies handles information submitted through this website and its enquiry form.',
+  path: '/privacy',
+})
 
 export default function PrivacyPage() {
   return (

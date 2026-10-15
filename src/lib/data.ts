@@ -887,6 +887,7 @@ export const resourceArticles = [
   {
     slug: 'rf-filter-selection-guide',
     title: 'RF Filter Selection Guide: Bandpass, Lowpass, and Notch Filters Explained',
+    seoTitle: 'RF Filter Selection Guide for Engineers',
     excerpt: 'A technical guide for RF engineers on selecting the right filter topology for telecom, defense, and industrial applications.',
     category: 'RF Guides',
     readTime: '8 min read',
@@ -922,6 +923,7 @@ Contact our engineering team to discuss your specific filter requirement.
   {
     slug: 'antenna-gain-selection-defense',
     title: 'High-Gain vs. Low-Gain Antennas: Choosing the Right Solution for Defense and Telecom',
+    seoTitle: 'High-Gain vs. Low-Gain Antennas',
     excerpt: 'Practical guidance on antenna gain selection, beam characteristics, and polarization for critical communication links.',
     category: 'Application Notes',
     readTime: '6 min read',
@@ -956,6 +958,7 @@ Contact us to discuss antenna selection for your application.
   {
     slug: '5g-nr-rf-challenges',
     title: '5G NR RF Challenges: Filtering, Duplexing, and Interference Management at Scale',
+    seoTitle: '5G NR RF Challenges',
     excerpt: 'Technical analysis of 5G NR RF challenges in sub-6 GHz and mmWave bands, and how precision components address them.',
     category: 'Technical Blogs',
     readTime: '10 min read',
@@ -980,6 +983,96 @@ Anand Technologies designs and tests all base station components to IEC 62037:
 - **Antennas**: PIM < –150 dBc @ 2×43 dBm
 
 Contact us to discuss your 5G RF component requirements.
+    `,
+  },
+  {
+    slug: 'rf-cable-assembly-selection-guide',
+    title: 'How to Choose an RF Cable Assembly: Connectors, Cable Type, and Length',
+    seoTitle: 'RF Cable Assembly Selection Guide',
+    excerpt: 'A practical checklist for specifying RF coaxial cable assemblies by frequency, connectors, length, loss, environment, and test needs.',
+    category: 'RF Guides',
+    readTime: '7 min read',
+    date: '2026-10-15',
+    content: `
+## Start with the complete signal path
+
+An RF cable assembly is not just a cable with connectors. Its electrical performance depends on the cable, both connector interfaces, assembly workmanship, and how it is installed. Define the operating frequency range, system impedance, power level, and route before selecting a part.
+
+### Match the connectors at both ends
+
+Record the connector series, gender, mounting style, and orientation for each interface. SMA, BNC, TNC, N-type, MMCX, and miniature board connectors are not interchangeable, even when their dimensions appear similar. Confirm the mating interface against the equipment drawing and avoid adapters where a direct assembly is practical.
+
+### Select cable and length for the operating band
+
+Cable attenuation generally increases with frequency and length. Compare the supplier's loss data at the highest frequency of interest, then include connector and adapter losses in the link budget. Use the shortest practical route without pulling the cable taut or violating its minimum bend radius. For a flexible installation, check the cable's bend and movement ratings rather than relying on a static datasheet value.
+
+### Check electrical and environmental requirements
+
+Confirm nominal impedance (commonly 50 ohms in RF systems), return loss or VSWR, shielding, and power handling at the actual frequency and temperature. For outdoor or panel-mounted equipment, specify the required sealing, jacket, temperature range, and strain relief. A connector's IP rating applies to the correctly mated interface and installed assembly, not automatically to every cable configuration.
+
+### Validate the finished assembly
+
+For critical paths, ask for the test method and acceptance limits for insertion loss, return loss, and continuity. Inspect connector alignment, cable routing, and torque during installation. For a custom assembly, provide both mating connector details, cable length reference points, frequency range, environment, and quantity when requesting a quotation.
+    `,
+  },
+  {
+    slug: 'rf-power-splitter-vs-coupler',
+    title: 'RF Power Splitters and Directional Couplers: How to Choose the Right Component',
+    seoTitle: 'RF Splitter vs. Coupler Guide',
+    excerpt: 'Understand the different jobs of RF power splitters and directional couplers, and compare port count, coupling, isolation, and power ratings.',
+    category: 'Application Notes',
+    readTime: '6 min read',
+    date: '2026-10-15',
+    content: `
+## Two components with different jobs
+
+An RF power splitter divides an input signal among two or more output ports. A directional coupler samples a defined portion of travelling power while allowing most of the signal to continue along the main line. They can look similar in a catalog, but they solve different measurement and distribution problems.
+
+### When to use a power splitter
+
+Use a splitter when one source must feed multiple receiver, antenna, or test paths. An ideal equal two-way split has a 3 dB division loss per output; a real component has additional insertion loss. Check the number of output ports, amplitude and phase balance, isolation between outputs, bandwidth, impedance, and the input power limit.
+
+### When to use a directional coupler
+
+Use a coupler to sample forward or reflected power for monitoring, feedback, or measurement without routing the full signal through a measurement instrument. Its coupling value describes the nominal difference between input power and sampled-port power. Also compare directivity, insertion loss, frequency range, connector type, and power handling.
+
+### Selection checklist
+
+- Define the frequency range and nominal system impedance.
+- Decide whether the requirement is signal distribution or power sampling.
+- Calculate the available output or sampled power, including losses.
+- Check isolation, balance, directivity, and termination requirements.
+- Confirm connector interfaces, mounting, and operating environment.
+
+Use the device datasheet for guaranteed values and confirm that the component's maximum input power and termination arrangement match the system. If the path is safety-critical or high power, review the complete operating conditions with the component supplier before integration.
+    `,
+  },
+  {
+    slug: 'rf-lightning-arrestor-installation-guide',
+    title: 'RF Lightning Arrestors: Choosing and Installing Coaxial Surge Protection',
+    seoTitle: 'RF Lightning Arrestor Guide',
+    excerpt: 'Learn where coaxial RF lightning arrestors fit in an antenna feed, what specifications to check, and how grounding affects protection.',
+    category: 'Technical Blogs',
+    readTime: '7 min read',
+    date: '2026-10-15',
+    content: `
+## Protect the antenna feed without overlooking the installation
+
+A coaxial RF lightning arrestor provides a defined path for transient energy at an antenna feed entry point. It is one part of a broader grounding and bonding system; choosing a device alone does not make an installation lightning-proof.
+
+### Check electrical compatibility first
+
+Match the arrestor to the system impedance, connector series, frequency range, and normal RF power. Review insertion loss, VSWR or return loss, and the device's specified surge behavior. Confirm whether the design is DC-pass or DC-block and whether that matches the antenna, bias tee, or remote radio configuration.
+
+### Plan the location and grounding
+
+Install the protector close to the point where the coax enters the protected equipment area, following the manufacturer's instructions and applicable electrical codes. Bond its grounding point to the site's grounding system with a short, direct conductor of the specified type and size. Avoid sharp bends and long, indirect grounding paths. Keep the feedline routing and bonding arrangement consistent with the overall site protection design.
+
+### Verify the complete assembly
+
+Use compatible connectors and weatherproof outdoor interfaces as required. After installation, inspect bonds and connectors, then test feedline continuity and RF performance using appropriate procedures. Replace a protector if inspection or testing indicates damage; some devices may require replacement after a significant surge event.
+
+For a site-specific installation, coordinate the coaxial protection plan with a qualified installer and the facility's grounding design. Always follow local electrical codes and the device manufacturer's installation and maintenance instructions.
     `,
   },
 ]

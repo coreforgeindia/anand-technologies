@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/seo'
 import HeroSection from '@/components/home/HeroSection'
 import StatsStrip from '@/components/home/StatsStrip'
 import ProductCategoriesGrid from '@/components/home/ProductCategoriesGrid'
@@ -6,11 +6,12 @@ import WhyChooseUs from '@/components/home/WhyChooseUs'
 import IndustriesServed from '@/components/home/IndustriesServed'
 import CTASection from '@/components/home/CTASection'
 
-export const metadata: Metadata = {
-  title: 'RF & Microwave Engineering India | Anand Technologies',
+export const metadata = createPageMetadata({
+  title: 'RF & Microwave Engineering India',
   description:
-    "India's trusted RF and microwave engineering manufacturer. Precision filters, duplexers, antennas, and custom RF solutions for telecom, defense, automotive, and IoT. Bengaluru-based.",
-}
+    "Anand Technologies designs and manufactures RF filters, duplexers, antennas, and custom microwave components in Bengaluru, India for telecom, defense, automotive, and IoT systems.",
+  path: '/',
+})
 
 export default function HomePage() {
   return (

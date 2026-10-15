@@ -4,19 +4,14 @@ import { useState, useEffect, useRef, Suspense } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { Search, ArrowRight, ChevronRight, ChevronDown, X } from 'lucide-react'
+import { Search, ArrowRight, ChevronDown, X } from 'lucide-react'
 import { productCategories, sampleProducts, getProductName } from '@/lib/data'
 
-function ProductsContent() {
-  const searchParams = useSearchParams()
-  const categoryParam = searchParams.get('category') || ''
-
+function ProductsContent({ categoryParam }: { categoryParam: string }) {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState(categoryParam)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => { setActiveCategory(categoryParam) }, [categoryParam])
 
   useEffect(() => {
     const handle = (e: MouseEvent) => {
@@ -43,30 +38,6 @@ function ProductsContent() {
 
   return (
     <>
-      {/* Page header */}
-      <section className="py-16 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex items-center gap-2 text-sm text-[#6B7280] mb-4">
-            <Link href="/" className="hover:text-[#00B8B8] transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-[#0A0A0A]">Products</span>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 bg-[#E0F9F9] text-[#00B8B8]">
-              Product Catalog
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-[#0A0A0A] mb-4">RF & Microwave Products</h1>
-            <p className="text-lg text-[#6B7280] max-w-2xl">
-              Precision-engineered RF and microwave components across 400 MHz to 40 GHz. Browse by category or search by specification.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Filter + Search — compact pill bar */}
       <section className="py-4 bg-[#F5F7F8] border-b border-gray-100 sticky top-16 lg:top-20 z-30">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -242,7 +213,7 @@ function ProductsContent() {
             className="mt-16 bg-[#0A0A0A] rounded-2xl p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6"
           >
             <div>
-              <h3 className="text-xl font-bold mb-2">Don't see exactly what you need?</h3>
+              <h3 className="text-xl font-bold mb-2">Don&apos;t see exactly what you need?</h3>
               <p className="text-[#6B7280] text-sm">
                 We engineer custom RF components to your exact specification. Share your requirement and our team will respond within 24 hours.
               </p>
@@ -261,10 +232,16 @@ function ProductsContent() {
   )
 }
 
+function ProductsWithSearchParams() {
+  const searchParams = useSearchParams()
+  const categoryParam = searchParams.get('category') || ''
+  return <ProductsContent key={categoryParam} categoryParam={categoryParam} />
+}
+
 export default function ProductsPage() {
   return (
     <Suspense fallback={<div className="py-20 text-center text-[#6B7280]">Loading products...</div>}>
-      <ProductsContent />
+      <ProductsWithSearchParams />
     </Suspense>
   )
 }

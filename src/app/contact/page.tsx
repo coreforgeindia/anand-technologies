@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/seo'
 import ContactPage from './ContactPage'
 
-export const metadata: Metadata = {
-  title: 'Contact & Enquiry | RF Component Sales, Bengaluru',
+export const metadata = createPageMetadata({
+  title: 'Contact Us',
   description:
-    'Contact Anand Technologies for RF and microwave component enquiries. Request a quote, speak to our sales team, or start a custom engineering project. Bengaluru, India.',
-}
+    'Contact Anand Technologies in Bengaluru for RF and microwave component enquiries, product quotations, and custom engineering projects.',
+  path: '/contact',
+})
 
 export default function Page() {
   return <ContactPage />

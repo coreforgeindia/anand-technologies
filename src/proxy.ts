@@ -12,7 +12,14 @@ export function proxy(request: NextRequest) {
   const requestHostname = requestHost.split(':')[0].toLowerCase()
   let shouldRedirect = false
 
-  if (requestProtocol === 'http:') {
+  const isLocalhost =
+    requestHostname === 'localhost' ||
+    requestHostname === '127.0.0.1' ||
+    requestHostname.startsWith('192.168.') ||
+    requestHostname.startsWith('10.') ||
+    requestHostname.endsWith('.local')
+
+  if (requestProtocol === 'http:' && !isLocalhost && process.env.NODE_ENV !== 'development') {
     canonicalUrl.protocol = 'https:'
     shouldRedirect = true
   }

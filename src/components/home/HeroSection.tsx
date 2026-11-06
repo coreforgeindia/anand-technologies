@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, ChevronDown, Zap, Shield, Cpu } from 'lucide-react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 
 const tags = ['Telecom', '5G/6G', 'Defense', 'Automotive', 'Industrial', 'IoT']
 
@@ -35,17 +35,6 @@ export default function HeroSection() {
 
       <div className="relative w-full max-w-7xl mx-auto px-4 md:px-8 py-8 lg:py-12">
         <div className="max-w-4xl">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00B8B8]/30 bg-[#E0F9F9] text-[#00B8B8] text-sm font-medium mb-5"
-          >
-            <Zap className="w-3.5 h-3.5" />
-            India's Precision RF & Microwave Engineering Partner
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -53,12 +42,10 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0A0A0A] leading-[1.1] tracking-tight mb-5"
           >
-            Precision RF &{' '}
+            Antenna &amp; RF Manufacturer in{' '}
             <span className="relative">
-              <span style={{ color: '#00B8B8' }}>Microwave Engineering</span>
+              <span style={{ color: '#00B8B8' }}>Bengaluru, India</span>
             </span>
-            <br />
-            for Mission-Critical Systems
           </motion.h1>
 
           {/* Subtext */}

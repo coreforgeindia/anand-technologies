@@ -2,10 +2,18 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ChevronRight, Clock, Tag, ArrowRight, ArrowLeft } from 'lucide-react'
+import { Clock, Tag, ArrowRight, ArrowLeft } from 'lucide-react'
 import { resourceArticles } from '@/lib/data'
 
 type Article = (typeof resourceArticles)[0]
+
+function headingId(heading: string) {
+  return heading
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s-]/gu, '')
+    .trim()
+    .replace(/\s+/g, '-')
+}
 
 const categoryColors: Record<string, { bg: string; text: string }> = {
   'RF Guides': { bg: '#E0F9F9', text: '#00B8B8' },
@@ -16,6 +24,12 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
 export default function ArticlePage({ article }: { article: Article }) {
   const catColor = categoryColors[article.category] || categoryColors['Technical Blogs']
   const related = resourceArticles.filter((a) => a.slug !== article.slug).slice(0, 2)
+  const tableOfContents = article.content
+    .split('\n')
+    .filter((line) => line.startsWith('## '))
+    .map((line) => line.slice(3))
+  const faqs = article.faqs ?? []
+  const relatedProducts = article.relatedProducts ?? []
 
   const renderMarkdown = (content: string) => {
     const lines = content.trim().split('\n')
@@ -26,9 +40,9 @@ export default function ArticlePage({ article }: { article: Article }) {
       const line = lines[i]
 
       if (line.startsWith('## ')) {
-        elements.push(<h2 key={i} className="text-2xl font-bold text-[#0A0A0A] mt-10 mb-4">{line.slice(3)}</h2>)
+        elements.push(<h2 id={headingId(line.slice(3))} key={i} className="text-2xl font-bold text-[#0A0A0A] mt-10 mb-4">{line.slice(3)}</h2>)
       } else if (line.startsWith('### ')) {
-        elements.push(<h3 key={i} className="text-lg font-bold text-[#0A0A0A] mt-6 mb-3">{line.slice(4)}</h3>)
+        elements.push(<h3 id={headingId(line.slice(4))} key={i} className="text-lg font-bold text-[#0A0A0A] mt-6 mb-3">{line.slice(4)}</h3>)
       } else if (line.startsWith('**') && line.endsWith('**') && line.includes(':')) {
         const text = line.replace(/\*\*/g, '')
         const [bold, ...rest] = text.split(':')
@@ -102,19 +116,6 @@ export default function ArticlePage({ article }: { article: Article }) {
 
   return (
     <>
-      {/* Breadcrumb */}
-      <section className="py-6 bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 md:px-8">
-          <div className="flex items-center gap-2 text-sm text-[#6B7280]">
-            <Link href="/" className="hover:text-[#00B8B8]">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <Link href="/resources" className="hover:text-[#00B8B8]">Resources</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-[#0A0A0A] line-clamp-1">{article.title}</span>
-          </div>
-        </div>
-      </section>
-
       {/* Article */}
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 md:px-8">
@@ -148,9 +149,52 @@ export default function ArticlePage({ article }: { article: Article }) {
                 {article.excerpt}
               </p>
 
+              <nav aria-label="Table of contents" className="mb-10 rounded-xl border border-gray-200 bg-[#F5F7F8] p-5">
+                <h2 className="text-base font-bold text-[#0A0A0A] mb-3">In this guide</h2>
+                <ol className="list-decimal pl-5 space-y-2">
+                  {tableOfContents.map((heading) => (
+                    <li key={heading} className="text-sm text-[#2A2A2A]">
+                      <a href={`#${headingId(heading)}`} className="hover:text-[#00B8B8]">
+                        {heading}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+
               <div className="prose-custom">
                 {renderMarkdown(article.content)}
               </div>
+
+              {relatedProducts.length > 0 && (
+                <section className="mt-10">
+                  <h2 className="text-xl font-bold text-[#0A0A0A] mb-4">Related RF products</h2>
+                  <ul className="flex flex-wrap gap-3">
+                    {relatedProducts.map((product) => (
+                      <li key={product.href}>
+                        <Link
+                          href={product.href}
+                          className="inline-flex rounded-full border border-[#00B8B8]/30 bg-[#E0F9F9] px-4 py-2 text-sm font-medium text-[#007f7f] hover:bg-[#ccf3f3]"
+                        >
+                          {product.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
+              {faqs.length > 0 && (
+                <section className="mt-12 border-t border-gray-100 pt-8">
+                  <h2 className="text-2xl font-bold text-[#0A0A0A] mb-5">Frequently asked questions</h2>
+                  {faqs.map((faq) => (
+                    <div key={faq.question} className="mb-6">
+                      <h3 className="text-lg font-bold text-[#0A0A0A] mb-2">{faq.question}</h3>
+                      <p className="text-base text-[#2A2A2A] leading-relaxed">{faq.answer}</p>
+                    </div>
+                  ))}
+                </section>
+              )}
 
               {/* Author */}
               <div className="mt-12 pt-8 border-t border-gray-100 flex items-start gap-4">

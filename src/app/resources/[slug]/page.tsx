@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { resourceArticles } from '@/lib/data'
 import { createPageMetadata, SITE_URL } from '@/lib/seo'
 import ArticlePage from './ArticlePage'
+import Breadcrumbs from '@/components/layout/Breadcrumbs'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: article.excerpt,
     path: `/resources/${article.slug}`,
     openGraphType: 'article',
+    keywords: article.seoKeywords,
   })
 }
 
@@ -28,7 +30,7 @@ export default async function Page({ params }: Props) {
   if (!article) notFound()
   const articleStructuredData = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': 'Article',
     headline: article.title,
     description: article.excerpt,
     datePublished: article.date,
@@ -37,14 +39,40 @@ export default async function Page({ params }: Props) {
     publisher: { '@type': 'Organization', name: 'Anand Technologies', url: SITE_URL },
     mainEntityOfPage: `${SITE_URL}/resources/${article.slug}`,
     inLanguage: 'en-IN',
+    image: `${SITE_URL}/opengraph-image`,
   }
+  const faqs = article.faqs ?? []
+  const faqStructuredData = faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }
+    : null
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Resources', href: '/resources' },
+          { label: article.title, href: `/resources/${article.slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData).replace(/</g, '\\u003c') }}
       />
+      {faqStructuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData).replace(/</g, '\\u003c') }}
+        />
+      )}
       <ArticlePage article={article} />
     </>
   )

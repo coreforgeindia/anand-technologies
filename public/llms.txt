@@ -1,0 +1,34 @@
+# Anand Technologies
+
+Anand Technologies designs and manufactures RF and microwave components in Bengaluru, Karnataka, India. The company supports telecom, defence, aerospace, automotive, industrial, and IoT engineering teams with standard and custom components.
+
+## Products and capabilities
+
+- Antennas: VHF/UHF, GSM/LTE, WiFi, GPS/GNSS, RFID, high-gain, and log-periodic
+- RF components: band-pass filters, cavity duplexers, diplexers, couplers, splitters, attenuators, lightning arrestors, and cable assemblies
+- Custom engineering: requirement review, RF design, prototyping, testing, and production support
+
+## Key pages
+
+- [Home](https://anandtechnologies.co.in/)
+- [Products](https://anandtechnologies.co.in/products)
+- [Industries](https://anandtechnologies.co.in/industries)
+- [Custom solutions](https://anandtechnologies.co.in/solutions)
+- [RF engineering resources](https://anandtechnologies.co.in/resources)
+- [Contact and quote requests](https://anandtechnologies.co.in/contact)
+- [About Anand Technologies](https://anandtechnologies.co.in/about)
+
+## Engineering guides
+
+- [Choosing an antenna manufacturer in India](https://anandtechnologies.co.in/resources/choose-antenna-manufacturer-india)
+- [RF antenna types explained](https://anandtechnologies.co.in/resources/types-of-rf-antennas-vhf-uhf-gsm-yagi)
+- [Cavity duplexers vs diplexers](https://anandtechnologies.co.in/resources/cavity-duplexers-vs-diplexers)
+- [RF band-pass filter specifications](https://anandtechnologies.co.in/resources/rf-band-pass-filter-specifications-telecom-defense)
+- [Custom microwave components for defence and aerospace](https://anandtechnologies.co.in/resources/custom-microwave-components-defense-aerospace-india)
+- [RF components for IoT, automotive and industry](https://anandtechnologies.co.in/resources/rf-components-iot-automotive-industrial)
+
+## Contact
+
+Address: 21, 6th Main Road, Magadi Main Road, Srigandhada Kaval, Sunkadakatte, Bengaluru, Karnataka 560091, India  
+Phone: +91 87629 21780  
+Email: smetri@anandtechnologies.co.in

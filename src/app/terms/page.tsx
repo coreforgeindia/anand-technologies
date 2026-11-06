@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { createPageMetadata } from '@/lib/seo'
+import Breadcrumbs from '@/components/layout/Breadcrumbs'
 
 export const metadata = createPageMetadata({
-  title: 'Website Terms of Use',
+  title: 'Website Terms of Use | Anand Technologies',
   description:
     'Read the terms for using the Anand Technologies website, including product information, enquiries, and external links.',
   path: '/terms',
@@ -10,7 +11,9 @@ export const metadata = createPageMetadata({
 
 export default function TermsPage() {
   return (
-    <section className="py-16 bg-white">
+    <>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Terms of Use', href: '/terms' }]} />
+      <section className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 md:px-8">
         <h1 className="text-3xl font-bold text-[#0A0A0A] mb-6">Website Terms of Use</h1>
         <p className="text-sm text-[#6B7280] mb-8">Last updated: October 2026</p>
@@ -45,6 +48,7 @@ export default function TermsPage() {
           </p>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

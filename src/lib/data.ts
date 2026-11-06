@@ -1,3 +1,5 @@
+import { seoResourceArticles, type ResourceArticle } from './seo-resource-articles'
+
 // Datasheets are served as static files from /public/datasheets/
 export function datasheetUrl(filename: string): string | null {
   if (!filename) return null
@@ -883,7 +885,7 @@ export const sampleProducts = [
   },
 ]
 
-export const resourceArticles = [
+export const resourceArticles: ResourceArticle[] = [
   {
     slug: 'rf-filter-selection-guide',
     title: 'RF Filter Selection Guide: Bandpass, Lowpass, and Notch Filters Explained',
@@ -1075,4 +1077,5 @@ Use compatible connectors and weatherproof outdoor interfaces as required. After
 For a site-specific installation, coordinate the coaxial protection plan with a qualified installer and the facility's grounding design. Always follow local electrical codes and the device manufacturer's installation and maintenance instructions.
     `,
   },
+  ...seoResourceArticles,
 ]

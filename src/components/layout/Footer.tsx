@@ -35,7 +35,7 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Products</h4>
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Products</h2>
             <ul className="space-y-2.5">
               {productCategories.map((cat) => (
                 <li key={cat.slug}>
@@ -52,7 +52,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Company</h4>
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Company</h2>
             <ul className="space-y-2.5">
               {[
                 { label: 'About Us', href: '/about' },
@@ -72,14 +72,15 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Contact</h4>
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Contact</h2>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#00B8B8] mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-[#6B7280]">
                   Anand Technologies,<br />
-                  21, 6th Main Road, Magadi Main Rd,<br />
-                  Sunkadakatte, Bengaluru,<br />
+                  21, 6th Main Road, Magadi Main Road,<br />
+                  Srigandhada Kaval, Sunkadakatte,<br />
+                  Bengaluru,<br />
                   Karnataka 560091, India
                 </span>
               </li>

@@ -9,6 +9,8 @@ const canonicalSiteUrl = 'https://anandtechnologies.co.in'
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
   async redirects() {
     return [
       ...legacyProductRedirects.map(({ source, destination }) => ({
@@ -39,12 +41,6 @@ const nextConfig: NextConfig = {
       {
         source: '/about-us',
         destination: `${canonicalSiteUrl}/about`,
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.anandtechnologies.co.in' }],
-        destination: `${canonicalSiteUrl}/:path*`,
         permanent: true,
       },
     ]

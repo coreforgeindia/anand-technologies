@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight, Clock, Tag } from 'lucide-react'
+import { ArrowRight, Clock, Tag } from 'lucide-react'
 import { resourceArticles } from '@/lib/data'
 
 const categoryColors: Record<string, { bg: string; text: string }> = {
@@ -17,11 +17,6 @@ export default function ResourcesPage() {
       {/* Header */}
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex items-center gap-2 text-sm text-[#6B7280] mb-6">
-            <Link href="/" className="hover:text-[#00B8B8]">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-[#0A0A0A]">Resources</span>
-          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { sampleProducts, productCategories, getDatasheetUrl, getProductName } from '@/lib/data'
 import { createPageMetadata, SITE_URL } from '@/lib/seo'
 import ProductDetailPage from './ProductDetailPage'
+import Breadcrumbs from '@/components/layout/Breadcrumbs'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -37,6 +38,7 @@ export default async function Page({ params }: Props) {
     product_name: getProductName(product.id) || product.short_spec,
     datasheet_url: getDatasheetUrl(product.id),
   }
+  const breadcrumbLabel = getProductName(product.id) || product.short_spec
   const productStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -50,6 +52,13 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Products', href: '/products' },
+          { label: breadcrumbLabel, href: `/products/${product.slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productStructuredData) }}

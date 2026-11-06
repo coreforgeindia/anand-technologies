@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { Viewport } from 'next'
 import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
@@ -19,55 +20,32 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: 'RF & Microwave Engineering India | Anand Technologies',
-    template: '%s | Anand Technologies',
-  },
+  title: 'Anand Technologies | RF Manufacturer in Bengaluru',
   description:
     'RF filters, duplexers, antennas, and custom microwave components engineered in Bengaluru, India for telecom, defense, automotive, industrial, and IoT systems.',
-  keywords: [
-    'RF manufacturer India',
-    'microwave components supplier India',
-    'custom RF solutions',
-    'antenna manufacturer India',
-    'RF filters India',
-    'duplexers India',
-    'telecom RF components',
-    'defense RF manufacturer',
-    'Bengaluru RF engineering',
-  ],
   authors: [{ name: 'Anand Technologies' }],
   creator: 'Anand Technologies',
-  openGraph: {
-    type: 'website',
-    locale: 'en_IN',
-    url: SITE_URL,
-    siteName: 'Anand Technologies',
-    title: 'RF & Microwave Engineering India | Anand Technologies',
-    description:
-      'Precision RF and microwave components engineered in Bengaluru for telecom, defense, automotive, industrial, and IoT systems.',
-    images: [
-      {
-        url: `${SITE_URL}/opengraph-image`,
-        width: 1200,
-        height: 630,
-        alt: 'Anand Technologies RF and microwave engineering',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'RF & Microwave Engineering India | Anand Technologies',
-    description: 'Precision RF and microwave components for mission-critical systems.',
-    images: [`${SITE_URL}/opengraph-image`],
-  },
-  alternates: { canonical: '/' },
   icons: {
     icon: '/favicon.jpg',
     shortcut: '/favicon.jpg',
     apple: '/favicon.jpg',
   },
-  robots: { index: true, follow: true },
+  manifest: '/manifest.webmanifest',
+  alternates: {
+    canonical: '/',
+    languages: { 'en-IN': '/', 'x-default': '/' },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#00B8B8',
 }
 
 export default function RootLayout({
@@ -75,35 +53,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const organizationStructuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Anand Technologies',
-    url: SITE_URL,
-    logo: `${SITE_URL}/favicon.jpg`,
-    description:
-      "RF and microwave engineering manufacturer serving telecom, defense, automotive, industrial, and IoT applications.",
-  }
-
-  const websiteStructuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Anand Technologies',
-    url: SITE_URL,
-    inLanguage: 'en-IN',
-  }
-
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en-IN" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
-        />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NJJSDJCL"
@@ -112,7 +64,7 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <Script id="gtm-script" strategy="beforeInteractive">
+        <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

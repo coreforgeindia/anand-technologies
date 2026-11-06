@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import {
-  ChevronRight, MapPin, Mail, Phone, CheckCircle2, ArrowRight, Building2, Clock
+  MapPin, Mail, Phone, CheckCircle2, ArrowRight, Building2, Clock
 } from 'lucide-react'
 import { productCategories } from '@/lib/data'
 
@@ -274,11 +274,6 @@ export default function ContactPage() {
       {/* Header */}
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex items-center gap-2 text-sm text-[#6B7280] mb-6">
-            <Link href="/" className="hover:text-[#00B8B8]">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-[#0A0A0A]">Contact</span>
-          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -332,9 +327,9 @@ export default function ContactPage() {
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#00B8B8' }} />
                   <address className="not-italic leading-relaxed">
                     Anand Technologies<br />
-                    21, 6th Main Road, Magadi Main Rd,<br />
-                    near Ashrya Hospital, Srigandhada Kaval,<br />
-                    Sunkadakatte, Bengaluru,<br />
+                    21, 6th Main Road, Magadi Main Road,<br />
+                    Srigandhada Kaval, Sunkadakatte,<br />
+                    Bengaluru,<br />
                     Karnataka 560091, India
                   </address>
                 </div>

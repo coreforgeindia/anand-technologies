@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight, Download, Mail, Phone, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, Download, Mail, Phone, CheckCircle2 } from 'lucide-react'
 import DatasheetModal from '@/components/DatasheetModal'
 
 type Props = {
@@ -17,6 +17,7 @@ type Props = {
 function WatermarkedImage({ src, alt }: { src: string; alt: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [loaded, setLoaded] = useState(false)
+  const accessibleAlt = alt.slice(0, 125)
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current
@@ -26,6 +27,8 @@ function WatermarkedImage({ src, alt }: { src: string; alt: string }) {
 
     const img = new window.Image()
     img.crossOrigin = 'anonymous'
+    img.alt = accessibleAlt
+    img.decoding = 'async'
     img.onload = () => {
       // Scale to fit within 720×440 max while keeping aspect ratio
       const maxW = 720
@@ -59,14 +62,33 @@ function WatermarkedImage({ src, alt }: { src: string; alt: string }) {
       setLoaded(true)
     }
     img.src = encodeURI(src)
-  }, [src])
+  }, [src, accessibleAlt])
 
-  useEffect(() => { draw() }, [draw])
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    if (!('IntersectionObserver' in window)) {
+      draw()
+      return
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        draw()
+        observer.disconnect()
+      }
+    }, { rootMargin: '200px' })
+    observer.observe(canvas)
+
+    return () => observer.disconnect()
+  }, [draw])
 
   return (
     <canvas
       ref={canvasRef}
-      aria-label={alt}
+      width={720}
+      height={440}
+      aria-label={accessibleAlt}
       onContextMenu={(e) => e.preventDefault()}
       className="object-contain max-h-52 max-w-full"
       style={{ display: loaded ? 'block' : 'none' }}
@@ -80,27 +102,6 @@ export default function ProductDetailPage({ product, category }: Props) {
 
   return (
     <>
-      {/* Breadcrumb */}
-      <section className="py-6 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex items-center gap-2 text-sm text-[#6B7280]">
-            <Link href="/" className="hover:text-[#00B8B8] transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <Link href="/products" className="hover:text-[#00B8B8] transition-colors">Products</Link>
-            <ChevronRight className="w-4 h-4" />
-            {category && (
-              <>
-                <Link href={`/products?category=${category.slug}`} className="hover:text-[#00B8B8] transition-colors">
-                  {category.name}
-                </Link>
-                <ChevronRight className="w-4 h-4" />
-              </>
-            )}
-            <span className="text-[#0A0A0A] font-medium">{product.name}</span>
-          </div>
-        </div>
-      </section>
-
       {/* Product hero - Tab 1: Overview */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -124,7 +125,9 @@ export default function ProductDetailPage({ product, category }: Props) {
                 </div>
 
                 {/* Product name + part number */}
-                <h1 className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-1">{product.product_name}</h1>
+                <h1 className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-1">
+                  {product.product_name} ({product.name})
+                </h1>
                 <p className="text-base text-[#6B7280] font-medium mb-2">
                   Part Number: <span className="font-mono font-semibold text-[#2A2A2A]">{product.name}</span>
                 </p>
@@ -133,7 +136,10 @@ export default function ProductDetailPage({ product, category }: Props) {
                 {/* Product image with canvas watermark baked in */}
                 {product.image_url && (
                   <div className="mb-8 rounded-2xl border border-gray-100 overflow-hidden bg-[#F5F7F8] flex items-center justify-center p-6" style={{ minHeight: 220 }}>
-                    <WatermarkedImage src={product.image_url} alt={product.name} />
+                    <WatermarkedImage
+                      src={product.image_url}
+                      alt={`${product.product_name} RF component for ${product.frequency_range}`}
+                    />
                   </div>
                 )}
 

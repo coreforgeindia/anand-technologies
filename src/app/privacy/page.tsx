@@ -1,15 +1,18 @@
 import { createPageMetadata } from '@/lib/seo'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/layout/Breadcrumbs'
 
 export const metadata = createPageMetadata({
-  title: 'Privacy Policy',
+  title: 'Privacy Policy | Anand Technologies',
   description: 'Read how Anand Technologies handles information submitted through this website and its enquiry form.',
   path: '/privacy',
 })
 
 export default function PrivacyPage() {
   return (
-    <section className="py-16 bg-white">
+    <>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy', href: '/privacy' }]} />
+      <section className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 md:px-8">
         <h1 className="text-3xl font-bold text-[#0A0A0A] mb-6">Privacy Policy</h1>
         <p className="text-sm text-[#6B7280] mb-8">Last updated: May 2026</p>
@@ -59,6 +62,7 @@ export default function PrivacyPage() {
           </Link>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

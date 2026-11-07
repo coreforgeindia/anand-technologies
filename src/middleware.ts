@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const canonicalUrl = new URL(request.url)
   const forwardedProtocol = request.headers.get('x-forwarded-proto')?.split(',')[0].trim()
   const requestProtocol = forwardedProtocol ? `${forwardedProtocol}:` : canonicalUrl.protocol
